@@ -1,0 +1,632 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		637DD4431C5C56D40048E9FD /* Glider PRO.r in Rez */ = {isa = PBXBuildFile; fileRef = 637DD4411C5C56BD0048E9FD /* Glider PRO.r */; };
+		63DCEA551C5BB02A00E25F8F /* About.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA121C5BB02A00E25F8F /* About.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA561C5BB02A00E25F8F /* AnimCursor.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA131C5BB02A00E25F8F /* AnimCursor.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA571C5BB02A00E25F8F /* AppleEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA141C5BB02A00E25F8F /* AppleEvents.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA581C5BB02A00E25F8F /* Banner.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA151C5BB02A00E25F8F /* Banner.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA591C5BB02A00E25F8F /* ColorUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA161C5BB02A00E25F8F /* ColorUtils.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA5A1C5BB02A00E25F8F /* Coordinates.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA171C5BB02A00E25F8F /* Coordinates.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA5C1C5BB02A00E25F8F /* DialogUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA191C5BB02A00E25F8F /* DialogUtils.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA5D1C5BB02A00E25F8F /* DynamicMaps.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA1A1C5BB02A00E25F8F /* DynamicMaps.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA5E1C5BB02A00E25F8F /* Dynamics.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA1B1C5BB02A00E25F8F /* Dynamics.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA5F1C5BB02A00E25F8F /* Dynamics2.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA1C1C5BB02A00E25F8F /* Dynamics2.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA601C5BB02A00E25F8F /* Dynamics3.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA1D1C5BB02A00E25F8F /* Dynamics3.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA611C5BB02A00E25F8F /* Environ.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA1E1C5BB02A00E25F8F /* Environ.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA621C5BB02A00E25F8F /* Events.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA1F1C5BB02A00E25F8F /* Events.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA631C5BB02A00E25F8F /* FileError.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA201C5BB02A00E25F8F /* FileError.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA641C5BB02A00E25F8F /* GameOver.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA211C5BB02A00E25F8F /* GameOver.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA651C5BB02A00E25F8F /* Grease.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA221C5BB02A00E25F8F /* Grease.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA661C5BB02A00E25F8F /* HighScores.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA231C5BB02A00E25F8F /* HighScores.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA671C5BB02A00E25F8F /* House.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA241C5BB02A00E25F8F /* House.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA681C5BB02A00E25F8F /* HouseInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA251C5BB02A00E25F8F /* HouseInfo.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA691C5BB02A00E25F8F /* HouseIO.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA261C5BB02A00E25F8F /* HouseIO.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA6A1C5BB02A00E25F8F /* HouseLegal.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA271C5BB02A00E25F8F /* HouseLegal.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA6B1C5BB02A00E25F8F /* Input.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA281C5BB02A00E25F8F /* Input.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA6C1C5BB02A00E25F8F /* Interactions.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA291C5BB02A00E25F8F /* Interactions.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA6D1C5BB02A00E25F8F /* InterfaceInit.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA2A1C5BB02A00E25F8F /* InterfaceInit.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA6E1C5BB02A00E25F8F /* Link.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA2B1C5BB02A00E25F8F /* Link.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA6F1C5BB02A00E25F8F /* Main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA2C1C5BB02A00E25F8F /* Main.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA701C5BB02A00E25F8F /* MainWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA2D1C5BB02A00E25F8F /* MainWindow.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA711C5BB02A00E25F8F /* Map.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA2E1C5BB02A00E25F8F /* Map.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA721C5BB02A00E25F8F /* Marquee.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA2F1C5BB02A00E25F8F /* Marquee.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA731C5BB02A00E25F8F /* Menu.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA301C5BB02A00E25F8F /* Menu.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA741C5BB02A00E25F8F /* Modes.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA311C5BB02A00E25F8F /* Modes.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA751C5BB02A00E25F8F /* Music.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA321C5BB02A00E25F8F /* Music.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA761C5BB02A00E25F8F /* ObjectAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA331C5BB02A00E25F8F /* ObjectAdd.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA771C5BB02A00E25F8F /* ObjectDraw.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA341C5BB02A00E25F8F /* ObjectDraw.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA781C5BB02A00E25F8F /* ObjectDraw2.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA351C5BB02A00E25F8F /* ObjectDraw2.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA791C5BB02A00E25F8F /* ObjectDrawAll.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA361C5BB02A00E25F8F /* ObjectDrawAll.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA7A1C5BB02A00E25F8F /* ObjectEdit.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA371C5BB02A00E25F8F /* ObjectEdit.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA7B1C5BB02A00E25F8F /* ObjectInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA381C5BB02A00E25F8F /* ObjectInfo.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA7C1C5BB02A00E25F8F /* ObjectRects.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA391C5BB02A00E25F8F /* ObjectRects.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA7D1C5BB02A00E25F8F /* Objects.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA3A1C5BB02A00E25F8F /* Objects.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA7E1C5BB02A00E25F8F /* Play.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA3B1C5BB02A00E25F8F /* Play.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA7F1C5BB02A00E25F8F /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA3C1C5BB02A00E25F8F /* Player.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA801C5BB02A00E25F8F /* Prefs.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA3D1C5BB02A00E25F8F /* Prefs.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA811C5BB02A00E25F8F /* RectUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA3E1C5BB02A00E25F8F /* RectUtils.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA821C5BB02A00E25F8F /* Render.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA3F1C5BB02A00E25F8F /* Render.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA831C5BB02A00E25F8F /* Room.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA401C5BB02A00E25F8F /* Room.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA841C5BB02A00E25F8F /* RoomGraphics.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA411C5BB02A00E25F8F /* RoomGraphics.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA851C5BB02A00E25F8F /* RoomInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA421C5BB02A00E25F8F /* RoomInfo.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA861C5BB02A00E25F8F /* RubberBands.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA431C5BB02A00E25F8F /* RubberBands.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA871C5BB02A00E25F8F /* SavedGames.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA441C5BB02A00E25F8F /* SavedGames.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA881C5BB02A00E25F8F /* Scoreboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA451C5BB02A00E25F8F /* Scoreboard.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA891C5BB02A00E25F8F /* Scrap.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA461C5BB02A00E25F8F /* Scrap.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA8A1C5BB02A00E25F8F /* SelectHouse.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA471C5BB02A00E25F8F /* SelectHouse.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA8B1C5BB02A00E25F8F /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA481C5BB02A00E25F8F /* Settings.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA8C1C5BB02A00E25F8F /* Sound.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA491C5BB02A00E25F8F /* Sound.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA8D1C5BB02A00E25F8F /* StringUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA4A1C5BB02A00E25F8F /* StringUtils.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA8E1C5BB02A00E25F8F /* StructuresInit.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA4B1C5BB02A00E25F8F /* StructuresInit.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA8F1C5BB02A00E25F8F /* StructuresInit2.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA4C1C5BB02A00E25F8F /* StructuresInit2.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA901C5BB02A00E25F8F /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA4D1C5BB02A00E25F8F /* Tools.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA911C5BB02A00E25F8F /* Transit.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA4E1C5BB02A00E25F8F /* Transit.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA921C5BB02A00E25F8F /* Transitions.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA4F1C5BB02A00E25F8F /* Transitions.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA931C5BB02A00E25F8F /* Triggers.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA501C5BB02A00E25F8F /* Triggers.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA941C5BB02A00E25F8F /* Trip.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA511C5BB02A00E25F8F /* Trip.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA951C5BB02A00E25F8F /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA521C5BB02A00E25F8F /* Utilities.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA961C5BB02A00E25F8F /* Validate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA531C5BB02A00E25F8F /* Validate.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEA971C5BB02A00E25F8F /* WindowUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DCEA541C5BB02A00E25F8F /* WindowUtils.m */; settings = {ASSET_TAGS = (); }; };
+		63DCEAB51C5BB26100E25F8F /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63DCEAB41C5BB26100E25F8F /* Carbon.framework */; };
+		63DCEAB71C5BB26600E25F8F /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63DCEAB61C5BB26600E25F8F /* CoreServices.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		637BC9A11C5BD17100CDB90C /* Glider PRO.rsrc */ = {isa = PBXFileReference; lastKnownFileType = archive.rsrc; path = "Glider PRO.rsrc"; sourceTree = SOURCE_ROOT; };
+		637C37451C5C4AB600A41BD2 /* QDOffscreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QDOffscreen.h; path = "Compatibility Headers/QDOffscreen.h"; sourceTree = SOURCE_ROOT; };
+		637C37461C5C4AB600A41BD2 /* Quickdraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Quickdraw.h; path = "Compatibility Headers/Quickdraw.h"; sourceTree = SOURCE_ROOT; };
+		637C37481C5C4AEF00A41BD2 /* QDExtra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QDExtra.h; path = "Compatibility Headers/QDExtra.h"; sourceTree = SOURCE_ROOT; };
+		637C37491C5C4B3A00A41BD2 /* QuickdrawText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuickdrawText.h; path = "Compatibility Headers/QuickdrawText.h"; sourceTree = SOURCE_ROOT; };
+		637DD4411C5C56BD0048E9FD /* Glider PRO.r */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.rez; path = "Glider PRO.r"; sourceTree = SOURCE_ROOT; };
+		63ABFC7C1C5BAF9D007F4C70 /* Glider PRO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Glider PRO.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		63DCEA121C5BB02A00E25F8F /* About.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = About.m; path = Sources/About.m; sourceTree = SOURCE_ROOT; };
+		63DCEA131C5BB02A00E25F8F /* AnimCursor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = AnimCursor.m; path = Sources/AnimCursor.m; sourceTree = SOURCE_ROOT; };
+		63DCEA141C5BB02A00E25F8F /* AppleEvents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = AppleEvents.m; path = Sources/AppleEvents.m; sourceTree = SOURCE_ROOT; };
+		63DCEA151C5BB02A00E25F8F /* Banner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = Banner.m; path = Sources/Banner.m; sourceTree = SOURCE_ROOT; };
+		63DCEA161C5BB02A00E25F8F /* ColorUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = ColorUtils.m; path = Sources/ColorUtils.m; sourceTree = SOURCE_ROOT; };
+		63DCEA171C5BB02A00E25F8F /* Coordinates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = Coordinates.m; path = Sources/Coordinates.m; sourceTree = SOURCE_ROOT; };
+		63DCEA191C5BB02A00E25F8F /* DialogUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = DialogUtils.m; path = Sources/DialogUtils.m; sourceTree = SOURCE_ROOT; };
+		63DCEA1A1C5BB02A00E25F8F /* DynamicMaps.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = DynamicMaps.m; path = Sources/DynamicMaps.m; sourceTree = SOURCE_ROOT; };
+		63DCEA1B1C5BB02A00E25F8F /* Dynamics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = Dynamics.m; path = Sources/Dynamics.m; sourceTree = SOURCE_ROOT; };
+		63DCEA1C1C5BB02A00E25F8F /* Dynamics2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = Dynamics2.m; path = Sources/Dynamics2.m; sourceTree = SOURCE_ROOT; };
+		63DCEA1D1C5BB02A00E25F8F /* Dynamics3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = Dynamics3.m; path = Sources/Dynamics3.m; sourceTree = SOURCE_ROOT; };
+		63DCEA1E1C5BB02A00E25F8F /* Environ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = Environ.m; path = Sources/Environ.m; sourceTree = SOURCE_ROOT; };
+		63DCEA1F1C5BB02A00E25F8F /* Events.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = Events.m; path = Sources/Events.m; sourceTree = SOURCE_ROOT; };
+		63DCEA201C5BB02A00E25F8F /* FileError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = FileError.m; path = Sources/FileError.m; sourceTree = SOURCE_ROOT; };
+		63DCEA211C5BB02A00E25F8F /* GameOver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = GameOver.m; path = Sources/GameOver.m; sourceTree = SOURCE_ROOT; };
+		63DCEA221C5BB02A00E25F8F /* Grease.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = Grease.m; path = Sources/Grease.m; sourceTree = SOURCE_ROOT; };
+		63DCEA231C5BB02A00E25F8F /* HighScores.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = HighScores.m; path = Sources/HighScores.m; sourceTree = SOURCE_ROOT; };
+		63DCEA241C5BB02A00E25F8F /* House.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = House.m; path = Sources/House.m; sourceTree = SOURCE_ROOT; };
+		63DCEA251C5BB02A00E25F8F /* HouseInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = HouseInfo.m; path = Sources/HouseInfo.m; sourceTree = SOURCE_ROOT; };
+		63DCEA261C5BB02A00E25F8F /* HouseIO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = HouseIO.m; path = Sources/HouseIO.m; sourceTree = SOURCE_ROOT; };
+		63DCEA271C5BB02A00E25F8F /* HouseLegal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = HouseLegal.m; path = Sources/HouseLegal.m; sourceTree = SOURCE_ROOT; };
+		63DCEA281C5BB02A00E25F8F /* Input.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = Input.m; path = Sources/Input.m; sourceTree = SOURCE_ROOT; };
+		63DCEA291C5BB02A00E25F8F /* Interactions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = Interactions.m; path = Sources/Interactions.m; sourceTree = SOURCE_ROOT; };
+		63DCEA2A1C5BB02A00E25F8F /* InterfaceInit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = InterfaceInit.m; path = Sources/InterfaceInit.m; sourceTree = SOURCE_ROOT; };
+		63DCEA2B1C5BB02A00E25F8F /* Link.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = Link.m; path = Sources/Link.m; sourceTree = SOURCE_ROOT; };
+		63DCEA2C1C5BB02A00E25F8F /* Main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = Main.m; path = Sources/Main.m; sourceTree = SOURCE_ROOT; };
+		63DCEA2D1C5BB02A00E25F8F /* MainWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = MainWindow.m; path = Sources/MainWindow.m; sourceTree = SOURCE_ROOT; };
+		63DCEA2E1C5BB02A00E25F8F /* Map.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = Map.m; path = Sources/Map.m; sourceTree = SOURCE_ROOT; };
+		63DCEA2F1C5BB02A00E25F8F /* Marquee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = Marquee.m; path = Sources/Marquee.m; sourceTree = SOURCE_ROOT; };
+		63DCEA301C5BB02A00E25F8F /* Menu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = Menu.m; path = Sources/Menu.m; sourceTree = SOURCE_ROOT; };
+		63DCEA311C5BB02A00E25F8F /* Modes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = Modes.m; path = Sources/Modes.m; sourceTree = SOURCE_ROOT; };
+		63DCEA321C5BB02A00E25F8F /* Music.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = Music.m; path = Sources/Music.m; sourceTree = SOURCE_ROOT; };
+		63DCEA331C5BB02A00E25F8F /* ObjectAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = ObjectAdd.m; path = Sources/ObjectAdd.m; sourceTree = SOURCE_ROOT; };
+		63DCEA341C5BB02A00E25F8F /* ObjectDraw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = ObjectDraw.m; path = Sources/ObjectDraw.m; sourceTree = SOURCE_ROOT; };
+		63DCEA351C5BB02A00E25F8F /* ObjectDraw2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = ObjectDraw2.m; path = Sources/ObjectDraw2.m; sourceTree = SOURCE_ROOT; };
+		63DCEA361C5BB02A00E25F8F /* ObjectDrawAll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = ObjectDrawAll.m; path = Sources/ObjectDrawAll.m; sourceTree = SOURCE_ROOT; };
+		63DCEA371C5BB02A00E25F8F /* ObjectEdit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = ObjectEdit.m; path = Sources/ObjectEdit.m; sourceTree = SOURCE_ROOT; };
+		63DCEA381C5BB02A00E25F8F /* ObjectInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = ObjectInfo.m; path = Sources/ObjectInfo.m; sourceTree = SOURCE_ROOT; };
+		63DCEA391C5BB02A00E25F8F /* ObjectRects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = ObjectRects.m; path = Sources/ObjectRects.m; sourceTree = SOURCE_ROOT; };
+		63DCEA3A1C5BB02A00E25F8F /* Objects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = Objects.m; path = Sources/Objects.m; sourceTree = SOURCE_ROOT; };
+		63DCEA3B1C5BB02A00E25F8F /* Play.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = Play.m; path = Sources/Play.m; sourceTree = SOURCE_ROOT; };
+		63DCEA3C1C5BB02A00E25F8F /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = Player.m; path = Sources/Player.m; sourceTree = SOURCE_ROOT; };
+		63DCEA3D1C5BB02A00E25F8F /* Prefs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = Prefs.m; path = Sources/Prefs.m; sourceTree = SOURCE_ROOT; };
+		63DCEA3E1C5BB02A00E25F8F /* RectUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = RectUtils.m; path = Sources/RectUtils.m; sourceTree = SOURCE_ROOT; };
+		63DCEA3F1C5BB02A00E25F8F /* Render.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = Render.m; path = Sources/Render.m; sourceTree = SOURCE_ROOT; };
+		63DCEA401C5BB02A00E25F8F /* Room.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = Room.m; path = Sources/Room.m; sourceTree = SOURCE_ROOT; };
+		63DCEA411C5BB02A00E25F8F /* RoomGraphics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = RoomGraphics.m; path = Sources/RoomGraphics.m; sourceTree = SOURCE_ROOT; };
+		63DCEA421C5BB02A00E25F8F /* RoomInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = RoomInfo.m; path = Sources/RoomInfo.m; sourceTree = SOURCE_ROOT; };
+		63DCEA431C5BB02A00E25F8F /* RubberBands.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = RubberBands.m; path = Sources/RubberBands.m; sourceTree = SOURCE_ROOT; };
+		63DCEA441C5BB02A00E25F8F /* SavedGames.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = SavedGames.m; path = Sources/SavedGames.m; sourceTree = SOURCE_ROOT; };
+		63DCEA451C5BB02A00E25F8F /* Scoreboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = Scoreboard.m; path = Sources/Scoreboard.m; sourceTree = SOURCE_ROOT; };
+		63DCEA461C5BB02A00E25F8F /* Scrap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = Scrap.m; path = Sources/Scrap.m; sourceTree = SOURCE_ROOT; };
+		63DCEA471C5BB02A00E25F8F /* SelectHouse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = SelectHouse.m; path = Sources/SelectHouse.m; sourceTree = SOURCE_ROOT; };
+		63DCEA481C5BB02A00E25F8F /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = Settings.m; path = Sources/Settings.m; sourceTree = SOURCE_ROOT; };
+		63DCEA491C5BB02A00E25F8F /* Sound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = Sound.m; path = Sources/Sound.m; sourceTree = SOURCE_ROOT; };
+		63DCEA4A1C5BB02A00E25F8F /* StringUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = StringUtils.m; path = Sources/StringUtils.m; sourceTree = SOURCE_ROOT; };
+		63DCEA4B1C5BB02A00E25F8F /* StructuresInit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = StructuresInit.m; path = Sources/StructuresInit.m; sourceTree = SOURCE_ROOT; };
+		63DCEA4C1C5BB02A00E25F8F /* StructuresInit2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = StructuresInit2.m; path = Sources/StructuresInit2.m; sourceTree = SOURCE_ROOT; };
+		63DCEA4D1C5BB02A00E25F8F /* Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = Tools.m; path = Sources/Tools.m; sourceTree = SOURCE_ROOT; };
+		63DCEA4E1C5BB02A00E25F8F /* Transit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = Transit.m; path = Sources/Transit.m; sourceTree = SOURCE_ROOT; };
+		63DCEA4F1C5BB02A00E25F8F /* Transitions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = Transitions.m; path = Sources/Transitions.m; sourceTree = SOURCE_ROOT; };
+		63DCEA501C5BB02A00E25F8F /* Triggers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = Triggers.m; path = Sources/Triggers.m; sourceTree = SOURCE_ROOT; };
+		63DCEA511C5BB02A00E25F8F /* Trip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = Trip.m; path = Sources/Trip.m; sourceTree = SOURCE_ROOT; };
+		63DCEA521C5BB02A00E25F8F /* Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = Utilities.m; path = Sources/Utilities.m; sourceTree = SOURCE_ROOT; };
+		63DCEA531C5BB02A00E25F8F /* Validate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = Validate.m; path = Sources/Validate.m; sourceTree = SOURCE_ROOT; };
+		63DCEA541C5BB02A00E25F8F /* WindowUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = WindowUtils.m; path = Sources/WindowUtils.m; sourceTree = SOURCE_ROOT; };
+		63DCEA981C5BB03400E25F8F /* About.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.h; name = About.h; path = Headers/About.h; sourceTree = SOURCE_ROOT; };
+		63DCEA991C5BB03400E25F8F /* DialogUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.h; name = DialogUtils.h; path = Headers/DialogUtils.h; sourceTree = SOURCE_ROOT; };
+		63DCEA9A1C5BB03400E25F8F /* DynamicMaps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.h; name = DynamicMaps.h; path = Headers/DynamicMaps.h; sourceTree = SOURCE_ROOT; };
+		63DCEA9B1C5BB03400E25F8F /* Environ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.h; name = Environ.h; path = Headers/Environ.h; sourceTree = SOURCE_ROOT; };
+		63DCEA9C1C5BB03400E25F8F /* Externs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.h; name = Externs.h; path = Headers/Externs.h; sourceTree = SOURCE_ROOT; };
+		63DCEA9D1C5BB03400E25F8F /* GameOver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.h; name = GameOver.h; path = Headers/GameOver.h; sourceTree = SOURCE_ROOT; };
+		63DCEA9E1C5BB03400E25F8F /* GliderDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.h; name = GliderDefines.h; path = Headers/GliderDefines.h; sourceTree = SOURCE_ROOT; };
+		63DCEA9F1C5BB03400E25F8F /* GliderProtos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.h; name = GliderProtos.h; path = Headers/GliderProtos.h; sourceTree = SOURCE_ROOT; };
+		63DCEAA01C5BB03400E25F8F /* GliderStructs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.h; name = GliderStructs.h; path = Headers/GliderStructs.h; sourceTree = SOURCE_ROOT; };
+		63DCEAA11C5BB03400E25F8F /* GliderVars.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.h; name = GliderVars.h; path = Headers/GliderVars.h; sourceTree = SOURCE_ROOT; };
+		63DCEAA21C5BB03400E25F8F /* House.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.h; name = House.h; path = Headers/House.h; sourceTree = SOURCE_ROOT; };
+		63DCEAA31C5BB03400E25F8F /* MainWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.h; name = MainWindow.h; path = Headers/MainWindow.h; sourceTree = SOURCE_ROOT; };
+		63DCEAA41C5BB03400E25F8F /* Map.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.h; name = Map.h; path = Headers/Map.h; sourceTree = SOURCE_ROOT; };
+		63DCEAA51C5BB03400E25F8F /* Marquee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.h; name = Marquee.h; path = Headers/Marquee.h; sourceTree = SOURCE_ROOT; };
+		63DCEAA61C5BB03400E25F8F /* ObjectEdit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.h; name = ObjectEdit.h; path = Headers/ObjectEdit.h; sourceTree = SOURCE_ROOT; };
+		63DCEAA71C5BB03400E25F8F /* Objects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.h; name = Objects.h; path = Headers/Objects.h; sourceTree = SOURCE_ROOT; };
+		63DCEAA81C5BB03400E25F8F /* Play.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.h; name = Play.h; path = Headers/Play.h; sourceTree = SOURCE_ROOT; };
+		63DCEAA91C5BB03400E25F8F /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.h; name = Player.h; path = Headers/Player.h; sourceTree = SOURCE_ROOT; };
+		63DCEAAA1C5BB03400E25F8F /* RectUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.h; name = RectUtils.h; path = Headers/RectUtils.h; sourceTree = SOURCE_ROOT; };
+		63DCEAAB1C5BB03400E25F8F /* Room.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.h; name = Room.h; path = Headers/Room.h; sourceTree = SOURCE_ROOT; };
+		63DCEAAC1C5BB03400E25F8F /* RoomGraphics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.h; name = RoomGraphics.h; path = Headers/RoomGraphics.h; sourceTree = SOURCE_ROOT; };
+		63DCEAAD1C5BB03400E25F8F /* RubberBands.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.h; name = RubberBands.h; path = Headers/RubberBands.h; sourceTree = SOURCE_ROOT; };
+		63DCEAAE1C5BB03400E25F8F /* Scoreboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.h; name = Scoreboard.h; path = Headers/Scoreboard.h; sourceTree = SOURCE_ROOT; };
+		63DCEAAF1C5BB03400E25F8F /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.h; name = Tools.h; path = Headers/Tools.h; sourceTree = SOURCE_ROOT; };
+		63DCEAB01C5BB03400E25F8F /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.h; name = Utilities.h; path = Headers/Utilities.h; sourceTree = SOURCE_ROOT; };
+		63DCEAB21C5BB22900E25F8F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
+		63DCEAB41C5BB26100E25F8F /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		63DCEAB61C5BB26600E25F8F /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		63ABFC791C5BAF9D007F4C70 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63DCEAB71C5BB26600E25F8F /* CoreServices.framework in Frameworks */,
+				63DCEAB51C5BB26100E25F8F /* Carbon.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		637C37441C5C4A9700A41BD2 /* Compatibility Headers */ = {
+			isa = PBXGroup;
+			children = (
+				637C37491C5C4B3A00A41BD2 /* QuickdrawText.h */,
+				637C37481C5C4AEF00A41BD2 /* QDExtra.h */,
+				637C37451C5C4AB600A41BD2 /* QDOffscreen.h */,
+				637C37461C5C4AB600A41BD2 /* Quickdraw.h */,
+			);
+			name = "Compatibility Headers";
+			sourceTree = "<group>";
+		};
+		63ABFC731C5BAF9C007F4C70 = {
+			isa = PBXGroup;
+			children = (
+				63DCEAB61C5BB26600E25F8F /* CoreServices.framework */,
+				63DCEAB41C5BB26100E25F8F /* Carbon.framework */,
+				63ABFC7E1C5BAF9D007F4C70 /* Glider PRO */,
+				63ABFC7D1C5BAF9D007F4C70 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		63ABFC7D1C5BAF9D007F4C70 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				63ABFC7C1C5BAF9D007F4C70 /* Glider PRO.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		63ABFC7E1C5BAF9D007F4C70 /* Glider PRO */ = {
+			isa = PBXGroup;
+			children = (
+				63DCEAB11C5BB21C00E25F8F /* Resources */,
+				637C37441C5C4A9700A41BD2 /* Compatibility Headers */,
+				63DCEA111C5BB01F00E25F8F /* Headers */,
+				63DCEA101C5BB01900E25F8F /* Sources */,
+			);
+			name = "Glider PRO";
+			path = gliderpro;
+			sourceTree = "<group>";
+		};
+		63DCEA101C5BB01900E25F8F /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				63DCEA121C5BB02A00E25F8F /* About.m */,
+				63DCEA131C5BB02A00E25F8F /* AnimCursor.m */,
+				63DCEA141C5BB02A00E25F8F /* AppleEvents.m */,
+				63DCEA151C5BB02A00E25F8F /* Banner.m */,
+				63DCEA161C5BB02A00E25F8F /* ColorUtils.m */,
+				63DCEA171C5BB02A00E25F8F /* Coordinates.m */,
+				63DCEA191C5BB02A00E25F8F /* DialogUtils.m */,
+				63DCEA1A1C5BB02A00E25F8F /* DynamicMaps.m */,
+				63DCEA1B1C5BB02A00E25F8F /* Dynamics.m */,
+				63DCEA1C1C5BB02A00E25F8F /* Dynamics2.m */,
+				63DCEA1D1C5BB02A00E25F8F /* Dynamics3.m */,
+				63DCEA1E1C5BB02A00E25F8F /* Environ.m */,
+				63DCEA1F1C5BB02A00E25F8F /* Events.m */,
+				63DCEA201C5BB02A00E25F8F /* FileError.m */,
+				63DCEA211C5BB02A00E25F8F /* GameOver.m */,
+				63DCEA221C5BB02A00E25F8F /* Grease.m */,
+				63DCEA231C5BB02A00E25F8F /* HighScores.m */,
+				63DCEA241C5BB02A00E25F8F /* House.m */,
+				63DCEA251C5BB02A00E25F8F /* HouseInfo.m */,
+				63DCEA261C5BB02A00E25F8F /* HouseIO.m */,
+				63DCEA271C5BB02A00E25F8F /* HouseLegal.m */,
+				63DCEA281C5BB02A00E25F8F /* Input.m */,
+				63DCEA291C5BB02A00E25F8F /* Interactions.m */,
+				63DCEA2A1C5BB02A00E25F8F /* InterfaceInit.m */,
+				63DCEA2B1C5BB02A00E25F8F /* Link.m */,
+				63DCEA2C1C5BB02A00E25F8F /* Main.m */,
+				63DCEA2D1C5BB02A00E25F8F /* MainWindow.m */,
+				63DCEA2E1C5BB02A00E25F8F /* Map.m */,
+				63DCEA2F1C5BB02A00E25F8F /* Marquee.m */,
+				63DCEA301C5BB02A00E25F8F /* Menu.m */,
+				63DCEA311C5BB02A00E25F8F /* Modes.m */,
+				63DCEA321C5BB02A00E25F8F /* Music.m */,
+				63DCEA331C5BB02A00E25F8F /* ObjectAdd.m */,
+				63DCEA341C5BB02A00E25F8F /* ObjectDraw.m */,
+				63DCEA351C5BB02A00E25F8F /* ObjectDraw2.m */,
+				63DCEA361C5BB02A00E25F8F /* ObjectDrawAll.m */,
+				63DCEA371C5BB02A00E25F8F /* ObjectEdit.m */,
+				63DCEA381C5BB02A00E25F8F /* ObjectInfo.m */,
+				63DCEA391C5BB02A00E25F8F /* ObjectRects.m */,
+				63DCEA3A1C5BB02A00E25F8F /* Objects.m */,
+				63DCEA3B1C5BB02A00E25F8F /* Play.m */,
+				63DCEA3C1C5BB02A00E25F8F /* Player.m */,
+				63DCEA3D1C5BB02A00E25F8F /* Prefs.m */,
+				63DCEA3E1C5BB02A00E25F8F /* RectUtils.m */,
+				63DCEA3F1C5BB02A00E25F8F /* Render.m */,
+				63DCEA401C5BB02A00E25F8F /* Room.m */,
+				63DCEA411C5BB02A00E25F8F /* RoomGraphics.m */,
+				63DCEA421C5BB02A00E25F8F /* RoomInfo.m */,
+				63DCEA431C5BB02A00E25F8F /* RubberBands.m */,
+				63DCEA441C5BB02A00E25F8F /* SavedGames.m */,
+				63DCEA451C5BB02A00E25F8F /* Scoreboard.m */,
+				63DCEA461C5BB02A00E25F8F /* Scrap.m */,
+				63DCEA471C5BB02A00E25F8F /* SelectHouse.m */,
+				63DCEA481C5BB02A00E25F8F /* Settings.m */,
+				63DCEA491C5BB02A00E25F8F /* Sound.m */,
+				63DCEA4A1C5BB02A00E25F8F /* StringUtils.m */,
+				63DCEA4B1C5BB02A00E25F8F /* StructuresInit.m */,
+				63DCEA4C1C5BB02A00E25F8F /* StructuresInit2.m */,
+				63DCEA4D1C5BB02A00E25F8F /* Tools.m */,
+				63DCEA4E1C5BB02A00E25F8F /* Transit.m */,
+				63DCEA4F1C5BB02A00E25F8F /* Transitions.m */,
+				63DCEA501C5BB02A00E25F8F /* Triggers.m */,
+				63DCEA511C5BB02A00E25F8F /* Trip.m */,
+				63DCEA521C5BB02A00E25F8F /* Utilities.m */,
+				63DCEA531C5BB02A00E25F8F /* Validate.m */,
+				63DCEA541C5BB02A00E25F8F /* WindowUtils.m */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+		63DCEA111C5BB01F00E25F8F /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				63DCEA981C5BB03400E25F8F /* About.h */,
+				63DCEA991C5BB03400E25F8F /* DialogUtils.h */,
+				63DCEA9A1C5BB03400E25F8F /* DynamicMaps.h */,
+				63DCEA9B1C5BB03400E25F8F /* Environ.h */,
+				63DCEA9C1C5BB03400E25F8F /* Externs.h */,
+				63DCEA9D1C5BB03400E25F8F /* GameOver.h */,
+				63DCEA9E1C5BB03400E25F8F /* GliderDefines.h */,
+				63DCEA9F1C5BB03400E25F8F /* GliderProtos.h */,
+				63DCEAA01C5BB03400E25F8F /* GliderStructs.h */,
+				63DCEAA11C5BB03400E25F8F /* GliderVars.h */,
+				63DCEAA21C5BB03400E25F8F /* House.h */,
+				63DCEAA31C5BB03400E25F8F /* MainWindow.h */,
+				63DCEAA41C5BB03400E25F8F /* Map.h */,
+				63DCEAA51C5BB03400E25F8F /* Marquee.h */,
+				63DCEAA61C5BB03400E25F8F /* ObjectEdit.h */,
+				63DCEAA71C5BB03400E25F8F /* Objects.h */,
+				63DCEAA81C5BB03400E25F8F /* Play.h */,
+				63DCEAA91C5BB03400E25F8F /* Player.h */,
+				63DCEAAA1C5BB03400E25F8F /* RectUtils.h */,
+				63DCEAAB1C5BB03400E25F8F /* Room.h */,
+				63DCEAAC1C5BB03400E25F8F /* RoomGraphics.h */,
+				63DCEAAD1C5BB03400E25F8F /* RubberBands.h */,
+				63DCEAAE1C5BB03400E25F8F /* Scoreboard.h */,
+				63DCEAAF1C5BB03400E25F8F /* Tools.h */,
+				63DCEAB01C5BB03400E25F8F /* Utilities.h */,
+			);
+			name = Headers;
+			sourceTree = "<group>";
+		};
+		63DCEAB11C5BB21C00E25F8F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				637DD4411C5C56BD0048E9FD /* Glider PRO.r */,
+				637BC9A11C5BD17100CDB90C /* Glider PRO.rsrc */,
+				63DCEAB21C5BB22900E25F8F /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		63ABFC7B1C5BAF9D007F4C70 /* Glider PRO */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 63ABFC8D1C5BAF9D007F4C70 /* Build configuration list for PBXNativeTarget "Glider PRO" */;
+			buildPhases = (
+				63ABFC781C5BAF9D007F4C70 /* Sources */,
+				63ABFC791C5BAF9D007F4C70 /* Frameworks */,
+				63ABFC7A1C5BAF9D007F4C70 /* Resources */,
+				637DD4421C5C56CE0048E9FD /* Rez */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Glider PRO";
+			productName = gliderpro;
+			productReference = 63ABFC7C1C5BAF9D007F4C70 /* Glider PRO.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		63ABFC741C5BAF9C007F4C70 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Soft Dorothy Software";
+				TargetAttributes = {
+					63ABFC7B1C5BAF9D007F4C70 = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+				};
+			};
+			buildConfigurationList = 63ABFC771C5BAF9C007F4C70 /* Build configuration list for PBXProject "Glider PRO" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 63ABFC731C5BAF9C007F4C70;
+			productRefGroup = 63ABFC7D1C5BAF9D007F4C70 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				63ABFC7B1C5BAF9D007F4C70 /* Glider PRO */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		63ABFC7A1C5BAF9D007F4C70 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXRezBuildPhase section */
+		637DD4421C5C56CE0048E9FD /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				637DD4431C5C56D40048E9FD /* Glider PRO.r in Rez */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXRezBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		63ABFC781C5BAF9D007F4C70 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63DCEA761C5BB02A00E25F8F /* ObjectAdd.m in Sources */,
+				63DCEA781C5BB02A00E25F8F /* ObjectDraw2.m in Sources */,
+				63DCEA711C5BB02A00E25F8F /* Map.m in Sources */,
+				63DCEA681C5BB02A00E25F8F /* HouseInfo.m in Sources */,
+				63DCEA621C5BB02A00E25F8F /* Events.m in Sources */,
+				63DCEA971C5BB02A00E25F8F /* WindowUtils.m in Sources */,
+				63DCEA751C5BB02A00E25F8F /* Music.m in Sources */,
+				63DCEA6C1C5BB02A00E25F8F /* Interactions.m in Sources */,
+				63DCEA721C5BB02A00E25F8F /* Marquee.m in Sources */,
+				63DCEA8A1C5BB02A00E25F8F /* SelectHouse.m in Sources */,
+				63DCEA951C5BB02A00E25F8F /* Utilities.m in Sources */,
+				63DCEA6F1C5BB02A00E25F8F /* Main.m in Sources */,
+				63DCEA641C5BB02A00E25F8F /* GameOver.m in Sources */,
+				63DCEA7D1C5BB02A00E25F8F /* Objects.m in Sources */,
+				63DCEA961C5BB02A00E25F8F /* Validate.m in Sources */,
+				63DCEA611C5BB02A00E25F8F /* Environ.m in Sources */,
+				63DCEA5D1C5BB02A00E25F8F /* DynamicMaps.m in Sources */,
+				63DCEA851C5BB02A00E25F8F /* RoomInfo.m in Sources */,
+				63DCEA6A1C5BB02A00E25F8F /* HouseLegal.m in Sources */,
+				63DCEA7E1C5BB02A00E25F8F /* Play.m in Sources */,
+				63DCEA7C1C5BB02A00E25F8F /* ObjectRects.m in Sources */,
+				63DCEA561C5BB02A00E25F8F /* AnimCursor.m in Sources */,
+				63DCEA811C5BB02A00E25F8F /* RectUtils.m in Sources */,
+				63DCEA901C5BB02A00E25F8F /* Tools.m in Sources */,
+				63DCEA861C5BB02A00E25F8F /* RubberBands.m in Sources */,
+				63DCEA731C5BB02A00E25F8F /* Menu.m in Sources */,
+				63DCEA571C5BB02A00E25F8F /* AppleEvents.m in Sources */,
+				63DCEA801C5BB02A00E25F8F /* Prefs.m in Sources */,
+				63DCEA7B1C5BB02A00E25F8F /* ObjectInfo.m in Sources */,
+				63DCEA591C5BB02A00E25F8F /* ColorUtils.m in Sources */,
+				63DCEA8B1C5BB02A00E25F8F /* Settings.m in Sources */,
+				63DCEA5F1C5BB02A00E25F8F /* Dynamics2.m in Sources */,
+				63DCEA871C5BB02A00E25F8F /* SavedGames.m in Sources */,
+				63DCEA741C5BB02A00E25F8F /* Modes.m in Sources */,
+				63DCEA5A1C5BB02A00E25F8F /* Coordinates.m in Sources */,
+				63DCEA821C5BB02A00E25F8F /* Render.m in Sources */,
+				63DCEA6E1C5BB02A00E25F8F /* Link.m in Sources */,
+				63DCEA6B1C5BB02A00E25F8F /* Input.m in Sources */,
+				63DCEA831C5BB02A00E25F8F /* Room.m in Sources */,
+				63DCEA911C5BB02A00E25F8F /* Transit.m in Sources */,
+				63DCEA691C5BB02A00E25F8F /* HouseIO.m in Sources */,
+				63DCEA631C5BB02A00E25F8F /* FileError.m in Sources */,
+				63DCEA8F1C5BB02A00E25F8F /* StructuresInit2.m in Sources */,
+				63DCEA931C5BB02A00E25F8F /* Triggers.m in Sources */,
+				63DCEA651C5BB02A00E25F8F /* Grease.m in Sources */,
+				63DCEA601C5BB02A00E25F8F /* Dynamics3.m in Sources */,
+				63DCEA551C5BB02A00E25F8F /* About.m in Sources */,
+				63DCEA8C1C5BB02A00E25F8F /* Sound.m in Sources */,
+				63DCEA581C5BB02A00E25F8F /* Banner.m in Sources */,
+				63DCEA8E1C5BB02A00E25F8F /* StructuresInit.m in Sources */,
+				63DCEA5C1C5BB02A00E25F8F /* DialogUtils.m in Sources */,
+				63DCEA7F1C5BB02A00E25F8F /* Player.m in Sources */,
+				63DCEA671C5BB02A00E25F8F /* House.m in Sources */,
+				63DCEA661C5BB02A00E25F8F /* HighScores.m in Sources */,
+				63DCEA7A1C5BB02A00E25F8F /* ObjectEdit.m in Sources */,
+				63DCEA881C5BB02A00E25F8F /* Scoreboard.m in Sources */,
+				63DCEA941C5BB02A00E25F8F /* Trip.m in Sources */,
+				63DCEA5E1C5BB02A00E25F8F /* Dynamics.m in Sources */,
+				63DCEA791C5BB02A00E25F8F /* ObjectDrawAll.m in Sources */,
+				63DCEA771C5BB02A00E25F8F /* ObjectDraw.m in Sources */,
+				63DCEA841C5BB02A00E25F8F /* RoomGraphics.m in Sources */,
+				63DCEA701C5BB02A00E25F8F /* MainWindow.m in Sources */,
+				63DCEA921C5BB02A00E25F8F /* Transitions.m in Sources */,
+				63DCEA6D1C5BB02A00E25F8F /* InterfaceInit.m in Sources */,
+				63DCEA8D1C5BB02A00E25F8F /* StringUtils.m in Sources */,
+				63DCEA891C5BB02A00E25F8F /* Scrap.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		63ABFC8B1C5BAF9D007F4C70 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				WARNING_CFLAGS = "-Wno-deprecated-declarations";
+			};
+			name = Debug;
+		};
+		63ABFC8C1C5BAF9D007F4C70 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				WARNING_CFLAGS = "-Wno-deprecated-declarations";
+			};
+			name = Release;
+		};
+		63ABFC8E1C5BAF9D007F4C70 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.softdorothy.gliderpro;
+				PRODUCT_NAME = "Glider PRO";
+			};
+			name = Debug;
+		};
+		63ABFC8F1C5BAF9D007F4C70 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.softdorothy.gliderpro;
+				PRODUCT_NAME = "Glider PRO";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		63ABFC771C5BAF9C007F4C70 /* Build configuration list for PBXProject "Glider PRO" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63ABFC8B1C5BAF9D007F4C70 /* Debug */,
+				63ABFC8C1C5BAF9D007F4C70 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		63ABFC8D1C5BAF9D007F4C70 /* Build configuration list for PBXNativeTarget "Glider PRO" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63ABFC8E1C5BAF9D007F4C70 /* Debug */,
+				63ABFC8F1C5BAF9D007F4C70 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 63ABFC741C5BAF9C007F4C70 /* Project object */;
+}
