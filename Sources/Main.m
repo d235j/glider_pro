@@ -289,6 +289,12 @@ int main (void)
 	OSErr		fileErr;
 	Boolean		whoCares, copyGood;
 	
+    FSRef resFile;
+    HFSUniStr255 forkName;
+    SInt16 refnum;
+    NSString *fileName, *filePath;
+    const char* resFileName;
+
 	ToolBoxInit();
 	CheckOurEnvirons();
 	if (!thisMac.hasColor)
@@ -297,7 +303,16 @@ int main (void)
 		RedAlert(kErrNeedSystem7);
 	if (thisMac.numScreens == 0)
 		RedAlert(kErrNeed16Or256Colors);
-//	dataResFile = OpenResFile("\pMermaid");
+    fileName = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleName"];    filePath = [[NSBundle mainBundle] pathForResource:fileName ofType:@"rsrc"];
+    resFileName = [filePath UTF8String];
+    fileErr = FSPathMakeRef((UInt8*)resFileName, &resFile, false);
+    if (fileErr != noErr) {
+        return 1;
+    }
+    FSGetDataForkName(&forkName);
+
+	dataResFile = FSOpenResourceFile(&resFile, forkName.length,forkName.unicode,fsRdPerm,&refnum);
+    UseResFile(refnum);
 	SetUpAppleEvents();
 	LoadCursors();
 	ReadInPrefs();
