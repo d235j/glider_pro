@@ -6,6 +6,8 @@
 //============================================================================
 
 
+#include "Quickdraw.h"
+#include "QDExtra.h"
 #include "Externs.h"
 #include "Environ.h"
 #include "Objects.h"

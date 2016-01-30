@@ -5,9 +5,11 @@
 //============================================================================
 
 
-#include <ControlDefinitions.h>
-#include <LowMem.h>
-#include <NumberFormatting.h>
+#include "Quickdraw.h"
+#include "QuickdrawText.h"
+#include "QDExtra.h"
+#include <Carbon/Carbon.h>
+#include <CoreServices/CoreServices.h>
 #include "DialogUtils.h"
 #include "Externs.h"
 

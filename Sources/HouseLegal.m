@@ -6,8 +6,9 @@
 //============================================================================
 
 
-#include <NumberFormatting.h>
-#include <StringCompare.h>
+#include "Quickdraw.h"
+#include "QDExtra.h"
+#include <CoreServices/CoreServices.h>
 #include "Externs.h"
 #include "ObjectEdit.h"
 #include "RectUtils.h"

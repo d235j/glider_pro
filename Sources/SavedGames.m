@@ -6,7 +6,8 @@
 //============================================================================
 
 
-#include <StringCompare.h>
+#include "Quickdraw.h"
+#include <CoreServices/CoreServices.h>
 #include "Externs.h"
 #include "House.h"
 

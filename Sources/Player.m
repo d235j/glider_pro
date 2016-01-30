@@ -5,6 +5,7 @@
 //============================================================================
 
 
+#include "Quickdraw.h"
 #include "Externs.h"
 #include "Play.h"
 #include "RectUtils.h"

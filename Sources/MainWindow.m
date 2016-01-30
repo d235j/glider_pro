@@ -5,8 +5,10 @@
 //============================================================================
 
 
-#include <NumberFormatting.h>
-#include <ToolUtils.h>
+#include "Quickdraw.h"
+#include "QuickdrawText.h"
+#include "QDExtra.h"
+#include <CoreServices/CoreServices.h>
 #include "Externs.h"
 #include "Environ.h"
 #include "House.h"

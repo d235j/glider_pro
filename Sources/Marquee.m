@@ -5,6 +5,8 @@
 //============================================================================
 
 
+#include "Quickdraw.h"
+#include "QDExtra.h"
 #include "Externs.h"
 #include "Marquee.h"
 #include "Objects.h"

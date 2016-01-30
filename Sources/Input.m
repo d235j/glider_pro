@@ -5,7 +5,8 @@
 //============================================================================
 
 
-#include <ToolUtils.h>
+#include "Quickdraw.h"
+#include <CoreServices/CoreServices.h>
 #include "Externs.h"
 #include "MainWindow.h"
 #include "RectUtils.h"

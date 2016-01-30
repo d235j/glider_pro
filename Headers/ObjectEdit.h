@@ -8,7 +8,7 @@
 #pragma once
 
 
-#include <Quickdraw.h>
+#include <ApplicationServices/ApplicationServices.h>
 
 
 extern Rect			roomObjectRects[];

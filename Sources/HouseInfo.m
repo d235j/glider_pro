@@ -6,7 +6,8 @@
 //============================================================================
 
 
-#include <NumberFormatting.h>
+#include "Quickdraw.h"
+#include <CoreServices/CoreServices.h>
 #include "Externs.h"
 #include "DialogUtils.h"
 

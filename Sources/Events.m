@@ -6,8 +6,7 @@
 //============================================================================
 
 
-#include <AppleEvents.h>
-#include <ToolUtils.h>
+#include "Quickdraw.h"
 #include "Externs.h"
 #include "Environ.h"
 #include "House.h"

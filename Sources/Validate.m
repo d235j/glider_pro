@@ -7,7 +7,7 @@
 
 
 #include "Externs.h"
-#include <Gestalt.h>
+#include <CoreServices/CoreServices.h>
 
 
 #ifndef COMPILEDEMO

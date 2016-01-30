@@ -5,8 +5,9 @@
 //============================================================================
 
 
-#include <Resources.h>
-#include <ToolUtils.h>
+#include "Quickdraw.h"
+#include "QDExtra.h"
+#include <CoreServices/CoreServices.h>
 #include "Externs.h"
 #include "House.h"
 #include "MainWindow.h"

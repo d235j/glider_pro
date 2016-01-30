@@ -6,6 +6,7 @@
 //============================================================================
 
 
+#include "Quickdraw.h"
 #include "Externs.h"
 #include "Environ.h"
 #include "RectUtils.h"

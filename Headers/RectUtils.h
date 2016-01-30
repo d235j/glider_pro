@@ -8,7 +8,7 @@
 #pragma once
 
 
-#include <Quickdraw.h>
+#include <ApplicationServices/ApplicationServices.h>
 
 
 void FrameWHRect (short, short, short, short);

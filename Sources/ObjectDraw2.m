@@ -6,8 +6,10 @@
 //============================================================================
 
 
-#include <Resources.h>
-#include <TextUtils.h>
+#include "Quickdraw.h"
+#include "QuickdrawText.h"
+#include "QDExtra.h"
+#include <CoreServices/CoreServices.h>
 #include "Externs.h"
 #include "Environ.h"
 #include "Objects.h"

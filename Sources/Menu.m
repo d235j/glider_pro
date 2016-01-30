@@ -7,8 +7,8 @@
 
 
 //#include <Balloons.h>
-#include <NumberFormatting.h>
-#include <ToolUtils.h>
+#include "Quickdraw.h"
+#include <CoreServices/CoreServices.h>
 #include "DialogUtils.h"
 #include "Externs.h"
 #include "House.h"
