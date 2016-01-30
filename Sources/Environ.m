@@ -156,11 +156,11 @@ Boolean DoWeHaveSystem605 (void)
 		haveIt = false;
 	return (haveIt);
 }
-/
+*/
 //--------------------------------------------------------------  DoWeHaveSystem7  
 
 // Determines if the System version is at least 7.0.0 or more recent.
-
+/*
 Boolean DoWeHaveSystem7 (void)
 {
 	SysEnvRec		thisWorld;
@@ -173,7 +173,7 @@ Boolean DoWeHaveSystem7 (void)
 		haveIt = false;
 	return (haveIt);
 }
-
+*/
 //--------------------------------------------------------------  DoWeHaveSoundManager3
 // Determines if the Sound Manager version is at least 3.0.0 or more recent.
 /*
