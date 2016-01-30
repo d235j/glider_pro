@@ -366,9 +366,9 @@ OSErr OpenSoundChannels (void)
 {
 	OSErr		theErr;
 	
-	callBack0UPP = NewSndCallBackProc(CallBack0);
-	callBack1UPP = NewSndCallBackProc(CallBack1);
-	callBack2UPP = NewSndCallBackProc(CallBack2);
+	callBack0UPP = NewSndCallBackUPP(CallBack0);
+	callBack1UPP = NewSndCallBackUPP(CallBack1);
+	callBack2UPP = NewSndCallBackUPP(CallBack2);
 	
 	theErr = noErr;
 	

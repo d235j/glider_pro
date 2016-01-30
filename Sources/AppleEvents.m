@@ -177,10 +177,10 @@ void SetUpAppleEvents (void)
 {
 	OSErr		theErr;
 	
-	openAppAEUPP = NewAEEventHandlerProc(DoOpenAppAE);
-	openDocAEUPP = NewAEEventHandlerProc(DoOpenDocAE);
-	printDocAEUPP = NewAEEventHandlerProc(DoPrintDocAE);
-	quitAEUPP = NewAEEventHandlerProc(DoQuitAE);
+	openAppAEUPP = NewAEEventHandlerUPP(DoOpenAppAE);
+	openDocAEUPP = NewAEEventHandlerUPP(DoOpenDocAE);
+	printDocAEUPP = NewAEEventHandlerUPP(DoPrintDocAE);
+	quitAEUPP = NewAEEventHandlerUPP(DoQuitAE);
 	
 	theErr = AEInstallEventHandler(kCoreEventClass,		// install oapp 
 			kAEOpenApplication, openAppAEUPP, 0, false);

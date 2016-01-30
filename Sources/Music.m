@@ -275,7 +275,7 @@ OSErr OpenMusicChannel (void)
 {
 	OSErr		theErr;
 	
-	musicCallBackUPP = NewSndCallBackProc(MusicCallBack);
+	musicCallBackUPP = NewSndCallBackUPP(MusicCallBack);
 	
 	theErr = noErr;
 	
