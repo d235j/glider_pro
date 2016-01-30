@@ -79,7 +79,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		637BC9A11C5BD17100CDB90C /* Glider PRO.rsrc */ = {isa = PBXFileReference; lastKnownFileType = archive.rsrc; path = "Glider PRO.rsrc"; sourceTree = SOURCE_ROOT; };
 		637C37451C5C4AB600A41BD2 /* QDOffscreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QDOffscreen.h; path = "Compatibility Headers/QDOffscreen.h"; sourceTree = SOURCE_ROOT; };
 		637C37461C5C4AB600A41BD2 /* Quickdraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Quickdraw.h; path = "Compatibility Headers/Quickdraw.h"; sourceTree = SOURCE_ROOT; };
 		637C37481C5C4AEF00A41BD2 /* QDExtra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QDExtra.h; path = "Compatibility Headers/QDExtra.h"; sourceTree = SOURCE_ROOT; };
@@ -345,7 +344,6 @@
 			isa = PBXGroup;
 			children = (
 				637DD4411C5C56BD0048E9FD /* Glider PRO.r */,
-				637BC9A11C5BD17100CDB90C /* Glider PRO.rsrc */,
 				63DCEAB21C5BB22900E25F8F /* Info.plist */,
 			);
 			name = Resources;
@@ -538,10 +536,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
 				WARNING_CFLAGS = "-Wno-deprecated-declarations";
 			};
 			name = Debug;
@@ -576,9 +573,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = macosx;
 				WARNING_CFLAGS = "-Wno-deprecated-declarations";
 			};
 			name = Release;
