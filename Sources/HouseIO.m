@@ -24,6 +24,7 @@ void LoopMovie (void);
 void OpenHouseMovie (void);
 void CloseHouseMovie (void);
 Boolean IsFileReadOnly (FSSpec *);
+void HouseBigToHostEndian(void);
 
 
 Movie		theMovie;
@@ -375,6 +376,8 @@ Boolean ReadHouse (void)
 		return(false);
 	}
 	
+    HouseBigToHostEndian();
+
 	numberRooms = (*thisHouse)->nRooms;
 	#ifdef COMPILEDEMO
 	if (numberRooms != 45)
@@ -704,3 +707,279 @@ Boolean IsFileReadOnly (FSSpec *theSpec)
 	*/
 }
 
+Byte getObjType(short what)
+{
+    switch (what)
+    {
+        case kFloorVent:
+        case kCeilingVent:
+        case kFloorBlower:
+        case kCeilingBlower:
+        case kSewerGrate:
+        case kLeftFan:
+        case kRightFan:
+        case kTaper:
+        case kCandle:
+        case kStubby:
+        case kTiki:
+        case kBBQ:
+        case kInvisBlower:
+        case kGrecoVent:
+        case kSewerBlower:
+        case kLiftArea:
+            return kBlowerMode;
+            break;
+
+        case kTable:
+        case kShelf:
+        case kCabinet:
+        case kFilingCabinet:
+        case kWasteBasket:
+        case kMilkCrate:
+        case kCounter:
+        case kDresser:
+        case kDeckTable:
+        case kStool:
+        case kTrunk:
+        case kInvisObstacle:
+        case kManhole:
+        case kBooks:
+        case kInvisBounce:
+            return kFurnitureMode;
+            break;
+
+        case kRedClock:
+        case kBlueClock:
+        case kYellowClock:
+        case kCuckoo:
+        case kPaper:
+        case kBattery:
+        case kBands:
+        case kGreaseRt:
+        case kGreaseLf:
+        case kFoil:
+        case kInvisBonus:
+        case kStar:
+        case kSparkle:
+        case kHelium:
+        case kSlider:
+            return kBonusMode;
+            break;
+
+        case kUpStairs:
+        case kDownStairs:
+        case kMailboxLf:
+        case kMailboxRt:
+        case kFloorTrans:
+        case kCeilingTrans:
+        case kDoorInLf:
+        case kDoorInRt:
+        case kDoorExRt:
+        case kDoorExLf:
+        case kWindowInLf:
+        case kWindowInRt:
+        case kWindowExRt:
+        case kWindowExLf:
+        case kInvisTrans:
+        case kDeluxeTrans:
+            return kTransportMode;
+            break;
+
+        case kLightSwitch:
+        case kMachineSwitch:
+        case kThermostat:
+        case kPowerSwitch:
+        case kKnifeSwitch:
+        case kInvisSwitch:
+        case kTrigger:
+        case kLgTrigger:
+        case kSoundTrigger:
+            return kSwitchMode;
+            break;
+
+        case kCeilingLight:
+        case kLightBulb:
+        case kTableLamp:
+        case kHipLamp:
+        case kDecoLamp:
+        case kFlourescent:
+        case kTrackLight:
+        case kInvisLight:
+            return kLightMode;
+            break;
+
+        case kShredder:
+        case kToaster:
+        case kMacPlus:
+        case kGuitar:
+        case kTV:
+        case kCoffee:
+        case kOutlet:
+        case kVCR:
+        case kStereo:
+        case kMicrowave:
+        case kCinderBlock:
+        case kFlowerBox:
+        case kCDs:
+        case kCustomPict:
+            return kApplianceMode;
+            break;
+
+        case kBalloon:
+        case kCopterLf:
+        case kCopterRt:
+        case kDartLf:
+        case kDartRt:
+        case kBall:
+        case kDrip:
+        case kFish:
+        case kCobweb:
+            return kEnemyMode;
+            break;
+
+        case kOzma:
+        case kMirror:
+        case kMousehole:
+        case kFireplace:
+        case kFlower:
+        case kWallWindow:
+        case kBear:
+        case kCalendar:
+        case kVase1:
+        case kVase2:
+        case kBulletin:
+        case kCloud:
+        case kFaucet:
+        case kRug:
+        case kChimes:
+            return kClutterMode;
+            break;
+    }
+    return 0;
+}
+
+void HouseBigToHostEndian(void)
+{
+    int i, j;
+
+    (*thisHouse)->version = EndianS16_BtoN((*thisHouse)->version);
+    (*thisHouse)->unusedShort = EndianS16_BtoN((*thisHouse)->unusedShort);
+    (*thisHouse)->timeStamp = EndianS32_BtoN((*thisHouse)->timeStamp);
+    (*thisHouse)->flags = EndianS32_BtoN((*thisHouse)->flags);
+    (*thisHouse)->initial.h = EndianS16_BtoN((*thisHouse)->initial.h);
+    (*thisHouse)->initial.v = EndianS16_BtoN((*thisHouse)->initial.v);
+    // banner - string
+    // trailer - string
+    for(i=0; i<kMaxScores; i++) {
+        for(j=0; j<kMaxScores; j++) {
+            (*thisHouse)->highScores.scores[j] = EndianS32_BtoN((*thisHouse)->highScores.scores[j]);
+            (*thisHouse)->highScores.timeStamps[j] = EndianU32_BtoN((*thisHouse)->highScores.timeStamps[j]);
+            (*thisHouse)->highScores.levels[j] = EndianS16_BtoN((*thisHouse)->highScores.levels[j]);
+        }
+    }
+    (*thisHouse)->savedGame.version = EndianS16_BtoN((*thisHouse)->savedGame.version);
+    (*thisHouse)->savedGame.wasStarsLeft = EndianS16_BtoN((*thisHouse)->savedGame.wasStarsLeft);
+    (*thisHouse)->savedGame.timeStamp = EndianS32_BtoN((*thisHouse)->savedGame.timeStamp);
+    (*thisHouse)->savedGame.where.h = EndianS16_BtoN((*thisHouse)->savedGame.where.h);
+    (*thisHouse)->savedGame.where.v = EndianS16_BtoN((*thisHouse)->savedGame.where.v);
+    (*thisHouse)->savedGame.score = EndianS32_BtoN((*thisHouse)->savedGame.score);
+    (*thisHouse)->savedGame.unusedLong = EndianS32_BtoN((*thisHouse)->savedGame.unusedLong);
+    (*thisHouse)->savedGame.unusedLong2 = EndianS32_BtoN((*thisHouse)->savedGame.unusedLong2);
+    (*thisHouse)->savedGame.energy = EndianS16_BtoN((*thisHouse)->savedGame.energy);
+    (*thisHouse)->savedGame.bands = EndianS16_BtoN((*thisHouse)->savedGame.bands);
+    (*thisHouse)->savedGame.roomNumber = EndianS16_BtoN((*thisHouse)->savedGame.roomNumber);
+    (*thisHouse)->savedGame.gliderState = EndianS16_BtoN((*thisHouse)->savedGame.gliderState);
+    (*thisHouse)->savedGame.numGliders = EndianS16_BtoN((*thisHouse)->savedGame.numGliders);
+    (*thisHouse)->savedGame.foil = EndianS16_BtoN((*thisHouse)->savedGame.foil);
+    (*thisHouse)->savedGame.unusedShort = EndianS16_BtoN((*thisHouse)->savedGame.unusedShort);
+
+    // unusedBoolean -- Boolean
+    (*thisHouse)->firstRoom = EndianS16_BtoN((*thisHouse)->firstRoom);
+    (*thisHouse)->nRooms = EndianS16_BtoN((*thisHouse)->nRooms);
+
+    for (i=0; i<((*thisHouse)->nRooms); i++) {
+        // name - string
+        (*thisHouse)->rooms[i].bounds = EndianS16_BtoN((*thisHouse)->rooms[i].bounds);
+        // leftState - byte
+        // rightState - byte
+        // unusedByte - byte
+        // visited - Boolean
+        (*thisHouse)->rooms[i].background = EndianS16_BtoN((*thisHouse)->rooms[i].background);
+        for(j=0; j<kNumTiles; j++) {
+            (*thisHouse)->rooms[i].tiles[j] = EndianS16_BtoN((*thisHouse)->rooms[i].tiles[j]);
+        }
+        (*thisHouse)->rooms[i].floor = EndianS16_BtoN((*thisHouse)->rooms[i].floor);
+        (*thisHouse)->rooms[i].suite = EndianS16_BtoN((*thisHouse)->rooms[i].suite);
+        (*thisHouse)->rooms[i].openings = EndianS16_BtoN((*thisHouse)->rooms[i].openings);
+        (*thisHouse)->rooms[i].numObjects = EndianS16_BtoN((*thisHouse)->rooms[i].numObjects);
+
+        for(j=0; j<kMaxRoomObs && j<(*thisHouse)->rooms[i].numObjects; j++) {
+            (*thisHouse)->rooms[i].objects[j].what = EndianS16_BtoN((*thisHouse)->rooms[i].objects[j].what);
+
+            switch(getObjType((*thisHouse)->rooms[i].objects[j].what)) {
+                case kBlowerMode:
+                    (*thisHouse)->rooms[i].objects[j].data.a.distance = EndianS16_BtoN((*thisHouse)->rooms[i].objects[j].data.a.distance);
+                    (*thisHouse)->rooms[i].objects[j].data.a.topLeft.h = EndianS16_BtoN((*thisHouse)->rooms[i].objects[j].data.a.topLeft.h);
+                    (*thisHouse)->rooms[i].objects[j].data.a.topLeft.v = EndianS16_BtoN((*thisHouse)->rooms[i].objects[j].data.a.topLeft.v);
+                    break;
+
+                case kFurnitureMode:
+                    (*thisHouse)->rooms[i].objects[j].data.b.bounds.bottom = EndianS16_BtoN((*thisHouse)->rooms[i].objects[j].data.b.bounds.bottom);
+                    (*thisHouse)->rooms[i].objects[j].data.b.bounds.left = EndianS16_BtoN((*thisHouse)->rooms[i].objects[j].data.b.bounds.left);
+                    (*thisHouse)->rooms[i].objects[j].data.b.bounds.right = EndianS16_BtoN((*thisHouse)->rooms[i].objects[j].data.b.bounds.right);
+                    (*thisHouse)->rooms[i].objects[j].data.b.bounds.top = EndianS16_BtoN((*thisHouse)->rooms[i].objects[j].data.b.bounds.top);
+                    (*thisHouse)->rooms[i].objects[j].data.b.pict = EndianS16_BtoN((*thisHouse)->rooms[i].objects[j].data.b.pict);
+                    break;
+
+                case kBonusMode:
+                    (*thisHouse)->rooms[i].objects[j].data.c.length = EndianS16_BtoN((*thisHouse)->rooms[i].objects[j].data.c.length);
+                    (*thisHouse)->rooms[i].objects[j].data.c.points = EndianS16_BtoN((*thisHouse)->rooms[i].objects[j].data.c.points);
+                    (*thisHouse)->rooms[i].objects[j].data.c.topLeft.h = EndianS16_BtoN((*thisHouse)->rooms[i].objects[j].data.c.topLeft.h);
+                    (*thisHouse)->rooms[i].objects[j].data.c.topLeft.v = EndianS16_BtoN((*thisHouse)->rooms[i].objects[j].data.c.topLeft.v);
+                    break;
+
+                case kTransportMode:
+                    (*thisHouse)->rooms[i].objects[j].data.d.tall = EndianS16_BtoN((*thisHouse)->rooms[i].objects[j].data.d.tall);
+                    (*thisHouse)->rooms[i].objects[j].data.d.where = EndianS16_BtoN((*thisHouse)->rooms[i].objects[j].data.d.where);
+                    (*thisHouse)->rooms[i].objects[j].data.d.topLeft.h = EndianS16_BtoN((*thisHouse)->rooms[i].objects[j].data.d.topLeft.h);
+                    (*thisHouse)->rooms[i].objects[j].data.d.topLeft.v = EndianS16_BtoN((*thisHouse)->rooms[i].objects[j].data.d.topLeft.v);
+                    break;
+
+                case kSwitchMode:
+                    (*thisHouse)->rooms[i].objects[j].data.e.delay = EndianS16_BtoN((*thisHouse)->rooms[i].objects[j].data.e.delay);
+                    (*thisHouse)->rooms[i].objects[j].data.e.where = EndianS16_BtoN((*thisHouse)->rooms[i].objects[j].data.e.where);
+                    (*thisHouse)->rooms[i].objects[j].data.e.topLeft.h = EndianS16_BtoN((*thisHouse)->rooms[i].objects[j].data.e.topLeft.h);
+                    (*thisHouse)->rooms[i].objects[j].data.e.topLeft.v = EndianS16_BtoN((*thisHouse)->rooms[i].objects[j].data.e.topLeft.v);
+                    break;
+
+                case kLightMode:
+                    (*thisHouse)->rooms[i].objects[j].data.f.length = EndianS16_BtoN((*thisHouse)->rooms[i].objects[j].data.f.length);
+                    (*thisHouse)->rooms[i].objects[j].data.f.topLeft.h = EndianS16_BtoN((*thisHouse)->rooms[i].objects[j].data.f.topLeft.h);
+                    (*thisHouse)->rooms[i].objects[j].data.f.topLeft.v = EndianS16_BtoN((*thisHouse)->rooms[i].objects[j].data.f.topLeft.v);
+                    break;
+
+                case kApplianceMode:
+                    (*thisHouse)->rooms[i].objects[j].data.g.height = EndianS16_BtoN((*thisHouse)->rooms[i].objects[j].data.g.height);
+                    (*thisHouse)->rooms[i].objects[j].data.g.topLeft.h = EndianS16_BtoN((*thisHouse)->rooms[i].objects[j].data.g.topLeft.h);
+                    (*thisHouse)->rooms[i].objects[j].data.g.topLeft.v = EndianS16_BtoN((*thisHouse)->rooms[i].objects[j].data.g.topLeft.v);
+                    break;
+
+                case kEnemyMode:
+                    (*thisHouse)->rooms[i].objects[j].data.h.length = EndianS16_BtoN((*thisHouse)->rooms[i].objects[j].data.h.length);
+                    (*thisHouse)->rooms[i].objects[j].data.h.topLeft.h = EndianS16_BtoN((*thisHouse)->rooms[i].objects[j].data.h.topLeft.h);
+                    (*thisHouse)->rooms[i].objects[j].data.h.topLeft.v = EndianS16_BtoN((*thisHouse)->rooms[i].objects[j].data.h.topLeft.v);
+                    break;
+
+                case kClutterMode:
+                    (*thisHouse)->rooms[i].objects[j].data.i.bounds.bottom = EndianS16_BtoN((*thisHouse)->rooms[i].objects[j].data.i.bounds.bottom);
+                    (*thisHouse)->rooms[i].objects[j].data.i.bounds.left = EndianS16_BtoN((*thisHouse)->rooms[i].objects[j].data.i.bounds.left);
+                    (*thisHouse)->rooms[i].objects[j].data.i.bounds.right = EndianS16_BtoN((*thisHouse)->rooms[i].objects[j].data.i.bounds.right);
+                    (*thisHouse)->rooms[i].objects[j].data.i.bounds.top = EndianS16_BtoN((*thisHouse)->rooms[i].objects[j].data.i.bounds.top);
+                    (*thisHouse)->rooms[i].objects[j].data.i.pict = EndianS16_BtoN((*thisHouse)->rooms[i].objects[j].data.i.pict);
+                    break;
+            }
+        }
+
+    }
+
+}
