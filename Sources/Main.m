@@ -19,7 +19,7 @@
 
 void ReadInPrefs (void);
 void WriteOutPrefs (void);
-void main (void);
+int main (void);
 
 
 short		isVolume, wasVolume;
@@ -282,7 +282,7 @@ void WriteOutPrefs (void)
 //--------------------------------------------------------------  main
 // Here is main().  The first function called when Glider PRO comes up.
 
-void main (void)
+int main (void)
 {
 //	long		wasSeed;
 	long		theErr;
