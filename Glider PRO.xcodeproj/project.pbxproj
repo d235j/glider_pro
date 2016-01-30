@@ -179,6 +179,28 @@
 		63DCEAB21C5BB22900E25F8F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
 		63DCEAB41C5BB26100E25F8F /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		63DCEAB61C5BB26600E25F8F /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
+		63E15C7A1C5D206F00BDAA97 /* Art Museum.binhex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Art Museum.binhex"; path = "Houses/Art Museum.binhex"; sourceTree = SOURCE_ROOT; };
+		63E15C7B1C5D206F00BDAA97 /* California or Bust!.binhex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "California or Bust!.binhex"; path = "Houses/California or Bust!.binhex"; sourceTree = SOURCE_ROOT; };
+		63E15C7C1C5D206F00BDAA97 /* Castle o' the Air.binhex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Castle o' the Air.binhex"; path = "Houses/Castle o' the Air.binhex"; sourceTree = SOURCE_ROOT; };
+		63E15C7D1C5D206F00BDAA97 /* CD Demo House.binhex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "CD Demo House.binhex"; path = "Houses/CD Demo House.binhex"; sourceTree = SOURCE_ROOT; };
+		63E15C7E1C5D206F00BDAA97 /* Davis Station.binhex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Davis Station.binhex"; path = "Houses/Davis Station.binhex"; sourceTree = SOURCE_ROOT; };
+		63E15C7F1C5D206F00BDAA97 /* Demo House.binhex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Demo House.binhex"; path = "Houses/Demo House.binhex"; sourceTree = SOURCE_ROOT; };
+		63E15C801C5D206F00BDAA97 /* Empty House.binhex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Empty House.binhex"; path = "Houses/Empty House.binhex"; sourceTree = SOURCE_ROOT; };
+		63E15C811C5D206F00BDAA97 /* Fun House.binhex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Fun House.binhex"; path = "Houses/Fun House.binhex"; sourceTree = SOURCE_ROOT; };
+		63E15C821C5D206F00BDAA97 /* Grand Prix.binhex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Grand Prix.binhex"; path = "Houses/Grand Prix.binhex"; sourceTree = SOURCE_ROOT; };
+		63E15C8E1C5D208B00BDAA97 /* ImagineHouse PRO II.binhex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "ImagineHouse PRO II.binhex"; path = "Houses/ImagineHouse PRO II.binhex"; sourceTree = SOURCE_ROOT; };
+		63E15C8F1C5D208B00BDAA97 /* In The Mirror.binhex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "In The Mirror.binhex"; path = "Houses/In The Mirror.binhex"; sourceTree = SOURCE_ROOT; };
+		63E15C901C5D208B00BDAA97 /* Land of Illusion.binhex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Land of Illusion.binhex"; path = "Houses/Land of Illusion.binhex"; sourceTree = SOURCE_ROOT; };
+		63E15C911C5D208B00BDAA97 /* Leviathan.binhex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Leviathan.binhex; path = Houses/Leviathan.binhex; sourceTree = SOURCE_ROOT; };
+		63E15C921C5D208B00BDAA97 /* Metropolis.binhex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Metropolis.binhex; path = Houses/Metropolis.binhex; sourceTree = SOURCE_ROOT; };
+		63E15C931C5D208B00BDAA97 /* Nemo's Market.binhex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Nemo's Market.binhex"; path = "Houses/Nemo's Market.binhex"; sourceTree = SOURCE_ROOT; };
+		63E15C941C5D208B00BDAA97 /* Rainbow's End.binhex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Rainbow's End.binhex"; path = "Houses/Rainbow's End.binhex"; sourceTree = SOURCE_ROOT; };
+		63E15C951C5D208B00BDAA97 /* Sampler.binhex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Sampler.binhex; path = Houses/Sampler.binhex; sourceTree = SOURCE_ROOT; };
+		63E15C961C5D208B00BDAA97 /* Slumberland.binhex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Slumberland.binhex; path = Houses/Slumberland.binhex; sourceTree = SOURCE_ROOT; };
+		63E15C971C5D208B00BDAA97 /* SpacePods.binhex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SpacePods.binhex; path = Houses/SpacePods.binhex; sourceTree = SOURCE_ROOT; };
+		63E15C981C5D208B00BDAA97 /* Teddy World.binhex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Teddy World.binhex"; path = "Houses/Teddy World.binhex"; sourceTree = SOURCE_ROOT; };
+		63E15C991C5D208B00BDAA97 /* The Asylum Pro.binhex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "The Asylum Pro.binhex"; path = "Houses/The Asylum Pro.binhex"; sourceTree = SOURCE_ROOT; };
+		63E15C9A1C5D208B00BDAA97 /* Titanic.binhex */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Titanic.binhex; path = Houses/Titanic.binhex; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +248,7 @@
 		63ABFC7E1C5BAF9D007F4C70 /* Glider PRO */ = {
 			isa = PBXGroup;
 			children = (
+				63E15C751C5D1FA600BDAA97 /* Houses */,
 				63DCEAB11C5BB21C00E25F8F /* Resources */,
 				637C37441C5C4A9700A41BD2 /* Compatibility Headers */,
 				63DCEA111C5BB01F00E25F8F /* Headers */,
@@ -349,6 +372,35 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		63E15C751C5D1FA600BDAA97 /* Houses */ = {
+			isa = PBXGroup;
+			children = (
+				63E15C8E1C5D208B00BDAA97 /* ImagineHouse PRO II.binhex */,
+				63E15C8F1C5D208B00BDAA97 /* In The Mirror.binhex */,
+				63E15C901C5D208B00BDAA97 /* Land of Illusion.binhex */,
+				63E15C911C5D208B00BDAA97 /* Leviathan.binhex */,
+				63E15C921C5D208B00BDAA97 /* Metropolis.binhex */,
+				63E15C931C5D208B00BDAA97 /* Nemo's Market.binhex */,
+				63E15C941C5D208B00BDAA97 /* Rainbow's End.binhex */,
+				63E15C951C5D208B00BDAA97 /* Sampler.binhex */,
+				63E15C961C5D208B00BDAA97 /* Slumberland.binhex */,
+				63E15C971C5D208B00BDAA97 /* SpacePods.binhex */,
+				63E15C981C5D208B00BDAA97 /* Teddy World.binhex */,
+				63E15C991C5D208B00BDAA97 /* The Asylum Pro.binhex */,
+				63E15C9A1C5D208B00BDAA97 /* Titanic.binhex */,
+				63E15C7A1C5D206F00BDAA97 /* Art Museum.binhex */,
+				63E15C7B1C5D206F00BDAA97 /* California or Bust!.binhex */,
+				63E15C7C1C5D206F00BDAA97 /* Castle o' the Air.binhex */,
+				63E15C7D1C5D206F00BDAA97 /* CD Demo House.binhex */,
+				63E15C7E1C5D206F00BDAA97 /* Davis Station.binhex */,
+				63E15C7F1C5D206F00BDAA97 /* Demo House.binhex */,
+				63E15C801C5D206F00BDAA97 /* Empty House.binhex */,
+				63E15C811C5D206F00BDAA97 /* Fun House.binhex */,
+				63E15C821C5D206F00BDAA97 /* Grand Prix.binhex */,
+			);
+			name = Houses;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -358,8 +410,8 @@
 			buildPhases = (
 				63ABFC781C5BAF9D007F4C70 /* Sources */,
 				63ABFC791C5BAF9D007F4C70 /* Frameworks */,
-				63ABFC7A1C5BAF9D007F4C70 /* Resources */,
 				637DD4421C5C56CE0048E9FD /* Rez */,
+				63E15CBE1C5D20B000BDAA97 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -402,16 +454,6 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXResourcesBuildPhase section */
-		63ABFC7A1C5BAF9D007F4C70 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
 /* Begin PBXRezBuildPhase section */
 		637DD4421C5C56CE0048E9FD /* Rez */ = {
 			isa = PBXRezBuildPhase;
@@ -422,6 +464,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXRezBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		63E15CBE1C5D20B000BDAA97 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "mkdir -p \"${BUILT_PRODUCTS_DIR}/${CONTENTS_FOLDER_PATH}/Houses\"\ncd \"${BUILT_PRODUCTS_DIR}/${CONTENTS_FOLDER_PATH}/Houses\"\nfor i in \"${PROJECT_DIR}/Houses\"/*.binhex; do\n  rm -f \"$(basename \"$i\" .binhex)\"\n  binhex decode -o \"$(basename \"$i\" .binhex)\" \"$i\"\ndone";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		63ABFC781C5BAF9D007F4C70 /* Sources */ = {
