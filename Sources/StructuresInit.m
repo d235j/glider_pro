@@ -431,6 +431,7 @@ void InitTransports (void)
 	GDHandle	wasWorld;
 	OSErr		theErr;
 	
+    GetGWorld(&wasCPort, &wasWorld);
 	QSetRect(&transSrcRect, 0, 0, 56, 32);	// 1848 pixels
 	theErr = CreateOffScreenGWorld(&transSrcMap, &transSrcRect, kPreferredDepth);
 	SetGWorld(transSrcMap, nil);
