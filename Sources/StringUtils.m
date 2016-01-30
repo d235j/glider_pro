@@ -6,7 +6,9 @@
 //============================================================================
 
 
-#include <TextUtils.h>
+#include "Quickdraw.h"
+#include "QuickdrawText.h"
+#include <CoreServices/CoreServices.h>
 #include "Externs.h"
 
 

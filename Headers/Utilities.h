@@ -5,7 +5,7 @@
 //============================================================================
 
 
-#include <QDOffscreen.h>
+#include "QDOffscreen.h"
 
 
 OSErr CreateOffScreenGWorld (GWorldPtr *theGWorld, Rect *bounds, short depth);

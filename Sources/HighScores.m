@@ -6,11 +6,11 @@
 //============================================================================
 
 
-#include <Folders.h>
-#include <NumberFormatting.h>
-#include <Script.h>
-#include <Sound.h>
-#include <StringCompare.h>
+#include "Quickdraw.h"
+#include "QuickdrawText.h"
+#include "QDExtra.h"
+#include <CoreServices/CoreServices.h>
+#include <Carbon/Carbon.h>
 #include "DialogUtils.h"
 #include "Externs.h"
 #include "Environ.h"

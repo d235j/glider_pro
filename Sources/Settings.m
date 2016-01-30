@@ -6,8 +6,10 @@
 //============================================================================
 
 
-#include <Sound.h>
-#include <TextUtils.h>
+#include "Quickdraw.h"
+#include "QDExtra.h"
+#include <Carbon/Carbon.h>
+#include <CoreServices/CoreServices.h>
 #include "DialogUtils.h"
 #include "Externs.h"
 #include "Environ.h"

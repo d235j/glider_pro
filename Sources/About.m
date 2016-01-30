@@ -5,9 +5,10 @@
 //============================================================================
 
 
-#include <NumberFormatting.h>
-#include <Resources.h>
-#include <Sound.h>
+#include "Quickdraw.h"
+#include "QDExtra.h"
+#include <CoreServices/CoreServices.h>
+#include <Carbon/Carbon.h>
 #include "About.h"
 #include "DialogUtils.h"
 #include "Environ.h"

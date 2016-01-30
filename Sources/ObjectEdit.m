@@ -5,8 +5,10 @@
 //============================================================================
 
 
-#include <Sound.h>
-#include <ToolUtils.h>
+#include "Quickdraw.h"
+#include "QDExtra.h"
+#include <CoreServices/CoreServices.h>
+#include <Carbon/Carbon.h>
 #include "Externs.h"
 #include "House.h"
 #include "MainWindow.h"

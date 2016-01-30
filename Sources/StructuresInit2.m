@@ -5,7 +5,7 @@
 //============================================================================
 
 
-#include <Resources.h>
+#include <CoreServices/CoreServices.h>
 #include "Externs.h"
 #include "Environ.h"
 #include "GameOver.h"

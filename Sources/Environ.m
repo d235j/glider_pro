@@ -6,13 +6,12 @@
 //============================================================================
 
 
-#include <LowMem.h>
-#include <Gestalt.h>
-#include <NumberFormatting.h>
-#include <Sound.h>
+#include "Quickdraw.h"
+#include "QDExtra.h"
+#include <CoreServices/CoreServices.h>
+#include <Carbon/Carbon.h>
 #include "Externs.h"
 #include "Environ.h"
-#include <Palettes.h>
 
 
 #define	kSwitchDepthAlert		130

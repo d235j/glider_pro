@@ -6,9 +6,10 @@
 //============================================================================
 
 
-#include <NumberFormatting.h>
-#include <Resources.h>
-#include <Sound.h>
+#include "Quickdraw.h"
+#include "QDExtra.h"
+#include <ApplicationServices/ApplicationServices.h>
+#include <Carbon/Carbon.h>
 #include "DialogUtils.h"
 #include "Externs.h"
 #include "RectUtils.h"

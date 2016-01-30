@@ -5,7 +5,7 @@
 //============================================================================
 
 
-#include <Dialogs.h>
+#include <Carbon/Carbon.h>
 
 
 void BringUpDialog (DialogPtr *theDialog, short dialogID);

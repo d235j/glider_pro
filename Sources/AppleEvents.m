@@ -6,8 +6,9 @@
 //============================================================================
 
 
+#include "Quickdraw.h"
 #include "Externs.h"
-#include <AppleEvents.h>
+#include <CoreServices/CoreServices.h>
 #include "House.h"
 
 

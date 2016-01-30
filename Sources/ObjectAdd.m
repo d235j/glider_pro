@@ -6,7 +6,7 @@
 //============================================================================
 
 
-#include <ToolUtils.h>
+#include <CoreServices/CoreServices.h>
 #include "Externs.h"
 #include "ObjectEdit.h"
 #include "RectUtils.h"

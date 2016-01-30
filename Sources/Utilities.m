@@ -5,12 +5,11 @@
 //============================================================================
 
 
-#include <Icons.h>
-#include <NumberFormatting.h>
-#include <Resources.h>
-#include <Sound.h>
-#include <TextUtils.h>
-#include <ToolUtils.h>
+#include "Quickdraw.h"
+#include "QDExtra.h"
+#include <ApplicationServices/ApplicationServices.h>
+#include <CoreServices/CoreServices.h>
+#include <Carbon/Carbon.h>
 #include "Externs.h"
 #include "Utilities.h"
 

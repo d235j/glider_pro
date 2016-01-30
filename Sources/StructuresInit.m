@@ -5,7 +5,10 @@
 //============================================================================
 
 
-#include <Resources.h>
+#include "Quickdraw.h"
+#include "QuickdrawText.h"
+#include "QDExtra.h"
+#include <CoreServices/CoreServices.h>
 #include "Externs.h"
 #include "Objects.h"
 #include "Play.h"

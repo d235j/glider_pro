@@ -6,7 +6,9 @@
 //============================================================================
 
 
-#include <NumberFormatting.h>
+#include "Quickdraw.h"
+#include "QDExtra.h"
+#include <CoreServices/CoreServices.h>
 #include "Externs.h"
 #include "Environ.h"
 #include "RectUtils.h"

@@ -5,7 +5,8 @@
 //============================================================================
 
 
-#include <Movies.h>
+#include <Foundation/Foundation.h>
+#include <QuickTime/QuickTime.h>
 
 
 extern	Rect		blowerSrcRect;

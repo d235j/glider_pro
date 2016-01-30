@@ -6,11 +6,9 @@
 //============================================================================
 
 
-#include <Aliases.h>
-#include <Movies.h>
-#include <Resources.h>
-#include <StringCompare.h>
-#include <TextUtils.h>
+#include "Quickdraw.h"
+#include <CoreServices/CoreServices.h>
+#include <QuickTime/QuickTime.h>
 #include "Externs.h"
 #include "Environ.h"
 #include "House.h"

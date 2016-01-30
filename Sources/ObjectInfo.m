@@ -6,9 +6,9 @@
 //============================================================================
 
 
-#include <NumberFormatting.h>
-#include <Sound.h>
-#include <TextUtils.h>
+#include "Quickdraw.h"
+#include <CoreServices/CoreServices.h>
+#include <Carbon/Carbon.h>
 #include "DialogUtils.h"
 #include "Externs.h"
 #include "ObjectEdit.h"

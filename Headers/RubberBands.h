@@ -5,7 +5,7 @@
 //============================================================================
 
 
-#include <QDOffscreen.h>
+#include "QDOffscreen.h"
 
 
 extern GWorldPtr		bandsSrcMap;

@@ -6,8 +6,8 @@
 //============================================================================
 
 
-#include <Resources.h>
-#include <Sound.h>
+#include <CoreServices/CoreServices.h>
+#include <Carbon/Carbon.h>
 #include "Externs.h"
 
 
