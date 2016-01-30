@@ -563,15 +563,30 @@ void DoDirSearch (void)
 	long		theDirs[kMaxDirectories];
 	OSErr		theErr, notherErr;
 	short		count, i, currentDir, numDirs;
-	
+	FSRef       houseDir;
+	FSSpec      houseDirS;
+	NSString    *dirPath;
+	const char  *dirName;
+
+	dirPath = [[[NSBundle mainBundle] bundlePath] stringByAppendingString:@"/Contents/Houses"];
+	dirName = [dirPath UTF8String];
+	theErr = FSPathMakeRef((UInt8*)dirName, &houseDir, false);
+	if (theErr != noErr) {
+		exit(12);
+	}
+	theErr = FSGetCatalogInfo( &houseDir, kFSCatInfoNone, NULL, NULL, &houseDirS, NULL );
+	if (theErr != noErr) {
+		exit(13);
+	}
 	for (i = 0; i < kMaxDirectories; i++)
 		theDirs[i] = 0L;
 	currentDir = 0;
-	theDirs[currentDir] = thisMac.dirID;
+	theDirs[currentDir] = houseDirS.parID;
 	numDirs = 1;
+
 	
 	theBlock.hFileInfo.ioCompletion = nil;
-	theBlock.hFileInfo.ioVRefNum = thisMac.vRefNum;
+	theBlock.hFileInfo.ioVRefNum = houseDirS.vRefNum;
 	theBlock.hFileInfo.ioNamePtr = nameString;
 	
 	while ((currentDir < numDirs) && (currentDir < kMaxDirectories))
