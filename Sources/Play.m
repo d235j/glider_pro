@@ -124,17 +124,17 @@ void NewGame (short mode)
 	{
 		InitGlider(&theGlider, kNewGameMode);
 		InitGlider(&theGlider2, kNewGameMode);
-		SetPort((GrafPtr)glidSrcMap);
+		SetGWorld(glidSrcMap, nil);
 		LoadGraphic(kGliderPictID);
-		SetPort((GrafPtr)glid2SrcMap);
+		SetGWorld(glid2SrcMap, nil);
 		LoadGraphic(kGlider2PictID);
 	}
 	else
 	{
 		InitGlider(&theGlider, mode);
-		SetPort((GrafPtr)glidSrcMap);
+		SetGWorld(glidSrcMap, nil);
 		LoadGraphic(kGliderPictID);
-		SetPort((GrafPtr)glid2SrcMap);
+		SetGWorld(glid2SrcMap, nil);
 		LoadGraphic(kGliderFoilPictID);
 	}
 	
@@ -142,7 +142,7 @@ void NewGame (short mode)
 //	HideMenuBarOld();		// TEMP
 #endif
 	/*
-	SetPort((GrafPtr)mainWindow);		// paint strip on screen black
+	SetPortWindowPort(mainWindow);		// paint strip on screen black
 	tempRect = thisMac.screen;
 	tempRect.top = tempRect.bottom - 20;	// thisMac.menuHigh
 	PaintRect(&tempRect);
@@ -154,7 +154,7 @@ void NewGame (short mode)
 	}
 #endif
 	
-	SetPort((GrafPtr)workSrcMap);
+	SetGWorld(workSrcMap, nil);
 	PaintRect(&workSrcRect);
 //	if (quickerTransitions)
 //		DissBitsChunky(&workSrcRect);
@@ -810,7 +810,7 @@ void RestoreEntireGameScreen (void)
 //	HideMenuBarOld();		// TEMP
 #endif
 	
-	SetPort((GrafPtr)mainWindow);
+	SetPortWindowPort(mainWindow);
 	tempRect = thisMac.screen;
 	PaintRect(&tempRect);
 	

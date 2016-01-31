@@ -232,7 +232,7 @@ static pascal Boolean AboutFilter (DialogPtr theDial, EventRecord *theEvent, sho
 		case updateEvt:
 		if ((WindowPtr)theEvent->message == mainWindow)
 		{
-			SetPort((GrafPtr)mainWindow);
+			SetPortWindowPort(mainWindow);
 			BeginUpdate((WindowPtr)theEvent->message);
 			UpdateMainWindow();
 			EndUpdate((WindowPtr)theEvent->message);

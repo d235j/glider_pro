@@ -64,7 +64,7 @@ void DoGameOver (void)
 {	
 	playing = false;
 	SetUpFinalScreen();
-	SetPort((GrafPtr)mainWindow);
+	SetPortWindowPort(mainWindow);
 	ColorRect(&mainWindowRect, 244);
 	DoGameOverStarAnimation();
 	if (!TestHighScore())
@@ -82,8 +82,12 @@ void SetUpFinalScreen (void)
 	Str255		tempStr, subStr;
 	short		count, offset, i, textDown;
 	char		wasState;
-	
-	SetPort((GrafPtr)workSrcMap);
+    CGrafPtr    wasCPort;
+    GDHandle    wasWorld;
+
+    GetGWorld(&wasCPort, &wasWorld);
+
+	SetGWorld(workSrcMap, nil);
 	ColorRect(&workSrcRect, 244);
 	QSetRect(&tempRect, 0, 0, 640, 460);
 	CenterRectInRect(&tempRect, &workSrcRect);
@@ -129,6 +133,8 @@ void SetUpFinalScreen (void)
 		pages[i].was = pages[i].dest;
 		pages[i].frame = RandomInt(6);
 	}
+    SetGWorld(wasCPort, wasWorld);
+
 }
 
 //--------------------------------------------------------------  DoGameOverStarAnimation

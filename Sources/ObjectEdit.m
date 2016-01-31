@@ -2744,7 +2744,7 @@ void HiliteAllObjects (void)
 		return;
 	
 	PauseMarquee();
-	SetPort((GrafPtr)mainWindow);
+	SetPortWindowPort(mainWindow);
 	PenPat(GetQDGlobalsGray(&dummyPattern));
 	PenMode(patXor);
 	

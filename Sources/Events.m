@@ -341,42 +341,42 @@ void HandleUpdateEvent (EventRecord *theEvent)
 {	
 	if ((WindowPtr)theEvent->message == mainWindow)
 	{
-		SetPort((GrafPtr)mainWindow);
+		SetPortWindowPort(mainWindow);
 		BeginUpdate(mainWindow);
 		UpdateMainWindow();
 		EndUpdate(mainWindow);
 	}
 	else if ((WindowPtr)theEvent->message == mapWindow)
 	{
-		SetPort((GrafPtr)mapWindow);
+		SetPortWindowPort(mapWindow);
 		BeginUpdate(mapWindow);
 		UpdateMapWindow();
 		EndUpdate(mapWindow);
 	}
 	else if ((WindowPtr)theEvent->message == toolsWindow)
 	{
-		SetPort((GrafPtr)toolsWindow);
+		SetPortWindowPort(toolsWindow);
 		BeginUpdate(toolsWindow);
 		UpdateToolsWindow();
 		EndUpdate(toolsWindow);
 	}
 	else if ((WindowPtr)theEvent->message == linkWindow)
 	{
-		SetPort((GrafPtr)linkWindow);
+		SetPortWindowPort(linkWindow);
 		BeginUpdate(linkWindow);
 		UpdateLinkWindow();
 		EndUpdate(linkWindow);
 	}
 	else if ((WindowPtr)theEvent->message == coordWindow)
 	{
-		SetPort((GrafPtr)coordWindow);
+		SetPortWindowPort(coordWindow);
 		BeginUpdate(coordWindow);
 		UpdateCoordWindow();
 		EndUpdate(coordWindow);
 	}
 	else if ((WindowPtr)theEvent->message == menuWindow)
 	{
-		SetPort((GrafPtr)menuWindow);
+		SetPortWindowPort(menuWindow);
 		BeginUpdate(menuWindow);
 		UpdateMenuBarWindow();
 		EndUpdate(menuWindow);
@@ -459,7 +459,7 @@ void HandleIdleTask (void)
 {
 	if (theMode == kEditMode)
 	{
-		SetPort((GrafPtr)mainWindow);
+		SetPortWindowPort(mainWindow);
 		DoMarquee();
 		
 		if ((autoRoomEdit) && (newRoomNow))

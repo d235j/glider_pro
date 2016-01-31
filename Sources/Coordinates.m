@@ -65,13 +65,15 @@ void UpdateCoordWindow (void)
 {
 #ifndef COMPILEDEMO
 	Str255		tempStr, numStr;
-	GrafPtr		wasPort;
-	
+    CGrafPtr    wasCPort;
+    GDHandle    wasWorld;
+
+
 	if (coordWindow == nil)
 		return;
 	
-	GetPort(&wasPort);
-	SetPort((GrafPtr)coordWindow);
+    GetGWorld(&wasCPort, &wasWorld);
+	SetPortWindowPort(coordWindow);
 	EraseRect(&coordWindowRect);
 	
 	PasStringCopy("\ph: ", tempStr);
@@ -109,7 +111,7 @@ void UpdateCoordWindow (void)
 	DrawString(tempStr);
 	ForeColor(blackColor);
 	
-	SetPort((GrafPtr)wasPort);
+    SetGWorld(wasCPort, wasWorld);
 #endif
 }
 
@@ -128,10 +130,10 @@ void OpenCoordWindow (void)
 		QSetRect(&coordWindowRect, 0, 0, 50, 38);
 		if (thisMac.hasColor)
 			coordWindow = NewCWindow(nil, &coordWindowRect, 
-					"\pTools", false, kWindoidWDEF, kPutInFront, true, 0L);
+					"\pTools", false, floatProc, kPutInFront, true, 0L);
 		else
 			coordWindow = NewWindow(nil, &coordWindowRect, 
-					"\pTools", false, kWindoidWDEF, kPutInFront, true, 0L);
+					"\pTools", false, floatProc, kPutInFront, true, 0L);
 		
 		if (coordWindow == nil)
 			RedAlert(kErrNoMemory);

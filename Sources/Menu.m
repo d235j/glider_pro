@@ -687,7 +687,7 @@ pascal Boolean ResumeFilter (DialogPtr dial, EventRecord *event, short *item)
 		case updateEvt:
 		if ((WindowPtr)event->message == GetDialogWindow(dial))
 		{
-			SetPort((GrafPtr)dial);
+			SetPortDialogPort(dial);
 			BeginUpdate(GetDialogWindow(dial));
 			UpdateResumeDialog(dial);
 			EndUpdate(GetDialogWindow(dial));
@@ -738,7 +738,7 @@ short QueryResumeGame (void)
 	theDial = GetNewDialog(kResumeGameDial, nil, kPutInFront);
 	if (theDial == nil)
 		RedAlert(kErrDialogDidntLoad);
-	SetPort((GrafPtr)theDial);
+	SetPortDialogPort(theDial);
 	
 	ShowWindow(GetDialogWindow(theDial));
 	DrawDefaultButton(theDial);

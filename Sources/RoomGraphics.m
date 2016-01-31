@@ -237,7 +237,7 @@ void DrawRoomBackground (short who, short where, short elevation)
 		HSetState((Handle)thisHouse, wasState);
 	}
 	
-	SetPort((GrafPtr)workSrcMap);
+	SetGWorld(workSrcMap, nil);
 	LoadGraphicSpecial(pictID);
 	
 	QSetRect(&src, 0, 0, kTileWide, kTileHigh);

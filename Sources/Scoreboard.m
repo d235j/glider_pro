@@ -139,7 +139,7 @@ void RefreshRoomTitle (short mode)
 {
 	RGBColor	theRGBColor, wasColor;
 	
-	SetPort((GrafPtr)boardTSrcMap);
+	SetGWorld(boardTSrcMap, nil);
 	
 	GetForeColor(&wasColor);
 	if (thisMac.isDepth == 4)
@@ -197,7 +197,7 @@ void RefreshNumGliders (void)
 	Str255		nGlidersStr;
 	long		displayMortals;
 	
-	SetPort((GrafPtr)boardGSrcMap);
+	SetGWorld(boardGSrcMap, nil);
 	
 	GetForeColor(&wasColor);
 	if (thisMac.isDepth == 4)
@@ -235,7 +235,7 @@ void RefreshPoints (void)
 	RGBColor	theRGBColor, wasColor;
 	Str255		scoreStr;
 	
-	SetPort((GrafPtr)boardPSrcMap);
+	SetGWorld(boardPSrcMap, nil);
 	
 	GetForeColor(&wasColor);
 	if (thisMac.isDepth == 4)
@@ -272,7 +272,7 @@ void QuickGlidersRefresh (void)
 	RGBColor	theRGBColor, wasColor;
 	Str255		nGlidersStr;
 	
-	SetPort((GrafPtr)boardGSrcMap);
+	SetGWorld(boardGSrcMap, nil);
 	
 	GetForeColor(&wasColor);
 	if (thisMac.isDepth == 4)
@@ -307,7 +307,7 @@ void QuickScoreRefresh (void)
 	RGBColor	theRGBColor, wasColor;
 	Str255		scoreStr;
 	
-	SetPort((GrafPtr)boardPSrcMap);
+	SetGWorld(boardPSrcMap, nil);
 	
 	GetForeColor(&wasColor);
 	if (thisMac.isDepth == 4)

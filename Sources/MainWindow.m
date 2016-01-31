@@ -101,7 +101,7 @@ void RedrawSplashScreen (void)
 {
 	Rect		tempRect;
 	
-	SetPort((GrafPtr)workSrcMap);
+	SetGWorld(workSrcMap, nil);
 	PaintRect(&workSrcRect);
 	QSetRect(&tempRect, 0, 0, 640, 460);
 	QOffsetRect(&tempRect, splashOriginH, splashOriginV);
@@ -138,7 +138,7 @@ void UpdateMainWindow (void)
 	}
 	else if ((theMode == kSplashMode) || (theMode == kPlayMode))
 	{
-		SetPort((GrafPtr)workSrcMap);
+		SetGWorld(workSrcMap, nil);
 		PaintRect(&workSrcRect);
 		QSetRect(&tempRect, 0, 0, 640, 460);
 		QOffsetRect(&tempRect, splashOriginH, splashOriginV);
@@ -247,7 +247,7 @@ void OpenMainWindow (void)
 		if (splashOriginV < 0)
 			splashOriginV = 0;
 		
-		SetPort((GrafPtr)workSrcMap);
+		SetGWorld(workSrcMap, nil);
 		PaintRect(&workSrcRect);
 		LoadGraphic(kSplash8BitPICT);
 		

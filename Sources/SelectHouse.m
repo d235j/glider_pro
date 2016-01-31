@@ -127,7 +127,7 @@ void UpdateLoadDialog (DialogPtr theDialog)
 				theHousesSpecs[i].name, i == (thisHouseIndex + housePage));
 		
 	}
-	
+    QDFlushPortBuffer(GetDialogPort(theDialog), nil);
 	InitCursor();
 	UseResFile(wasResFile);
 }

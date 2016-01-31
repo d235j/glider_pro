@@ -79,7 +79,7 @@ void DoPause (void)
 {
 	Rect		bounds;
 	
-	SetPort((GrafPtr)mainWindow);
+	SetPortWindowPort(mainWindow);
 	QSetRect(&bounds, 0, 0, 214, 54);
 	CenterRectInRect(&bounds, &houseRect);
 	if (isEscPauseKey)

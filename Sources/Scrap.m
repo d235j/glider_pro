@@ -200,7 +200,7 @@ void GetObjectScrap (void)
 			ReadyBackground(thisRoom->background, thisRoom->tiles);
 			GetThisRoomsObjRects();
 			DrawThisRoomsObjects();
-			SetPort((GrafPtr)mainWindow);
+			SetPortWindowPort(mainWindow);
 			InvalRect(&mainWindowRect);
 			if (ObjectHasHandle(&direction, &dist))
 			{
@@ -353,7 +353,7 @@ Boolean DragRoom (EventRecord *theEvent, Rect *roomSrc, short roomNumber)
 		if (!WaitMouseMoved(theEvent->where))
 			return(false);
 		
-		SetPort((GrafPtr)mainWindow);
+		SetPortWindowPort(mainWindow);
 		BeginUpdate((GrafPtr)mainWindow);
 		UpdateMainWindow();
 		EndUpdate((GrafPtr)mainWindow);

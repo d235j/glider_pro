@@ -79,7 +79,6 @@ void DrawBanner (Point *topLeft)
 			GetPortBitMapForCopyBits(tempMask), 
 			GetPortBitMapForCopyBits(workSrcMap), 
 			&mapBounds, &mapBounds, &partPage);
-	SetPort((GrafPtr)workSrcMap);
 	
 	SetGWorld(wasCPort, wasWorld);
 	DisposeGWorld(tempMap);

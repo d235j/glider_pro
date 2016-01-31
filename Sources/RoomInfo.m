@@ -355,7 +355,7 @@ pascal Boolean RoomFilter (DialogPtr dial, EventRecord *event, short *item)
 		break;
 		
 		case updateEvt:
-		SetPort((GrafPtr)dial);
+		SetPortDialogPort(dial);
 		BeginUpdate(GetDialogWindow(dial));
 		UpdateRoomInfoDialog(dial);
 		EndUpdate(GetDialogWindow(dial));
@@ -408,7 +408,7 @@ void DoRoomInfo (void)
 	theErr = CreateOffScreenGWorld(&tileSrcMap, &tileSrcRect, kPreferredDepth);
 	SetGWorld(tileSrcMap, nil);
 //	CreateOffScreenPixMap(&tileSrcRect, &tileSrcMap);
-//	SetPort((GrafPtr)tileSrcMap);
+//	SetGWorld(tileSrcMap, nil);
 	if ((tempBack > kStars) && (!PictIDExists(tempBack)))
 	{
 		BitchAboutPICTNotFound();
@@ -429,7 +429,7 @@ void DoRoomInfo (void)
 	roomInfoDialog = GetNewDialog(kRoomInfoDialogID, nil, kPutInFront);
 	if (roomInfoDialog == nil)
 		RedAlert(kErrDialogDidntLoad);
-	SetPort((GrafPtr)roomInfoDialog);
+	SetPortDialogPort(roomInfoDialog);
 	
 	// Fix this later.  TEMP
 //	AddMenuToPopUp(roomInfoDialog, kRoomPopupItem, backgroundsMenu);
@@ -511,7 +511,7 @@ void DoRoomInfo (void)
 				if ((tempBack != newBack) || (forceDraw))
 				{
 					tempBack = newBack;
-					SetPort((GrafPtr)tileSrcMap);
+					SetGWorld(tileSrcMap, nil);
 					LoadScaledGraphic(tempBack, &tileSrcRect);
 					InvalWindowRect(GetDialogWindow(roomInfoDialog), &tileSrc);
 					InvalWindowRect(GetDialogWindow(roomInfoDialog), &tileDest);
@@ -536,7 +536,7 @@ void DoRoomInfo (void)
 			if (newBack != tempBack)
 			{
 				tempBack = newBack;
-				SetPort((GrafPtr)tileSrcMap);
+				SetGWorld(tileSrcMap, nil);
 				if ((tempBack == 2002) || (tempBack == 2011) || 
 						(tempBack == 2016) || (tempBack == 2017))
 					LoadScaledGraphic(tempBack - 800, &tileSrcRect);
@@ -552,7 +552,7 @@ void DoRoomInfo (void)
 			if (tempBack != newBack)
 			{
 				tempBack = newBack;
-				SetPort((GrafPtr)tileSrcMap);
+				SetGWorld(tileSrcMap, nil);
 				LoadScaledGraphic(tempBack, &tileSrcRect);
 				InvalWindowRect(GetDialogWindow(roomInfoDialog), &tileSrc);
 				InvalWindowRect(GetDialogWindow(roomInfoDialog), &tileDest);
@@ -691,7 +691,7 @@ pascal Boolean OriginalArtFilter (DialogPtr dial, EventRecord *event, short *ite
 		break;
 		
 		case updateEvt:
-		SetPort((GrafPtr)dial);
+		SetPortDialogPort(dial);
 		BeginUpdate(GetDialogWindow(dial));
 		UpdateOriginalArt(dial);
 		EndUpdate(GetDialogWindow(dial));

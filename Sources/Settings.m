@@ -132,6 +132,12 @@ void SetBrainsToDefaults (DialogPtr theDialog)
 
 void UpdateSettingsBrains (DialogPtr theDialog)
 {
+    CGrafPtr    wasCPort;
+    GDHandle    wasWorld;
+
+    GetGWorld(&wasCPort, &wasWorld);
+
+    SetPortDialogPort(theDialog);
 	DrawDialog(theDialog);
 	DrawDefaultButton(theDialog);
 	
@@ -139,6 +145,7 @@ void UpdateSettingsBrains (DialogPtr theDialog)
 	SelectDialogItemText(theDialog, kMaxFilesItem, 0, 1024);
 	
 	FrameDialogItemC(theDialog, 3, kRedOrangeColor8);
+    SetGWorld(wasCPort, wasWorld);
 }
 
 //--------------------------------------------------------------  BrainsFilter
@@ -210,7 +217,7 @@ pascal Boolean BrainsFilter (DialogPtr dial, EventRecord *event, short *item)
 		break;
 		
 		case updateEvt:
-		SetPort((GrafPtr)dial);
+		SetPortDialogPort(dial);
 		BeginUpdate(GetDialogWindow(dial));
 		UpdateSettingsBrains(dial);
 		EndUpdate(GetDialogWindow(dial));
@@ -362,7 +369,11 @@ void UpdateControlKeyName (DialogPtr theDialog)
 void UpdateSettingsControl (DialogPtr theDialog)
 {
 	short		i;
-	
+    CGrafPtr    wasCPort;
+    GDHandle    wasWorld;
+
+    GetGWorld(&wasCPort, &wasWorld);
+    SetPortDialogPort(theDialog);
 	DrawDialog(theDialog);
 	
 	PenSize(2, 2);
@@ -375,6 +386,7 @@ void UpdateSettingsControl (DialogPtr theDialog)
 	PenNormal();
 	UpdateControlKeyName(theDialog);
 	FrameDialogItemC(theDialog, 3, kRedOrangeColor8);
+    SetGWorld(wasCPort, wasWorld);
 }
 
 //--------------------------------------------------------------  ControlFilter
@@ -485,7 +497,7 @@ pascal Boolean ControlFilter (DialogPtr dial, EventRecord *event, short *item)
 		break;
 		
 		case updateEvt:
-		SetPort((GrafPtr)dial);
+		SetPortDialogPort(dial);
 		BeginUpdate(GetDialogWindow(dial));
 		UpdateSettingsControl(dial);
 		EndUpdate(GetDialogWindow(dial));
@@ -514,7 +526,7 @@ void DoControlPrefs (void)
 	prefDlg = GetNewDialog(kControlPrefsDialID, nil, kPutInFront);
 	if (prefDlg == nil)
 		RedAlert(kErrDialogDidntLoad);
-	SetPort((GrafPtr)prefDlg);
+	SetPortDialogPort(prefDlg);
 	for (i = 0; i < 4; i++)
 	{
 		GetDialogItemRect(prefDlg, i + kRightControl, &controlRects[i]);
@@ -741,7 +753,7 @@ pascal Boolean SoundFilter (DialogPtr dial, EventRecord *event, short *item)
 		break;
 		
 		case updateEvt:
-		SetPort((GrafPtr)dial);
+		SetPortDialogPort(dial);
 		BeginUpdate(GetDialogWindow(dial));
 		UpdateSettingsSound(dial);
 		EndUpdate(GetDialogWindow(dial));
@@ -1096,7 +1108,7 @@ pascal Boolean DisplayFilter (DialogPtr dial, EventRecord *event, short *item)
 		break;
 		
 		case updateEvt:
-		SetPort((GrafPtr)dial);
+		SetPortDialogPort(dial);
 		BeginUpdate(GetDialogWindow(dial));
 		DisplayUpdate(dial);
 		EndUpdate(GetDialogWindow(dial));
@@ -1385,7 +1397,7 @@ pascal Boolean PrefsFilter (DialogPtr dial, EventRecord *event, short *item)
 			BeginUpdate(mainWindow);
 			UpdateMainWindow();
 			EndUpdate(mainWindow);
-			SetPort((GrafPtr)dial);
+			SetPortDialogPort(dial);
 		}
 		else if ((WindowPtr)event->message == GetDialogWindow(dial))
 		{
@@ -1413,11 +1425,16 @@ void DoSettingsMain (void)
 	short			itemHit;
 	Boolean			leaving;
 	ModalFilterUPP	prefsFilterUPP;
-	
+    CGrafPtr    wasCPort;
+    GDHandle    wasWorld;
+
+    GetGWorld(&wasCPort, &wasWorld);
+
 	prefsFilterUPP = NewModalFilterUPP(PrefsFilter);
 	
 	BringUpDialog(&prefDlg, kMainPrefsDialID);
-	
+    SetPortDialogPort(prefDlg);
+
 	GetDialogItemRect(prefDlg, kDisplayButton, &prefButton[0]);
 	InsetRect(&prefButton[0], -4, -4);
 	GetDialogItemRect(prefDlg, 4, &prefButton[1]);
@@ -1442,20 +1459,20 @@ void DoSettingsMain (void)
 			case kDisplayButton:
 			FlashSettingsButton(0);
 			DoDisplayPrefs();
-			SetPort((GrafPtr)prefDlg);
+            SetPortDialogPort(prefDlg);
 			break;
 			
 			case kSoundButton:
 			FlashSettingsButton(1);
 			DoSoundPrefs();
-			SetPort((GrafPtr)prefDlg);
+            SetPortDialogPort(prefDlg);
 			FlushEvents(everyEvent, 0);
 			break;
 			
 			case kControlsButton:
 			FlashSettingsButton(2);
 			DoControlPrefs();
-			SetPort((GrafPtr)prefDlg);
+            SetPortDialogPort(prefDlg);
 			break;
 			
 			case kBrainsButton:
@@ -1467,7 +1484,7 @@ void DoSettingsMain (void)
 			}
 			FlashSettingsButton(3);
 			DoBrainsPrefs();
-			SetPort((GrafPtr)prefDlg);
+			SetPortDialogPort(prefDlg);
 			break;
 			
 			case kAllDefaultsButton:
@@ -1475,7 +1492,8 @@ void DoSettingsMain (void)
 			break;
 		}
 	}
-	
+
+    SetGWorld(wasCPort, wasWorld);
 	DisposeDialog(prefDlg);
 	DisposeModalFilterUPP(prefsFilterUPP);
 	

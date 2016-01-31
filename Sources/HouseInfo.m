@@ -169,7 +169,7 @@ pascal Boolean HouseFilter (DialogPtr dial, EventRecord *event, short *item)
 		break;
 		
 		case updateEvt:
-		SetPort((GrafPtr)dial);
+        SetPortDialogPort(dial);
 		BeginUpdate(GetDialogWindow(dial));
 		UpdateHouseInfoDialog(dial);
 		EndUpdate(GetDialogWindow(dial));
@@ -240,7 +240,7 @@ void DoHouseInfo (void)
 	houseInfoDialog = GetNewDialog(kHouseInfoDialogID, nil, kPutInFront);
 	if (houseInfoDialog == nil)
 		RedAlert(kErrDialogDidntLoad);
-	SetPort((GrafPtr)houseInfoDialog);
+	SetPortDialogPort(houseInfoDialog);
 	ShowWindow(GetDialogWindow(houseInfoDialog));
 	
 	SetDialogString(houseInfoDialog, kBannerTextItem, banner);

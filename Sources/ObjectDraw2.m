@@ -189,7 +189,7 @@ void DrawMailboxLeft (Rect *theRect, short down)
 	
 	DisposeGWorld(tempMap);
 	DisposeGWorld(tempMask);
-//	SetPort((GrafPtr)backSrcMap);
+//	SetGWorld(backSrcMap, nil);
 }
 
 //--------------------------------------------------------------  DrawMailboxRight
@@ -272,7 +272,7 @@ void DrawMailboxRight (Rect *theRect, short down)
 	
 	DisposeGWorld(tempMap);
 	DisposeGWorld(tempMask);
-//	SetPort((GrafPtr)backSrcMap);
+//	SetGWorld(backSrcMap, nil);
 }
 
 //--------------------------------------------------------------  DrawSimpleTransport
@@ -670,7 +670,7 @@ void DrawTV (Rect *theRect, Boolean isOn, Boolean isLit)
 		
 		DisposeGWorld(tempMap);
 		DisposeGWorld(tempMask);
-//		SetPort((GrafPtr)backSrcMap);
+//		SetGWorld(backSrcMap, nil);
 	}
 	
 	bounds = tvScreen1;
@@ -765,7 +765,7 @@ void DrawVCR (Rect *theRect, Boolean isOn, Boolean isLit)
 		DisposeGWorld(tempMap);
 		DisposeGWorld(tempMask);
 		
-//		SetPort((GrafPtr)backSrcMap);
+//		SetGWorld(backSrcMap, nil);
 	}
 	
 	bounds = vcrTime1;
@@ -820,7 +820,7 @@ void DrawStereo (Rect *theRect, Boolean isOn, Boolean isLit)
 		DisposeGWorld(tempMap);
 		DisposeGWorld(tempMask);
 		
-//		SetPort((GrafPtr)backSrcMap);
+//		SetGWorld(backSrcMap, nil);
 	}
 	
 	bounds = stereoLight1;
@@ -875,7 +875,7 @@ void DrawMicrowave (Rect *theRect, Boolean isOn, Boolean isLit)
 		DisposeGWorld(tempMap);
 		DisposeGWorld(tempMask);
 		
-//		SetPort((GrafPtr)backSrcMap);
+//		SetGWorld(backSrcMap, nil);
 	}
 	
 	bounds = microOn;
@@ -1155,7 +1155,7 @@ void DrawCalendar (Rect *theRect)
 	DrawPicture(thePicture, &bounds);
 	ReleaseResource((Handle)thePicture);
 	
-	SetPort((GrafPtr)backSrcMap);
+	SetGWorld(backSrcMap, nil);
 	TextFace(bold);
 	TextFont(applFont);
 	TextSize(9);
@@ -1296,7 +1296,7 @@ void DrawPictWithMaskObject (short what, Rect *theRect)
 	DisposeGWorld(tempMap);
 	DisposeGWorld(tempMask);
 	
-//	SetPort((GrafPtr)backSrcMap);
+//	SetGWorld(backSrcMap, nil);
 }
 
 //--------------------------------------------------------------  DrawPictSansWhiteObject
@@ -1407,7 +1407,7 @@ void DrawPictSansWhiteObject (short what, Rect *theRect)
 	SetGWorld(wasCPort, wasWorld);
 	
 	DisposeGWorld(tempMap);
-//	SetPort((GrafPtr)backSrcMap);
+//	SetGWorld(backSrcMap, nil);
 }
 //--------------------------------------------------------------  DrawCustPictSansWhite
 
@@ -1434,6 +1434,6 @@ void DrawCustPictSansWhite (short pictID, Rect *theRect)
 	SetGWorld(wasCPort, wasWorld);
 	
 	DisposeGWorld(tempMap);
-//	SetPort((GrafPtr)backSrcMap);
+//	SetGWorld(backSrcMap, nil);
 }
 

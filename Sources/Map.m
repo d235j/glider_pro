@@ -204,7 +204,7 @@ void RedrawMapContents (void)
 	newClip.right = mapWindowRect.right + 2 - kMapScrollBarWidth;
 	newClip.bottom = mapWindowRect.bottom + 2 - kMapScrollBarWidth;
 	
-	SetPort((GrafPtr)mapWindow);
+	SetPortWindowPort(mapWindow);
 	wasClip = NewRgn();
 	if (wasClip != nil)
 	{
@@ -374,7 +374,7 @@ void OpenMapWindow (void)
 				mapRoomsWide * kMapRoomWidth + kMapScrollBarWidth - 2, 
 				mapRoomsHigh * kMapRoomHeight + kMapScrollBarWidth - 2);
 		mapWindow = NewCWindow(nil, &mapWindowRect, 
-					"\pMap", false, kWindoidGrowWDEF, kPutInFront, true, 0L);
+					"\pMap", false, floatGrowProc, kPutInFront, true, 0L);
 		
 		if (mapWindow == nil)
 			RedAlert(kErrNoMemory);
@@ -396,7 +396,7 @@ void OpenMapWindow (void)
 //		FlagWindowFloating(mapWindow);	TEMP - use flaoting windows
 		HiliteAllWindows();
 		
-		SetPort((GrafPtr)mapWindow);
+        SetPortWindowPort(mapWindow);
 		SetOrigin(1, 1);
 		QSetRect(&mapHScrollRect, -1, mapRoomsHigh * kMapRoomHeight, 
 				mapRoomsWide * kMapRoomWidth + 1, 

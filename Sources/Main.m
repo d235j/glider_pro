@@ -191,10 +191,10 @@ void ReadInPrefs (void)
 	
 	if ((numNeighbors > 1) && (thisMac.screen.right <= 512))
 		numNeighbors = 1;
-	
+	/*
 	UnivGetSoundVolume(&wasVolume, thisMac.hasSM3);
 	UnivSetSoundVolume(isVolume, thisMac.hasSM3);
-	
+	*/
 	if (isVolume == 0)
 		isSoundOn = false;
 	else

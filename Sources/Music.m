@@ -207,10 +207,10 @@ pascal void MusicCallBack (SndChannelPtr theChannel, SndCommand *theCommand)
 	theCommand->param2 = (long)(theMusicData[musicSoundID]);
 	theErr = SndDoCommand(musicChannel, theCommand, false);
 
-	//theCommand->cmd = callBackCmd;
-	//theCommand->param1 = 0;
-	//theCommand->param2 = gameA5;
-	//theErr = SndDoCommand(musicChannel, theCommand, false);
+	theCommand->cmd = callBackCmd;
+	theCommand->param1 = 0;
+	theCommand->param2 = gameA5;
+	theErr = SndDoCommand(musicChannel, theCommand, false);
 	
 	//thisA5 = SetA5(thisA5);
 }

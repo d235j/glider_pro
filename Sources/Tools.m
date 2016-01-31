@@ -193,8 +193,8 @@ void EraseSelectedTool (void)
 	if (toolsWindow == nil)
 		return;
 	
-	SetPort((GrafPtr)toolsWindow);
-	
+    SetPortWindowPort(toolsWindow);
+
 	toolIcon = toolSelected;
 	if ((toolMode == kBlowerMode) && (toolIcon >= 7))
 	{
@@ -226,7 +226,7 @@ void SelectTool (short which)
 	if (toolsWindow == nil)
 		return;
 	
-	SetPort((GrafPtr)toolsWindow);
+	SetPortWindowPort(toolsWindow);
 	
 	toolIcon = which;
 	if ((toolMode == kBlowerMode) && (toolIcon >= 7))
@@ -291,10 +291,10 @@ void OpenToolsWindow (void)
 		QOffsetRect(&toolTextRect, 0, 157 - 15);
 		if (thisMac.hasColor)
 			toolsWindow = NewCWindow(nil, &toolsWindowRect, 
-					"\pTools", false, kWindoidWDEF, kPutInFront, true, 0L);
+					"\pTools", false, floatProc, kPutInFront, true, 0L);
 		else
 			toolsWindow = NewWindow(nil, &toolsWindowRect, 
-					"\pTools", false, kWindoidWDEF, kPutInFront, true, 0L);
+					"\pTools", false, floatProc, kPutInFront, true, 0L);
 		
 		if (toolsWindow == nil)
 			RedAlert(kErrNoMemory);

@@ -337,7 +337,7 @@ Boolean GetMasterDisk (void)
 	masterDialog = GetNewDialog(kMasterDialogID, nil, kPutInFront);
 	if (masterDialog == nil)
 		RedAlert(kErrDialogDidntLoad);
-	SetPort((GrafPtr)masterDialog);
+	SetPortDialogPort(masterDialog);
 	ShowWindow(GetDialogWindow(masterDialog));
 	
 	legitMasterDisk = false;	

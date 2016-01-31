@@ -576,7 +576,7 @@ void HandleOutlet (short who)
 		}
 		else
 		{
-//			SetPort((GrafPtr)workSrcMap);
+//			SetGWorld(workSrcMap, nil);
 			PaintRect(&dinahs[who].dest);
 		}
 		AddRectToWorkRects(&dinahs[who].dest);

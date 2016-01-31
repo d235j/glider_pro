@@ -156,7 +156,7 @@ void DrawReflection (gliderPtr thisGlider, Boolean oneOrTwo)
 	if (wasClip == nil)
 		return;
 	
-	SetPort((GrafPtr)workSrcMap);
+	SetGWorld(workSrcMap, nil);
 	GetClip(wasClip);
 	SetClip(mirrorRgn);
 	

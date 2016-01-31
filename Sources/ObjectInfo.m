@@ -374,7 +374,7 @@ pascal Boolean BlowerFilter (DialogPtr dial, EventRecord *event, short *item)
 		break;
 		
 		case updateEvt:
-		SetPort((GrafPtr)dial);
+		SetPortDialogPort(dial);
 		BeginUpdate(GetDialogWindow(dial));
 		UpdateBlowerInfo(dial);
 		EndUpdate(GetDialogWindow(dial));
@@ -410,7 +410,7 @@ pascal Boolean FurnitureFilter (DialogPtr dial, EventRecord *event, short *item)
 		break;
 		
 		case updateEvt:
-		SetPort((GrafPtr)dial);
+		SetPortDialogPort(dial);
 		BeginUpdate(GetDialogWindow(dial));
 		UpdateFurnitureInfo(dial);
 		EndUpdate(GetDialogWindow(dial));
@@ -446,7 +446,7 @@ pascal Boolean CustPictFilter (DialogPtr dial, EventRecord *event, short *item)
 		break;
 		
 		case updateEvt:
-		SetPort((GrafPtr)dial);
+		SetPortDialogPort(dial);
 		BeginUpdate(GetDialogWindow(dial));
 		UpdateCustPictInfo(dial);
 		EndUpdate(GetDialogWindow(dial));
@@ -488,7 +488,7 @@ pascal Boolean SwitchFilter (DialogPtr dial, EventRecord *event, short *item)
 		break;
 		
 		case updateEvt:
-		SetPort((GrafPtr)dial);
+		SetPortDialogPort(dial);
 		BeginUpdate(GetDialogWindow(dial));
 		UpdateSwitchInfo(dial);
 		EndUpdate(GetDialogWindow(dial));
@@ -535,7 +535,7 @@ pascal Boolean TriggerFilter (DialogPtr dial, EventRecord *event, short *item)
 		break;
 		
 		case updateEvt:
-		SetPort((GrafPtr)dial);
+		SetPortDialogPort(dial);
 		BeginUpdate(GetDialogWindow(dial));
 		UpdateTriggerInfo(dial);
 		EndUpdate(GetDialogWindow(dial));
@@ -585,7 +585,7 @@ pascal Boolean LightFilter (DialogPtr dial, EventRecord *event, short *item)
 		break;
 		
 		case updateEvt:
-		SetPort((GrafPtr)dial);
+		SetPortDialogPort(dial);
 		BeginUpdate(GetDialogWindow(dial));
 		UpdateLightInfo(dial);
 		EndUpdate(GetDialogWindow(dial));
@@ -640,7 +640,7 @@ pascal Boolean ApplianceFilter (DialogPtr dial, EventRecord *event, short *item)
 		break;
 		
 		case updateEvt:
-		SetPort((GrafPtr)dial);
+		SetPortDialogPort(dial);
 		BeginUpdate(GetDialogWindow(dial));
 		UpdateApplianceInfo(dial);
 		EndUpdate(GetDialogWindow(dial));
@@ -690,7 +690,7 @@ pascal Boolean MicrowaveFilter (DialogPtr dial, EventRecord *event, short *item)
 		break;
 		
 		case updateEvt:
-		SetPort((GrafPtr)dial);
+		SetPortDialogPort(dial);
 		BeginUpdate(GetDialogWindow(dial));
 		UpdateMicrowaveInfo(dial);
 		EndUpdate(GetDialogWindow(dial));
@@ -732,7 +732,7 @@ pascal Boolean GreaseFilter (DialogPtr dial, EventRecord *event, short *item)
 		break;
 		
 		case updateEvt:
-		SetPort((GrafPtr)dial);
+		SetPortDialogPort(dial);
 		BeginUpdate(GetDialogWindow(dial));
 		UpdateGreaseInfo(dial);
 		EndUpdate(GetDialogWindow(dial));
@@ -768,7 +768,7 @@ pascal Boolean InvisBonusFilter (DialogPtr dial, EventRecord *event, short *item
 		break;
 		
 		case updateEvt:
-		SetPort((GrafPtr)dial);
+		SetPortDialogPort(dial);
 		BeginUpdate(GetDialogWindow(dial));
 		UpdateInvisBonusInfo(dial);
 		EndUpdate(GetDialogWindow(dial));
@@ -810,7 +810,7 @@ pascal Boolean TransFilter (DialogPtr dial, EventRecord *event, short *item)
 		break;
 		
 		case updateEvt:
-		SetPort((GrafPtr)dial);
+		SetPortDialogPort(dial);
 		BeginUpdate(GetDialogWindow(dial));
 		UpdateTransInfo(dial);
 		EndUpdate(GetDialogWindow(dial));
@@ -865,7 +865,7 @@ pascal Boolean EnemyFilter (DialogPtr dial, EventRecord *event, short *item)
 		break;
 		
 		case updateEvt:
-		SetPort((GrafPtr)dial);
+		SetPortDialogPort(dial);
 		BeginUpdate(GetDialogWindow(dial));
 		UpdateEnemyInfo(dial);
 		EndUpdate(GetDialogWindow(dial));
@@ -915,7 +915,7 @@ pascal Boolean FlowerFilter (DialogPtr dial, EventRecord *event, short *item)
 		break;
 		
 		case updateEvt:
-		SetPort((GrafPtr)dial);
+		SetPortDialogPort(dial);
 		BeginUpdate(GetDialogWindow(dial));
 		UpdateFlowerInfo(dial);
 		EndUpdate(GetDialogWindow(dial));
@@ -950,7 +950,7 @@ void DoBlowerObjectInfo (short what)
 	infoDial = GetNewDialog(kBlowerInfoDialogID, nil, kPutInFront);
 	if (infoDial == nil)
 		RedAlert(kErrDialogDidntLoad);
-	SetPort((GrafPtr)infoDial);
+	SetPortDialogPort(infoDial);
 	
 	newDirection = thisRoom->objects[objActive].data.a.vector & 0x0F;
 	if (thisRoom->objects[objActive].data.a.initial)
@@ -1562,7 +1562,7 @@ void DoLightObjectInfo (void)
 	infoDial = GetNewDialog(kLightInfoDialogID, nil, kPutInFront);
 	if (infoDial == nil)
 		RedAlert(kErrDialogDidntLoad);
-	SetPort((GrafPtr)infoDial);
+	SetPortDialogPort(infoDial);
 	
 	if (thisRoom->objects[objActive].data.f.initial)
 		SetDialogItemValue(infoDial, kInitialStateCheckbox, 1);

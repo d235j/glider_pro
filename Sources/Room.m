@@ -248,7 +248,7 @@ void ReadyBackground (short theID, short *theTiles)
 	PicHandle	thePicture;
 	short		i;
 	
-	SetPort((GrafPtr)workSrcMap);
+	SetGWorld(workSrcMap, nil);
 	
 	if ((noRoomAtAll) || (!houseUnlocked))
 	{

@@ -122,7 +122,7 @@ void OpenMessageWindow (StringPtr title)
 	if (mssgWindow != nil)
 	{
 		ShowWindow(mssgWindow);
-		SetPort((GrafPtr)mssgWindow);
+		SetPortWindowPort(mssgWindow);
 		ClipRect(&mssgWindowRect);
 		ForeColor(blackColor);
 		BackColor(whiteColor);
@@ -141,7 +141,7 @@ void SetMessageWindowMessage (StringPtr message)
 	
 	if (mssgWindow != nil)
 	{
-		SetPort((GrafPtr)mssgWindow);
+		SetPortWindowPort(mssgWindow);
 		SetRect(&mssgWindowRect, 0, 0, 256, kMessageWindowTall);
 		InsetRect(&mssgWindowRect, 16, 16);
 		EraseRect(&mssgWindowRect);

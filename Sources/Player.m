@@ -1146,9 +1146,9 @@ void DeckGliderInFoil (gliderPtr thisGlider)
 	
 	if (twoPlayerGame)
 	{
-		SetPort((GrafPtr)glidSrcMap);
+		SetGWorld(glidSrcMap, nil);
 		LoadGraphic(kGliderFoilPictID);
-		SetPort((GrafPtr)glid2SrcMap);
+		SetGWorld(glid2SrcMap, nil);
 		LoadGraphic(kGliderFoil2PictID);
 	}
 	
@@ -1206,9 +1206,9 @@ void RemoveFoilFromGlider (gliderPtr thisGlider)
 	
 	if (twoPlayerGame)
 	{
-		SetPort((GrafPtr)glidSrcMap);
+		SetGWorld(glidSrcMap, nil);
 		LoadGraphic(kGliderPictID);
-		SetPort((GrafPtr)glid2SrcMap);
+		SetGWorld(glid2SrcMap, nil);
 		LoadGraphic(kGlider2PictID);
 	}
 	
