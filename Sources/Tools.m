@@ -175,7 +175,7 @@ void DrawToolTiles (void)
 		QOffsetRect(&srcRect, i * 24, (toolMode - 1) * 24);
 		QOffsetRect(&destRect, toolRects[i + 1].left + 2, toolRects[i + 1].top + 2);
 		
-		CopyBits((BitMap *)*GetGWorldPixMap(toolSrcMap), 
+		CopyBits(GetPortBitMapForCopyBits(toolSrcMap), 
 				GetPortBitMapForCopyBits(GetWindowPort(toolsWindow)), 
 				&srcRect, &destRect, srcCopy, nil);
 	}

@@ -60,9 +60,9 @@ void DrawLargeClockHands (Point, short, short);
 
 void DrawSimpleBlowers (short what, Rect *theRect)
 {
-	CopyMask((BitMap *)*GetGWorldPixMap(blowerSrcMap), 
-			(BitMap *)*GetGWorldPixMap(blowerMaskMap), 
-			(BitMap *)*GetGWorldPixMap(backSrcMap), 
+	CopyMask(GetPortBitMapForCopyBits(blowerSrcMap), 
+			GetPortBitMapForCopyBits(blowerMaskMap), 
+			GetPortBitMapForCopyBits(backSrcMap), 
 			&srcRects[what], &srcRects[what], theRect);
 }
 
@@ -107,9 +107,9 @@ void DrawTiki (Rect *theRect, short down)
 	
 	SetGWorld(wasCPort, wasWorld);
 	
-	CopyMask((BitMap *)*GetGWorldPixMap(blowerSrcMap), 
-			(BitMap *)*GetGWorldPixMap(blowerMaskMap), 
-			(BitMap *)*GetGWorldPixMap(backSrcMap), 
+	CopyMask(GetPortBitMapForCopyBits(blowerSrcMap), 
+			GetPortBitMapForCopyBits(blowerMaskMap), 
+			GetPortBitMapForCopyBits(backSrcMap), 
 			&srcRects[kTiki], &srcRects[kTiki], theRect);
 }
 
@@ -254,9 +254,9 @@ void DrawTable (Rect *tableTop, short down)
 	tempRect = tableSrc;
 	QOffsetRect(&tempRect, -HalfRectWide(&tableSrc) + tableTop->left + 
 			HalfRectWide(tableTop), kTableBaseTop + down);
-	CopyMask((BitMap *)*GetGWorldPixMap(furnitureSrcMap), 
-			(BitMap *)*GetGWorldPixMap(furnitureMaskMap), 
-			(BitMap *)*GetGWorldPixMap(backSrcMap), 
+	CopyMask(GetPortBitMapForCopyBits(furnitureSrcMap), 
+			GetPortBitMapForCopyBits(furnitureMaskMap), 
+			GetPortBitMapForCopyBits(backSrcMap), 
 			&tableSrc, &tableSrc, &tempRect);
 }
 
@@ -341,17 +341,17 @@ void DrawShelf (Rect *shelfTop)
 	tempRect = shelfSrc;
 	ZeroRectCorner(&tempRect);
 	QOffsetRect(&tempRect, shelfTop->left + kBracketInset, shelfTop->bottom);
-	CopyMask((BitMap *)*GetGWorldPixMap(furnitureSrcMap), 
-			(BitMap *)*GetGWorldPixMap(furnitureMaskMap), 
-			(BitMap *)*GetGWorldPixMap(backSrcMap), 
+	CopyMask(GetPortBitMapForCopyBits(furnitureSrcMap), 
+			GetPortBitMapForCopyBits(furnitureMaskMap), 
+			GetPortBitMapForCopyBits(backSrcMap), 
 			&shelfSrc, &shelfSrc, &tempRect);
 	
 	ZeroRectCorner(&tempRect);
 	QOffsetRect(&tempRect, shelfTop->right - kBracketInset - kShelfDeep - 
 			kBracketThick, shelfTop->bottom);
-	CopyMask((BitMap *)*GetGWorldPixMap(furnitureSrcMap), 
-			(BitMap *)*GetGWorldPixMap(furnitureMaskMap), 
-			(BitMap *)*GetGWorldPixMap(backSrcMap), 
+	CopyMask(GetPortBitMapForCopyBits(furnitureSrcMap), 
+			GetPortBitMapForCopyBits(furnitureMaskMap), 
+			GetPortBitMapForCopyBits(backSrcMap), 
 			&shelfSrc, &shelfSrc, &tempRect);
 }
 
@@ -460,26 +460,26 @@ void DrawCabinet (Rect *cabinet)
 	tempRect = hingeSrc;
 	ZeroRectCorner(&tempRect);
 	QOffsetRect(&tempRect, cabinet->left + kCabinetDeep + 2, cabinet->top + 10);
-	CopyMask((BitMap *)*GetGWorldPixMap(furnitureSrcMap), 
-			(BitMap *)*GetGWorldPixMap(furnitureMaskMap), 
-			(BitMap *)*GetGWorldPixMap(backSrcMap), 
+	CopyMask(GetPortBitMapForCopyBits(furnitureSrcMap), 
+			GetPortBitMapForCopyBits(furnitureMaskMap), 
+			GetPortBitMapForCopyBits(backSrcMap), 
 			&hingeSrc, &hingeSrc, &tempRect);
 	
 	tempRect = hingeSrc;
 	ZeroRectCorner(&tempRect);
 	QOffsetRect(&tempRect, cabinet->left + kCabinetDeep + 2, cabinet->bottom - 26);
-	CopyMask((BitMap *)*GetGWorldPixMap(furnitureSrcMap), 
-			(BitMap *)*GetGWorldPixMap(furnitureMaskMap), 
-			(BitMap *)*GetGWorldPixMap(backSrcMap), 
+	CopyMask(GetPortBitMapForCopyBits(furnitureSrcMap), 
+			GetPortBitMapForCopyBits(furnitureMaskMap), 
+			GetPortBitMapForCopyBits(backSrcMap), 
 			&hingeSrc, &hingeSrc, &tempRect);
 	
 	tempRect = handleSrc;
 	ZeroRectCorner(&tempRect);
 	QOffsetRect(&tempRect, cabinet->right - 8, cabinet->top + 
 			HalfRectTall(cabinet) - HalfRectTall(&handleSrc));
-	CopyMask((BitMap *)*GetGWorldPixMap(furnitureSrcMap), 
-			(BitMap *)*GetGWorldPixMap(furnitureMaskMap), 
-			(BitMap *)*GetGWorldPixMap(backSrcMap), 
+	CopyMask(GetPortBitMapForCopyBits(furnitureSrcMap), 
+			GetPortBitMapForCopyBits(furnitureMaskMap), 
+			GetPortBitMapForCopyBits(backSrcMap), 
 			&handleSrc, &handleSrc, &tempRect);
 	
 	FrameRect(cabinet);
@@ -489,9 +489,9 @@ void DrawCabinet (Rect *cabinet)
 
 void DrawSimpleFurniture (short what, Rect *theRect)
 {
-	CopyMask((BitMap *)*GetGWorldPixMap(furnitureSrcMap), 
-			(BitMap *)*GetGWorldPixMap(furnitureMaskMap), 
-			(BitMap *)*GetGWorldPixMap(backSrcMap), 
+	CopyMask(GetPortBitMapForCopyBits(furnitureSrcMap), 
+			GetPortBitMapForCopyBits(furnitureMaskMap), 
+			GetPortBitMapForCopyBits(backSrcMap), 
 			&srcRects[what], &srcRects[what], theRect);
 }
 
@@ -735,15 +735,15 @@ void DrawDresser (Rect *dresser)
 		QSetRect(&dest, -4, -4, 4, 4);
 		QOffsetRect(&dest, HalfRectTall(&tempRect), HalfRectTall(&tempRect));
 		QOffsetRect(&dest, tempRect.left, tempRect.top);
-		CopyBits((BitMap *)*GetGWorldPixMap(furnitureSrcMap), 
-				(BitMap *)*GetGWorldPixMap(backSrcMap), 
+		CopyBits(GetPortBitMapForCopyBits(furnitureSrcMap), 
+				GetPortBitMapForCopyBits(backSrcMap), 
 				&knobSrc, &dest, srcCopy, nil);
 		
 		QSetRect(&dest, -4, -4, 4, 4);
 		QOffsetRect(&dest, -HalfRectTall(&tempRect), HalfRectTall(&tempRect));
 		QOffsetRect(&dest, tempRect.right, tempRect.top);
-		CopyBits((BitMap *)*GetGWorldPixMap(furnitureSrcMap), 
-				(BitMap *)*GetGWorldPixMap(backSrcMap), 
+		CopyBits(GetPortBitMapForCopyBits(furnitureSrcMap), 
+				GetPortBitMapForCopyBits(backSrcMap), 
 				&knobSrc, &dest, srcCopy, nil);
 		
 		QOffsetRect(&tempRect, 0, kDresserTopThick + height);
@@ -755,18 +755,18 @@ void DrawDresser (Rect *dresser)
 	ZeroRectCorner(&dest);
 	QOffsetRect(&dest, dresser->left + 6, dresser->bottom - 2);
 	
-	CopyMask((BitMap *)*GetGWorldPixMap(furnitureSrcMap), 
-			(BitMap *)*GetGWorldPixMap(furnitureMaskMap), 
-			(BitMap *)*GetGWorldPixMap(backSrcMap), 
+	CopyMask(GetPortBitMapForCopyBits(furnitureSrcMap), 
+			GetPortBitMapForCopyBits(furnitureMaskMap), 
+			GetPortBitMapForCopyBits(backSrcMap), 
 			&leftFootSrc, &leftFootSrc, &dest);
 	
 	dest = rightFootSrc;
 	ZeroRectCorner(&dest);
 	QOffsetRect(&dest, dresser->right - 19, dresser->bottom - 2);
 	
-	CopyMask((BitMap *)*GetGWorldPixMap(furnitureSrcMap), 
-			(BitMap *)*GetGWorldPixMap(furnitureMaskMap), 
-			(BitMap *)*GetGWorldPixMap(backSrcMap), 
+	CopyMask(GetPortBitMapForCopyBits(furnitureSrcMap), 
+			GetPortBitMapForCopyBits(furnitureMaskMap), 
+			GetPortBitMapForCopyBits(backSrcMap), 
 			&rightFootSrc, &rightFootSrc, &dest);
 }
 
@@ -877,9 +877,9 @@ void DrawDeckTable (Rect *tableTop, short down)
 	ZeroRectCorner(&tempRect);
 	QOffsetRect(&tempRect, -HalfRectWide(&deckSrc) + tableTop->left + 
 			HalfRectWide(tableTop), kTableBaseTop + down);
-	CopyMask((BitMap *)*GetGWorldPixMap(furnitureSrcMap), 
-			(BitMap *)*GetGWorldPixMap(furnitureMaskMap), 
-			(BitMap *)*GetGWorldPixMap(backSrcMap), 
+	CopyMask(GetPortBitMapForCopyBits(furnitureSrcMap), 
+			GetPortBitMapForCopyBits(furnitureMaskMap), 
+			GetPortBitMapForCopyBits(backSrcMap), 
 			&deckSrc, &deckSrc, &tempRect);
 }
 
@@ -924,9 +924,9 @@ void DrawStool (Rect *theRect, short down)
 	
 	SetGWorld(wasCPort, wasWorld);
 	
-	CopyMask((BitMap *)*GetGWorldPixMap(furnitureSrcMap), 
-			(BitMap *)*GetGWorldPixMap(furnitureMaskMap), 
-			(BitMap *)*GetGWorldPixMap(backSrcMap), 
+	CopyMask(GetPortBitMapForCopyBits(furnitureSrcMap), 
+			GetPortBitMapForCopyBits(furnitureMaskMap), 
+			GetPortBitMapForCopyBits(backSrcMap), 
 			&srcRects[kStool], &srcRects[kStool], theRect);
 }
 
@@ -964,9 +964,9 @@ void DrawRedClock (Rect *theRect)
 	Rect		dest;
 	short		hour, minutes;
 	
-	CopyMask((BitMap *)*GetGWorldPixMap(bonusSrcMap), 
-			(BitMap *)*GetGWorldPixMap(bonusMaskMap), 
-			(BitMap *)*GetGWorldPixMap(backSrcMap), 
+	CopyMask(GetPortBitMapForCopyBits(bonusSrcMap), 
+			GetPortBitMapForCopyBits(bonusMaskMap), 
+			GetPortBitMapForCopyBits(backSrcMap), 
 			&srcRects[kRedClock], &srcRects[kRedClock], theRect);
 	
 	GetTime(&timeRec);
@@ -991,8 +991,8 @@ void DrawRedClock (Rect *theRect)
 
 void DrawClockDigit (short number, Rect *dest)
 {
-	CopyBits((BitMap *)*GetGWorldPixMap(bonusSrcMap), 
-			(BitMap *)*GetGWorldPixMap(backSrcMap), 
+	CopyBits(GetPortBitMapForCopyBits(bonusSrcMap), 
+			GetPortBitMapForCopyBits(backSrcMap), 
 			&digits[number], dest, srcCopy, nil);
 }
 
@@ -1004,9 +1004,9 @@ void DrawBlueClock (Rect *theRect)
 	Point		dest;
 	short		hour, minutes;
 	
-	CopyMask((BitMap *)*GetGWorldPixMap(bonusSrcMap), 
-			(BitMap *)*GetGWorldPixMap(bonusMaskMap), 
-			(BitMap *)*GetGWorldPixMap(backSrcMap), 
+	CopyMask(GetPortBitMapForCopyBits(bonusSrcMap), 
+			GetPortBitMapForCopyBits(bonusMaskMap), 
+			GetPortBitMapForCopyBits(backSrcMap), 
 			&srcRects[kBlueClock], &srcRects[kBlueClock], theRect);
 	
 	dest.h = theRect->left + 13;
@@ -1025,9 +1025,9 @@ void DrawYellowClock (Rect *theRect)
 	Point		dest;
 	short		hour, minutes;
 	
-	CopyMask((BitMap *)*GetGWorldPixMap(bonusSrcMap), 
-			(BitMap *)*GetGWorldPixMap(bonusMaskMap), 
-			(BitMap *)*GetGWorldPixMap(backSrcMap), 
+	CopyMask(GetPortBitMapForCopyBits(bonusSrcMap), 
+			GetPortBitMapForCopyBits(bonusMaskMap), 
+			GetPortBitMapForCopyBits(backSrcMap), 
 			&srcRects[kYellowClock], &srcRects[kYellowClock], theRect);
 	
 	dest.h = theRect->left + 13;
@@ -1046,9 +1046,9 @@ void DrawCuckoo (Rect *theRect)
 	Point		dest;
 	short		hour, minutes;
 	
-	CopyMask((BitMap *)*GetGWorldPixMap(bonusSrcMap), 
-			(BitMap *)*GetGWorldPixMap(bonusMaskMap), 
-			(BitMap *)*GetGWorldPixMap(backSrcMap), 
+	CopyMask(GetPortBitMapForCopyBits(bonusSrcMap), 
+			GetPortBitMapForCopyBits(bonusMaskMap), 
+			GetPortBitMapForCopyBits(backSrcMap), 
 			&srcRects[kCuckoo], &srcRects[kCuckoo], theRect);
 	
 	dest.h = theRect->left + 19;
@@ -1298,9 +1298,9 @@ void DrawLargeClockHands (Point where, short bigHand, short littleHand)
 
 void DrawSimplePrizes (short what, Rect *theRect)
 {
-	CopyMask((BitMap *)*GetGWorldPixMap(bonusSrcMap), 
-			(BitMap *)*GetGWorldPixMap(bonusMaskMap), 
-			(BitMap *)*GetGWorldPixMap(backSrcMap), 
+	CopyMask(GetPortBitMapForCopyBits(bonusSrcMap), 
+			GetPortBitMapForCopyBits(bonusMaskMap), 
+			GetPortBitMapForCopyBits(backSrcMap), 
 			&srcRects[what], &srcRects[what], theRect);
 }
 
@@ -1315,17 +1315,17 @@ void DrawGreaseRt (Rect *theRect, short distance, Boolean state)
 	dest = *theRect;
 	if (state)		// grease upright
 	{
-		CopyMask((BitMap *)*GetGWorldPixMap(bonusSrcMap), 
-				(BitMap *)*GetGWorldPixMap(bonusMaskMap), 
-				(BitMap *)*GetGWorldPixMap(backSrcMap), 
+		CopyMask(GetPortBitMapForCopyBits(bonusSrcMap), 
+				GetPortBitMapForCopyBits(bonusMaskMap), 
+				GetPortBitMapForCopyBits(backSrcMap), 
 				&greaseSrcRt[0], &greaseSrcRt[0], &dest);
 	}
 	else			// grease spilled
 	{
 		QOffsetRect(&dest, 6, 0);
-		CopyMask((BitMap *)*GetGWorldPixMap(bonusSrcMap), 
-				(BitMap *)*GetGWorldPixMap(bonusMaskMap), 
-				(BitMap *)*GetGWorldPixMap(backSrcMap), 
+		CopyMask(GetPortBitMapForCopyBits(bonusSrcMap), 
+				GetPortBitMapForCopyBits(bonusMaskMap), 
+				GetPortBitMapForCopyBits(backSrcMap), 
 				&greaseSrcRt[3], &greaseSrcRt[3], &dest);
 		
 		GetGWorld(&wasCPort, &wasWorld);
@@ -1348,17 +1348,17 @@ void DrawGreaseLf (Rect *theRect, short distance, Boolean state)
 	dest = *theRect;
 	if (state)		// grease upright
 	{
-		CopyMask((BitMap *)*GetGWorldPixMap(bonusSrcMap), 
-				(BitMap *)*GetGWorldPixMap(bonusMaskMap), 
-				(BitMap *)*GetGWorldPixMap(backSrcMap), 
+		CopyMask(GetPortBitMapForCopyBits(bonusSrcMap), 
+				GetPortBitMapForCopyBits(bonusMaskMap), 
+				GetPortBitMapForCopyBits(backSrcMap), 
 				&greaseSrcLf[0], &greaseSrcLf[0], &dest);
 	}
 	else			// grease spilled
 	{
 		QOffsetRect(&dest, -6, 0);
-		CopyMask((BitMap *)*GetGWorldPixMap(bonusSrcMap), 
-				(BitMap *)*GetGWorldPixMap(bonusMaskMap), 
-				(BitMap *)*GetGWorldPixMap(backSrcMap), 
+		CopyMask(GetPortBitMapForCopyBits(bonusSrcMap), 
+				GetPortBitMapForCopyBits(bonusMaskMap), 
+				GetPortBitMapForCopyBits(backSrcMap), 
 				&greaseSrcLf[3], &greaseSrcLf[3], &dest);
 		
 		GetGWorld(&wasCPort, &wasWorld);
@@ -1374,9 +1374,9 @@ void DrawGreaseLf (Rect *theRect, short distance, Boolean state)
 
 void DrawFoil (Rect *theRect)
 {
-	CopyMask((BitMap *)*GetGWorldPixMap(bonusSrcMap), 
-			(BitMap *)*GetGWorldPixMap(bonusMaskMap), 
-			(BitMap *)*GetGWorldPixMap(backSrcMap), 
+	CopyMask(GetPortBitMapForCopyBits(bonusSrcMap), 
+			GetPortBitMapForCopyBits(bonusMaskMap), 
+			GetPortBitMapForCopyBits(backSrcMap), 
 			&srcRects[kFoil], &srcRects[kFoil], theRect);
 }
 

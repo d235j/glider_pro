@@ -29,7 +29,6 @@ void BringUpDialog (DialogPtr *theDialog, short dialogID)
 	*theDialog = GetNewDialog(dialogID, nil, kPutInFront);
 	if (*theDialog == nil)
 		RedAlert(kErrDialogDidntLoad);
-	SetPort((GrafPtr)*theDialog);
 	ShowWindow(GetDialogWindow(*theDialog));
 	DrawDefaultButton(*theDialog);
 }
@@ -356,12 +355,16 @@ void DrawDefaultButton (DialogPtr theDialog)
 	Rect		itemRect;
 	Handle		itemHandle;
 	short		itemType;
-	
+    GrafPtr     curPort;
+
+    GetPort(&curPort);
+    SetPortDialogPort(theDialog);
 	GetDialogItem(theDialog, 1, &itemType, &itemHandle, &itemRect);
 	InsetRect(&itemRect, -4, -4);
 	PenSize(3, 3);
 	FrameRoundRect(&itemRect, 16, 16);
 	PenNormal();
+    SetPort(curPort);
 }
 
 //--------------------------------------------------------------  GetDialogString

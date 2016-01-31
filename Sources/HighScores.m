@@ -120,9 +120,9 @@ void DrawHighScores (void)
 	tempRect2 = tempRect;
 	QOffsetRect(&tempRect2, scoreLeft + (kScoreWide - 332) / 2, dropIt - 60);
 	
-	CopyMask((BitMap *)*GetGWorldPixMap(tempMap), 
-			(BitMap *)*GetGWorldPixMap(tempMask), 
-			(BitMap *)*GetGWorldPixMap(workSrcMap), 
+	CopyMask(GetPortBitMapForCopyBits(tempMap), 
+			GetPortBitMapForCopyBits(tempMask), 
+			GetPortBitMapForCopyBits(workSrcMap), 
 			&tempRect, &tempRect, &tempRect2);
 	
 	DisposeGWorld(tempMap);

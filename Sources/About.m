@@ -161,6 +161,7 @@ static void UpdateMainPict (DialogPtr theDial)
 	NumToString((long)thisMac.isDepth, theStr2);
 	PasStringConcat(theStr, theStr2);
 	DrawDialogUserText2(theDial, 8, theStr);
+
 }
 
 //--------------------------------------------------------------  AboutFilter

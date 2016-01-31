@@ -75,9 +75,9 @@ void DrawBanner (Point *topLeft)
 	SetGWorld(tempMask, nil);
 	LoadGraphic(kBannerPageBottomMask);
 	
-	CopyMask((BitMap *)*GetGWorldPixMap(tempMap), 
-			(BitMap *)*GetGWorldPixMap(tempMask), 
-			(BitMap *)*GetGWorldPixMap(workSrcMap), 
+	CopyMask(GetPortBitMapForCopyBits(tempMap), 
+			GetPortBitMapForCopyBits(tempMask), 
+			GetPortBitMapForCopyBits(workSrcMap), 
 			&mapBounds, &mapBounds, &partPage);
 	SetPort((GrafPtr)workSrcMap);
 	
@@ -185,8 +185,8 @@ void BringUpBanner (void)
 	QSetRect(&wholePage, 0, 0, 330, 220);
 	QOffsetRect(&wholePage, topLeft.h, topLeft.v);
 	
-	CopyBits((BitMap *)*GetGWorldPixMap(backSrcMap), 
-			(BitMap *)*GetGWorldPixMap(workSrcMap), 
+	CopyBits(GetPortBitMapForCopyBits(backSrcMap), 
+			GetPortBitMapForCopyBits(workSrcMap), 
 			&wholePage, &wholePage, srcCopy, nil);
 	
 	if (demoGoing)

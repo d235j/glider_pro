@@ -2709,24 +2709,24 @@ void DrawThisRoomsObjects (void)
 	
 	if (isFirstRoom)
 	{
-		CopyMask((BitMap *)*GetGWorldPixMap(glidSrcMap), 
-				(BitMap *)*GetGWorldPixMap(glidMaskMap), 
-				(BitMap *)*GetGWorldPixMap(backSrcMap), 
+		CopyMask(GetPortBitMapForCopyBits(glidSrcMap), 
+				GetPortBitMapForCopyBits(glidMaskMap), 
+				GetPortBitMapForCopyBits(backSrcMap), 
 				&gliderSrc[0], &gliderSrc[0], &initialGliderRect);
 	}
 	
-	CopyMask((BitMap *)*GetGWorldPixMap(blowerSrcMap), 
-			(BitMap *)*GetGWorldPixMap(blowerMaskMap), 
-			(BitMap *)*GetGWorldPixMap(backSrcMap), 
+	CopyMask(GetPortBitMapForCopyBits(blowerSrcMap), 
+			GetPortBitMapForCopyBits(blowerMaskMap), 
+			GetPortBitMapForCopyBits(backSrcMap), 
 			&leftStartGliderSrc, &leftStartGliderSrc, &leftStartGliderDest);
 	
-	CopyMask((BitMap *)*GetGWorldPixMap(blowerSrcMap), 
-			(BitMap *)*GetGWorldPixMap(blowerMaskMap), 
-			(BitMap *)*GetGWorldPixMap(backSrcMap), 
+	CopyMask(GetPortBitMapForCopyBits(blowerSrcMap), 
+			GetPortBitMapForCopyBits(blowerMaskMap), 
+			GetPortBitMapForCopyBits(backSrcMap), 
 			&rightStartGliderSrc, &rightStartGliderSrc, &rightStartGliderDest);
 	
-	CopyBits((BitMap *)*GetGWorldPixMap(backSrcMap), 
-			(BitMap *)*GetGWorldPixMap(workSrcMap), 
+	CopyBits(GetPortBitMapForCopyBits(backSrcMap), 
+			GetPortBitMapForCopyBits(workSrcMap), 
 			&backSrcRect, &backSrcRect, srcCopy, nil);
 }
 #endif

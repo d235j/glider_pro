@@ -83,7 +83,7 @@ short BackUpToSavedMap (Rect *theRect, short where, short who)
 //	CreateOffScreenPixMap(&mapRect, &savedMaps[numSavedMaps].map);
 	theErr = CreateOffScreenGWorld(&savedMaps[numSavedMaps].map, &mapRect, kPreferredDepth);
 	
-	CopyBits((BitMap *)*GetGWorldPixMap(backSrcMap), 
+	CopyBits(GetPortBitMapForCopyBits(backSrcMap), 
 			GetPortBitMapForCopyBits(savedMaps[numSavedMaps].map), 
 			theRect, &mapRect, srcCopy, nil);
 	
@@ -114,7 +114,7 @@ short ReBackUpSavedMap (Rect *theRect, short where, short who)
 			mapRect = *theRect;
 			ZeroRectCorner(&mapRect);
 			
-			CopyBits((BitMap *)*GetGWorldPixMap(backSrcMap), 
+			CopyBits(GetPortBitMapForCopyBits(backSrcMap), 
 					GetPortBitMapForCopyBits(savedMaps[foundIndex].map), 
 					theRect, &mapRect, srcCopy, nil);
 			
@@ -144,10 +144,10 @@ void RestoreFromSavedMap (short where, short who, Boolean doSparkle)
 			ZeroRectCorner(&mapRect);
 			
 			CopyBits(GetPortBitMapForCopyBits(savedMaps[i].map), 
-					(BitMap *)*GetGWorldPixMap(backSrcMap), 
+					GetPortBitMapForCopyBits(backSrcMap), 
 					&mapRect, &savedMaps[i].dest, srcCopy, nil);
 			CopyBits(GetPortBitMapForCopyBits(savedMaps[i].map), 
-					(BitMap *)*GetGWorldPixMap(workSrcMap), 
+					GetPortBitMapForCopyBits(workSrcMap), 
 					&mapRect, &savedMaps[i].dest, srcCopy, nil);
 			
 			AddRectToWorkRects(&savedMaps[i].dest);
@@ -271,13 +271,13 @@ void BackUpFlames (Rect *src, short index)
 	for (i = 0; i < kNumCandleFlames; i++)
 	{
 				// Copy background to map.
-		CopyBits((BitMap *)*GetGWorldPixMap(backSrcMap), 
+		CopyBits(GetPortBitMapForCopyBits(backSrcMap), 
 				GetPortBitMapForCopyBits(savedMaps[index].map), 
 				src, &dest, srcCopy, nil);
 		
 				// Copy flame to map.
-		CopyMask((BitMap *)*GetGWorldPixMap(blowerSrcMap), 
-				(BitMap *)*GetGWorldPixMap(blowerMaskMap), 
+		CopyMask(GetPortBitMapForCopyBits(blowerSrcMap), 
+				GetPortBitMapForCopyBits(blowerMaskMap), 
 				GetPortBitMapForCopyBits(savedMaps[index].map), 
 				&flame[i], &flame[i], &dest);
 		
@@ -357,13 +357,13 @@ void BackUpTikiFlames (Rect *src, short index)
 	for (i = 0; i < kNumTikiFlames; i++)
 	{
 				// copy background to map
-		CopyBits((BitMap *)*GetGWorldPixMap(backSrcMap), 
+		CopyBits(GetPortBitMapForCopyBits(backSrcMap), 
 				GetPortBitMapForCopyBits(savedMaps[index].map), 
 				src, &dest, srcCopy, nil);
 		
 				// copy flame to map
-		CopyMask((BitMap *)*GetGWorldPixMap(blowerSrcMap), 
-				(BitMap *)*GetGWorldPixMap(blowerMaskMap), 
+		CopyMask(GetPortBitMapForCopyBits(blowerSrcMap), 
+				GetPortBitMapForCopyBits(blowerMaskMap), 
 				GetPortBitMapForCopyBits(savedMaps[index].map), 
 				&tikiFlame[i], &tikiFlame[i], &dest);
 		
@@ -443,13 +443,13 @@ void BackUpBBQCoals (Rect *src, short index)
 	for (i = 0; i < kNumBBQCoals; i++)
 	{
 				// copy background to map
-		CopyBits((BitMap *)*GetGWorldPixMap(backSrcMap), 
+		CopyBits(GetPortBitMapForCopyBits(backSrcMap), 
 				GetPortBitMapForCopyBits(savedMaps[index].map), 
 				src, &dest, srcCopy, nil);
 		
 				// copy flame to map
-		CopyMask((BitMap *)*GetGWorldPixMap(blowerSrcMap), 
-				(BitMap *)*GetGWorldPixMap(blowerMaskMap), 
+		CopyMask(GetPortBitMapForCopyBits(blowerSrcMap), 
+				GetPortBitMapForCopyBits(blowerMaskMap), 
 				GetPortBitMapForCopyBits(savedMaps[index].map), 
 				&coals[i], &coals[i], &dest);
 		
@@ -528,12 +528,12 @@ void BackUpPendulum (Rect *src, short index)
 	QSetRect(&dest, 0, 0, 32, 28);
 	for (i = 0; i < kNumPendulums; i++)
 	{
-		CopyBits((BitMap *)*GetGWorldPixMap(backSrcMap), 
+		CopyBits(GetPortBitMapForCopyBits(backSrcMap), 
 				GetPortBitMapForCopyBits(savedMaps[index].map), 
 				src, &dest, srcCopy, nil);
 		
-		CopyMask((BitMap *)*GetGWorldPixMap(bonusSrcMap), 
-				(BitMap *)*GetGWorldPixMap(bonusMaskMap), 
+		CopyMask(GetPortBitMapForCopyBits(bonusSrcMap), 
+				GetPortBitMapForCopyBits(bonusMaskMap), 
 				GetPortBitMapForCopyBits(savedMaps[index].map), 
 				&pendulumSrc[i], &pendulumSrc[i], &dest);
 		
@@ -619,13 +619,13 @@ void BackUpStar (Rect *src, short index)
 	QSetRect(&dest, 0, 0, 32, 31);
 	for (i = 0; i < 6; i++)
 	{
-		CopyBits((BitMap *)*GetGWorldPixMap(backSrcMap), 
+		CopyBits(GetPortBitMapForCopyBits(backSrcMap), 
 				GetPortBitMapForCopyBits(savedMaps[index].map), 
 				src, &dest, srcCopy, nil);
 		
 				// copy flame to map
-		CopyMask((BitMap *)*GetGWorldPixMap(bonusSrcMap), 
-				(BitMap *)*GetGWorldPixMap(bonusMaskMap), 
+		CopyMask(GetPortBitMapForCopyBits(bonusSrcMap), 
+				GetPortBitMapForCopyBits(bonusMaskMap), 
 				GetPortBitMapForCopyBits(savedMaps[index].map), 
 				&starSrc[i], &starSrc[i], &dest);
 		

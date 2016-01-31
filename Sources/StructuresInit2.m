@@ -177,6 +177,7 @@ void CreateOffscreens (void)
 	
 	QSetRect(&tileSrcRect, 0, 0, 128, 80);
 	tileSrcMap = nil;
+    SetGWorld(wasCPort, wasWorld);
 //	????
 }
 

@@ -84,10 +84,12 @@
 		637C37481C5C4AEF00A41BD2 /* QDExtra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QDExtra.h; path = "Compatibility Headers/QDExtra.h"; sourceTree = SOURCE_ROOT; };
 		637C37491C5C4B3A00A41BD2 /* QuickdrawText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuickdrawText.h; path = "Compatibility Headers/QuickdrawText.h"; sourceTree = SOURCE_ROOT; };
 		637DD4411C5C56BD0048E9FD /* Glider PRO.r */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.rez; path = "Glider PRO.r"; sourceTree = SOURCE_ROOT; };
+		638D3B681C5D80E10095DF14 /* Glider PRO.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "Glider PRO.icns"; sourceTree = SOURCE_ROOT; };
+		638D3B691C5D81550095DF14 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "Glider PRO/Images.xcassets"; sourceTree = SOURCE_ROOT; };
 		63ABFC7C1C5BAF9D007F4C70 /* Glider PRO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Glider PRO.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		63DCEA121C5BB02A00E25F8F /* About.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = About.m; path = Sources/About.m; sourceTree = SOURCE_ROOT; };
-		63DCEA131C5BB02A00E25F8F /* AnimCursor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = AnimCursor.m; path = Sources/AnimCursor.m; sourceTree = SOURCE_ROOT; };
-		63DCEA141C5BB02A00E25F8F /* AppleEvents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = AppleEvents.m; path = Sources/AppleEvents.m; sourceTree = SOURCE_ROOT; };
+		63DCEA121C5BB02A00E25F8F /* About.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = About.m; path = Sources/About.m; sourceTree = SOURCE_ROOT; };
+		63DCEA131C5BB02A00E25F8F /* AnimCursor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnimCursor.m; path = Sources/AnimCursor.m; sourceTree = SOURCE_ROOT; };
+		63DCEA141C5BB02A00E25F8F /* AppleEvents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppleEvents.m; path = Sources/AppleEvents.m; sourceTree = SOURCE_ROOT; };
 		63DCEA151C5BB02A00E25F8F /* Banner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = Banner.m; path = Sources/Banner.m; sourceTree = SOURCE_ROOT; };
 		63DCEA161C5BB02A00E25F8F /* ColorUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = ColorUtils.m; path = Sources/ColorUtils.m; sourceTree = SOURCE_ROOT; };
 		63DCEA171C5BB02A00E25F8F /* Coordinates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.m.m; name = Coordinates.m; path = Sources/Coordinates.m; sourceTree = SOURCE_ROOT; };
@@ -253,6 +255,7 @@
 				637C37441C5C4A9700A41BD2 /* Compatibility Headers */,
 				63DCEA111C5BB01F00E25F8F /* Headers */,
 				63DCEA101C5BB01900E25F8F /* Sources */,
+				638D3B691C5D81550095DF14 /* Images.xcassets */,
 			);
 			name = "Glider PRO";
 			path = gliderpro;
@@ -366,6 +369,7 @@
 		63DCEAB11C5BB21C00E25F8F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				638D3B681C5D80E10095DF14 /* Glider PRO.icns */,
 				637DD4411C5C56BD0048E9FD /* Glider PRO.r */,
 				63DCEAB21C5BB22900E25F8F /* Info.plist */,
 			);
@@ -640,6 +644,7 @@
 		63ABFC8E1C5BAF9D007F4C70 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -651,6 +656,7 @@
 		63ABFC8F1C5BAF9D007F4C70 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";

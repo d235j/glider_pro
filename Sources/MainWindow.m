@@ -130,7 +130,7 @@ void UpdateMainWindow (void)
 	if (theMode == kEditMode)
 	{
 		PauseMarquee();
-		CopyBits((BitMap *)*GetGWorldPixMap(workSrcMap), 
+		CopyBits(GetPortBitMapForCopyBits(workSrcMap),
 				GetPortBitMapForCopyBits(GetWindowPort(mainWindow)), 
 				&mainWindowRect, &mainWindowRect, srcCopy, 
 				GetPortVisibleRegion(GetWindowPort(mainWindow), dummyRgn));
@@ -143,12 +143,15 @@ void UpdateMainWindow (void)
 		QSetRect(&tempRect, 0, 0, 640, 460);
 		QOffsetRect(&tempRect, splashOriginH, splashOriginV);
 		LoadScaledGraphic(kSplash8BitPICT, &tempRect);
-		CopyBits((BitMap *)*GetGWorldPixMap(workSrcMap), 
-				GetPortBitMapForCopyBits(GetWindowPort(mainWindow)), 
-				&workSrcRect, &mainWindowRect, srcCopy, 
-				GetPortVisibleRegion(GetWindowPort(mainWindow), dummyRgn));
-		SetPortWindowPort(mainWindow);
-		
+
+        SetPortWindowPort(mainWindow);
+
+        CopyBits(GetPortBitMapForCopyBits(workSrcMap),
+                 GetPortBitMapForCopyBits(GetWindowPort(mainWindow)),
+                 &workSrcRect, &mainWindowRect, srcCopy,
+                 GetPortVisibleRegion(GetWindowPort(mainWindow), dummyRgn));
+
+
 		DrawOnSplash();
 	}
 	

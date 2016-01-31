@@ -60,7 +60,7 @@ void RefreshScoreboard (short mode)
 	RefreshNumGliders();
 	RefreshPoints();
 	
-	CopyBits((BitMap *)*GetGWorldPixMap(boardSrcMap), 
+	CopyBits(GetPortBitMapForCopyBits(boardSrcMap), 
 			GetPortBitMapForCopyBits(GetWindowPort(mainWindow)), 
 			&boardSrcRect, &boardDestRect, srcCopy, 0L);
 	
@@ -184,8 +184,8 @@ void RefreshRoomTitle (short mode)
 	}
 	ForeColor(blackColor);
 	
-	CopyBits((BitMap *)*GetGWorldPixMap(boardTSrcMap), 
-			(BitMap *)*GetGWorldPixMap(boardSrcMap), 
+	CopyBits(GetPortBitMapForCopyBits(boardTSrcMap), 
+			GetPortBitMapForCopyBits(boardSrcMap), 
 			&boardTSrcRect, &boardTDestRect, srcCopy, nil);
 }
 
@@ -223,8 +223,8 @@ void RefreshNumGliders (void)
 	
 	ForeColor(blackColor);
 	
-	CopyBits((BitMap *)*GetGWorldPixMap(boardGSrcMap), 
-			(BitMap *)*GetGWorldPixMap(boardSrcMap), 
+	CopyBits(GetPortBitMapForCopyBits(boardGSrcMap), 
+			GetPortBitMapForCopyBits(boardSrcMap), 
 			&boardGSrcRect, &boardGDestRect, srcCopy, nil);
 }
 
@@ -258,8 +258,8 @@ void RefreshPoints (void)
 	
 	ForeColor(blackColor);
 	
-	CopyBits((BitMap *)*GetGWorldPixMap(boardPSrcMap), 
-			(BitMap *)*GetGWorldPixMap(boardSrcMap), 
+	CopyBits(GetPortBitMapForCopyBits(boardPSrcMap), 
+			GetPortBitMapForCopyBits(boardSrcMap), 
 			&boardPSrcRect, &boardPDestRect, srcCopy, nil);
 	
 	displayedScore = theScore;
@@ -295,7 +295,7 @@ void QuickGlidersRefresh (void)
 	
 	ForeColor(blackColor);
 	
-	CopyBits((BitMap *)*GetGWorldPixMap(boardGSrcMap), 
+	CopyBits(GetPortBitMapForCopyBits(boardGSrcMap), 
 			GetPortBitMapForCopyBits(GetWindowPort(mainWindow)), 
 			&boardGSrcRect, &boardGQDestRect, srcCopy, nil);
 }
@@ -330,7 +330,7 @@ void QuickScoreRefresh (void)
 	
 	ForeColor(blackColor);
 	
-	CopyBits((BitMap *)*GetGWorldPixMap(boardPSrcMap), 
+	CopyBits(GetPortBitMapForCopyBits(boardPSrcMap), 
 			GetPortBitMapForCopyBits(GetWindowPort(mainWindow)), 
 			&boardPSrcRect, &boardPQDestRect, srcCopy, nil);
 }
@@ -341,7 +341,7 @@ void QuickBatteryRefresh (Boolean flash)
 {
 	if ((batteryTotal > 0) && (!flash))
 	{
-		CopyBits((BitMap *)*GetGWorldPixMap(badgeSrcMap), 
+		CopyBits(GetPortBitMapForCopyBits(badgeSrcMap), 
 				GetPortBitMapForCopyBits(GetWindowPort(mainWindow)), 
 				&badgesBadgesRects[kBatteryBadge], 
 				&badgesDestRects[kBatteryBadge], 
@@ -349,7 +349,7 @@ void QuickBatteryRefresh (Boolean flash)
 	}
 	else if ((batteryTotal < 0) && (!flash))
 	{
-		CopyBits((BitMap *)*GetGWorldPixMap(badgeSrcMap), 
+		CopyBits(GetPortBitMapForCopyBits(badgeSrcMap), 
 				GetPortBitMapForCopyBits(GetWindowPort(mainWindow)), 
 				&badgesBadgesRects[kHeliumBadge], 
 				&badgesDestRects[kHeliumBadge], 
@@ -357,7 +357,7 @@ void QuickBatteryRefresh (Boolean flash)
 	}
 	else
 	{
-		CopyBits((BitMap *)*GetGWorldPixMap(badgeSrcMap), 
+		CopyBits(GetPortBitMapForCopyBits(badgeSrcMap), 
 				GetPortBitMapForCopyBits(GetWindowPort(mainWindow)), 
 				&badgesBlankRects[kBatteryBadge], 
 				&badgesDestRects[kBatteryBadge], 
@@ -371,7 +371,7 @@ void QuickBandsRefresh (Boolean flash)
 {
 	if ((bandsTotal > 0) && (!flash))
 	{
-		CopyBits((BitMap *)*GetGWorldPixMap(badgeSrcMap), 
+		CopyBits(GetPortBitMapForCopyBits(badgeSrcMap), 
 				GetPortBitMapForCopyBits(GetWindowPort(mainWindow)), 
 				&badgesBadgesRects[kBandsBadge], 
 				&badgesDestRects[kBandsBadge], 
@@ -379,7 +379,7 @@ void QuickBandsRefresh (Boolean flash)
 	}
 	else
 	{
-		CopyBits((BitMap *)*GetGWorldPixMap(badgeSrcMap), 
+		CopyBits(GetPortBitMapForCopyBits(badgeSrcMap), 
 				GetPortBitMapForCopyBits(GetWindowPort(mainWindow)), 
 				&badgesBlankRects[kBandsBadge], 
 				&badgesDestRects[kBandsBadge], 
@@ -393,7 +393,7 @@ void QuickFoilRefresh (Boolean flash)
 {
 	if ((foilTotal > 0) && (!flash))
 	{
-		CopyBits((BitMap *)*GetGWorldPixMap(badgeSrcMap), 
+		CopyBits(GetPortBitMapForCopyBits(badgeSrcMap), 
 				GetPortBitMapForCopyBits(GetWindowPort(mainWindow)), 
 				&badgesBadgesRects[kFoilBadge], 
 				&badgesDestRects[kFoilBadge], 
@@ -401,7 +401,7 @@ void QuickFoilRefresh (Boolean flash)
 	}
 	else
 	{
-		CopyBits((BitMap *)*GetGWorldPixMap(badgeSrcMap), 
+		CopyBits(GetPortBitMapForCopyBits(badgeSrcMap), 
 				GetPortBitMapForCopyBits(GetWindowPort(mainWindow)), 
 				&badgesBlankRects[kFoilBadge], 
 				&badgesDestRects[kFoilBadge], 

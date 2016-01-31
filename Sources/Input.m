@@ -103,9 +103,10 @@ void DoPause (void)
 			paused = false;
 		else if (BitTst(&theKeys, kCommandKeyMap))
 			DoCommandKey();
+        usleep(kTicksPerFrame * 1000 * 1000 / 60);
 	}
 	
-	CopyBits((BitMap *)*GetGWorldPixMap(workSrcMap), 
+	CopyBits(GetPortBitMapForCopyBits(workSrcMap), 
 			GetPortBitMapForCopyBits(GetWindowPort(mainWindow)), 
 			&bounds, &bounds, srcCopy, nil);
 	

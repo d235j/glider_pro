@@ -72,12 +72,12 @@ void HandleGrease (void)
 			
 			QSetRect(&src, 0, 0, 32, 27);
 			QOffsetRect(&src, 0, grease[i].frame * 27);
-			CopyBits((BitMap *)*GetGWorldPixMap(savedMaps[grease[i].mapNum].map), 
-					(BitMap *)*GetGWorldPixMap(workSrcMap), 
+			CopyBits(GetPortBitMapForCopyBits(savedMaps[grease[i].mapNum].map), 
+					GetPortBitMapForCopyBits(workSrcMap), 
 					&src, &grease[i].dest, 
 					srcCopy, nil);
-			CopyBits((BitMap *)*GetGWorldPixMap(savedMaps[grease[i].mapNum].map), 
-					(BitMap *)*GetGWorldPixMap(backSrcMap), 
+			CopyBits(GetPortBitMapForCopyBits(savedMaps[grease[i].mapNum].map), 
+					GetPortBitMapForCopyBits(backSrcMap), 
 					&src, &grease[i].dest, 
 					srcCopy, nil);
 			
@@ -148,23 +148,23 @@ void BackupGrease (Rect *src, short index, Boolean isRight)
 	QSetRect(&dest, 0, 0, 32, 27);
 	for (i = 0; i < 4; i++)
 	{
-		CopyBits((BitMap *)*GetGWorldPixMap(backSrcMap), 
-				(BitMap *)*GetGWorldPixMap(savedMaps[index].map), 
+		CopyBits(GetPortBitMapForCopyBits(backSrcMap), 
+				GetPortBitMapForCopyBits(savedMaps[index].map), 
 				src, &dest, srcCopy, nil);
 		
 		if (isRight)
 		{
-			CopyMask((BitMap *)*GetGWorldPixMap(bonusSrcMap), 
-					(BitMap *)*GetGWorldPixMap(bonusMaskMap), 
-					(BitMap *)*GetGWorldPixMap(savedMaps[index].map), 
+			CopyMask(GetPortBitMapForCopyBits(bonusSrcMap), 
+					GetPortBitMapForCopyBits(bonusMaskMap), 
+					GetPortBitMapForCopyBits(savedMaps[index].map), 
 					&greaseSrcRt[i], &greaseSrcRt[i], &dest);
 			QOffsetRect(src, 2, 0);
 		}
 		else
 		{
-			CopyMask((BitMap *)*GetGWorldPixMap(bonusSrcMap), 
-					(BitMap *)*GetGWorldPixMap(bonusMaskMap), 
-					(BitMap *)*GetGWorldPixMap(savedMaps[index].map), 
+			CopyMask(GetPortBitMapForCopyBits(bonusSrcMap), 
+					GetPortBitMapForCopyBits(bonusMaskMap), 
+					GetPortBitMapForCopyBits(savedMaps[index].map), 
 					&greaseSrcLf[i], &greaseSrcLf[i], &dest);
 			QOffsetRect(src, -2, 0);
 		}
@@ -232,6 +232,7 @@ short AddGrease (short where, short who, short h, short v,
 		grease[numGrease].mapNum = savedNum;
 		grease[numGrease].mode = kGreaseIdle;
 		grease[numGrease].frame = -1;
+        grease[numGrease].hotNum = 0;
 		if (isRight)
 		{
 			grease[numGrease].isRight = true;

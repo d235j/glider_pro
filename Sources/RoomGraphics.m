@@ -247,8 +247,8 @@ void DrawRoomBackground (short who, short where, short elevation)
 	{
 		src.left = tiles[i] * kTileWide;
 		src.right = src.left + kTileWide;
-		CopyBits((BitMap *)*GetGWorldPixMap(workSrcMap), 
-				(BitMap *)*GetGWorldPixMap(backSrcMap), 
+		CopyBits(GetPortBitMapForCopyBits(workSrcMap), 
+				GetPortBitMapForCopyBits(backSrcMap), 
 				&src, &dest, srcCopy, nil);
 		QOffsetRect(&dest, kTileWide, 0);
 	}
@@ -272,8 +272,8 @@ void DrawFloorSupport (void)
 		dest = suppSrcRect;			// left room's ceiling
 		QOffsetRect(&dest, localRoomsDest[kWestRoom].left, 
 				localRoomsDest[kCentralRoom].top - suppSrcRect.bottom);
-		CopyBits((BitMap *)*GetGWorldPixMap(suppSrcMap), 
-				(BitMap *)*GetGWorldPixMap(backSrcMap), 
+		CopyBits(GetPortBitMapForCopyBits(suppSrcMap), 
+				GetPortBitMapForCopyBits(backSrcMap), 
 				&src, &dest, srcCopy, nil);
 		
 		for (i = 0; i < numTempManholes; i++)
@@ -290,8 +290,8 @@ void DrawFloorSupport (void)
 		dest = suppSrcRect;			// left room's floor
 		QOffsetRect(&dest, localRoomsDest[kWestRoom].left, 
 				localRoomsDest[kCentralRoom].bottom);
-		CopyBits((BitMap *)*GetGWorldPixMap(suppSrcMap), 
-				(BitMap *)*GetGWorldPixMap(backSrcMap), 
+		CopyBits(GetPortBitMapForCopyBits(suppSrcMap), 
+				GetPortBitMapForCopyBits(backSrcMap), 
 				&src, &dest, srcCopy, nil);
 		
 		for (i = 0; i < numTempManholes; i++)
@@ -308,8 +308,8 @@ void DrawFloorSupport (void)
 		dest = suppSrcRect;			// directly above main room
 		QOffsetRect(&dest, localRoomsDest[kCentralRoom].left, 
 				localRoomsDest[kCentralRoom].top - suppSrcRect.bottom);
-		CopyBits((BitMap *)*GetGWorldPixMap(suppSrcMap), 
-				(BitMap *)*GetGWorldPixMap(backSrcMap), 
+		CopyBits(GetPortBitMapForCopyBits(suppSrcMap), 
+				GetPortBitMapForCopyBits(backSrcMap), 
 				&src, &dest, srcCopy, nil);
 		for (i = 0; i < numTempManholes; i++)
 			if (SectRect(&dest, &tempManholes[i], &whoCares))
@@ -325,8 +325,8 @@ void DrawFloorSupport (void)
 		dest = suppSrcRect;			// directly below main room
 		QOffsetRect(&dest, localRoomsDest[kCentralRoom].left, 
 				localRoomsDest[kCentralRoom].bottom);
-		CopyBits((BitMap *)*GetGWorldPixMap(suppSrcMap), 
-				(BitMap *)*GetGWorldPixMap(backSrcMap), 
+		CopyBits(GetPortBitMapForCopyBits(suppSrcMap), 
+				GetPortBitMapForCopyBits(backSrcMap), 
 				&src, &dest, srcCopy, nil);
 		
 		for (i = 0; i < numTempManholes; i++)
@@ -343,8 +343,8 @@ void DrawFloorSupport (void)
 		dest = suppSrcRect;
 		QOffsetRect(&dest, localRoomsDest[kEastRoom].left, 
 				localRoomsDest[kCentralRoom].top - suppSrcRect.bottom);
-		CopyBits((BitMap *)*GetGWorldPixMap(suppSrcMap), 
-				(BitMap *)*GetGWorldPixMap(backSrcMap), 
+		CopyBits(GetPortBitMapForCopyBits(suppSrcMap), 
+				GetPortBitMapForCopyBits(backSrcMap), 
 				&src, &dest, srcCopy, nil);
 		
 		for (i = 0; i < numTempManholes; i++)
@@ -361,8 +361,8 @@ void DrawFloorSupport (void)
 		dest = suppSrcRect;
 		QOffsetRect(&dest, localRoomsDest[kEastRoom].left, 
 				localRoomsDest[kCentralRoom].bottom);
-		CopyBits((BitMap *)*GetGWorldPixMap(suppSrcMap), 
-				(BitMap *)*GetGWorldPixMap(backSrcMap), 
+		CopyBits(GetPortBitMapForCopyBits(suppSrcMap), 
+				GetPortBitMapForCopyBits(backSrcMap), 
 				&src, &dest, srcCopy, nil);
 		
 		for (i = 0; i < numTempManholes; i++)
@@ -381,8 +381,8 @@ void DrawFloorSupport (void)
 
 void ReadyBackMap (void)
 {
-	CopyBits((BitMap *)*GetGWorldPixMap(workSrcMap), 
-			(BitMap *)*GetGWorldPixMap(backSrcMap), 
+	CopyBits(GetPortBitMapForCopyBits(workSrcMap), 
+			GetPortBitMapForCopyBits(backSrcMap), 
 			&workSrcRect, &workSrcRect, srcCopy, nil);
 }
 
@@ -394,8 +394,8 @@ void RestoreWorkMap (void)
 	
 	dest = backSrcRect;
 	
-	CopyBits((BitMap *)*GetGWorldPixMap(backSrcMap), 
-			(BitMap *)*GetGWorldPixMap(workSrcMap), 
+	CopyBits(GetPortBitMapForCopyBits(backSrcMap), 
+			GetPortBitMapForCopyBits(workSrcMap), 
 			&backSrcRect, &backSrcRect, srcCopy, nil);
 }
 

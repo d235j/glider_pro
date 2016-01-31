@@ -927,7 +927,12 @@ void FrameDisplayIcon (DialogPtr theDialog)
 
 void DisplayUpdate (DialogPtr theDialog)
 {
-	DrawDialog(theDialog);
+    GrafPtr     curPort;
+
+    GetPort(&curPort);
+    SetPortDialogPort(theDialog);
+
+    DrawDialog(theDialog);
 	DrawDefaultButton(theDialog);
 	
 	SetDialogItemValue(theDialog, kDoColorFadeItem, (short)wasFade);
@@ -942,6 +947,8 @@ void DisplayUpdate (DialogPtr theDialog)
 	FrameDialogItemC(theDialog, 8, kRedOrangeColor8);
 	FrameDialogItemC(theDialog, 13, kRedOrangeColor8);
 	FrameDialogItemC(theDialog, 14, kRedOrangeColor8);
+
+    SetPort(curPort);
 }
 
 //--------------------------------------------------------------  DisplayFilter
@@ -1111,11 +1118,16 @@ void DoDisplayPrefs (void)
 	short			itemHit, wasNeighbors;
 	Boolean			leaving;
 	ModalFilterUPP	displayFilterUPP;
-	
+    GrafPtr     curPort;
+
+    GetPort(&curPort);
+
 	displayFilterUPP = NewModalFilterUPP(DisplayFilter);
 	
 	BringUpDialog(&prefDlg, kDisplayPrefsDialID);
-	if (!thisMac.can8Bit)
+    SetPortDialogPort(prefDlg);
+
+    if (!thisMac.can8Bit)
 	{
 		MyDisableControl(prefDlg, kDoColorFadeItem);
 		MyDisableControl(prefDlg, k256Depth);
@@ -1213,7 +1225,7 @@ void DoDisplayPrefs (void)
 			break;
 		}
 	}
-	
+    SetPort(curPort);
 	DisposeDialog(prefDlg);
 	DisposeModalFilterUPP(displayFilterUPP);
 }

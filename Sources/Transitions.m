@@ -55,7 +55,7 @@ void PourScreenOn (Rect *theRect)
 		if (columnRects[i].bottom > theRect->bottom)
 			columnRects[i].bottom = theRect->bottom;
 		
-		CopyBits((BitMap *)*GetGWorldPixMap(workSrcMap), 
+		CopyBits(GetPortBitMapForCopyBits(workSrcMap), 
 				GetPortBitMapForCopyBits(GetWindowPort(mainWindow)), 
 				&columnRects[i], &columnRects[i], srcCopy, nil);
 				
@@ -79,7 +79,12 @@ void WipeScreenOn (short direction, Rect *theRect)
 	RgnHandle	dummyRgn;
 	short		hOffset, vOffset;
 	short		i, count;
-	
+    CGrafPtr    wasCPort;
+    GDHandle    wasWorld;
+
+    GetGWorld(&wasCPort, &wasWorld);
+    SetPortWindowPort(mainWindow);
+
 	wipeRect = *theRect;
 	switch (direction)
 	{
@@ -116,7 +121,7 @@ void WipeScreenOn (short direction, Rect *theRect)
 	
 	for (i = 0; i < count; i++)
 	{
-		CopyBits((BitMap *)*GetGWorldPixMap(workSrcMap), 
+		CopyBits(GetPortBitMapForCopyBits(workSrcMap), 
 				GetPortBitMapForCopyBits(GetWindowPort(mainWindow)), 
 				&wipeRect, &wipeRect, srcCopy, GetPortVisibleRegion(GetWindowPort(mainWindow), dummyRgn));
 		
@@ -130,8 +135,10 @@ void WipeScreenOn (short direction, Rect *theRect)
 			wipeRect.bottom = theRect->top;
 		else if (wipeRect.bottom > theRect->bottom)
 			wipeRect.bottom = theRect->bottom;
+
+        QDFlushPortBuffer(GetWindowPort(mainWindow), nil);
 	}
-	
+    SetGWorld(wasCPort, wasWorld);
 	DisposeRgn(dummyRgn);
 }
 
@@ -139,8 +146,15 @@ void WipeScreenOn (short direction, Rect *theRect)
 
 void DumpScreenOn (Rect *theRect)
 {
-	CopyBits((BitMap *)*GetGWorldPixMap(workSrcMap), 
+    CGrafPtr        wasCPort;
+    GDHandle        wasWorld;
+
+    GetGWorld(&wasCPort, &wasWorld);
+    SetPortWindowPort(mainWindow);
+	CopyBits(GetPortBitMapForCopyBits(workSrcMap),
 			GetPortBitMapForCopyBits(GetWindowPort(mainWindow)), 
 			theRect, theRect, srcCopy, nil);
+    QDFlushPortBuffer(GetWindowPort(mainWindow), nil);
+    SetGWorld(wasCPort, wasWorld);
 }
 

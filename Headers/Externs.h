@@ -12,7 +12,7 @@
 #include <Carbon/Carbon.h>
 
 
-#define kPreferredDepth				8
+#define kPreferredDepth				0
 
 
 #define	kNilPointer					0L

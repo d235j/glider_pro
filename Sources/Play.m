@@ -81,6 +81,7 @@ void NewGame (short mode)
 	Boolean		wasPlayMusicPref;
 	
 	AdjustScoreboardHeight();
+    SetPortWindowPort(mainWindow);
 	gameOver = false;
 	theMode = kPlayMode;
 	if (isPlayMusicGame)
@@ -140,12 +141,12 @@ void NewGame (short mode)
 #if !BUILD_ARCADE_VERSION
 //	HideMenuBarOld();		// TEMP
 #endif
-	
+	/*
 	SetPort((GrafPtr)mainWindow);		// paint strip on screen black
 	tempRect = thisMac.screen;
 	tempRect.top = tempRect.bottom - 20;	// thisMac.menuHigh
 	PaintRect(&tempRect);
-	
+	*/
 #ifdef COMPILEQT
 	if ((thisMac.hasQT) && (hasMovie))
 	{
@@ -400,7 +401,7 @@ void HandlePlayEvent (void)
 			GetPort(&wasPort);
 			SetPortWindowPort(mainWindow);
 			BeginUpdate(mainWindow);
-			CopyBits((BitMap *)*GetGWorldPixMap(workSrcMap), 
+			CopyBits(GetPortBitMapForCopyBits(workSrcMap), 
 					GetPortBitMapForCopyBits(GetWindowPort(mainWindow)), 
 					&justRoomsRect, &justRoomsRect, srcCopy, nil);
 			RefreshScoreboard(kNormalTitleMode);
@@ -517,7 +518,7 @@ void PlayGame (void)
 				SetGWorld(boardSrcMap, nil);
 				PaintRect(&boardSrcRect);
 				
-				CopyBits((BitMap *)*GetGWorldPixMap(boardSrcMap), 
+				CopyBits(GetPortBitMapForCopyBits(boardSrcMap), 
 						GetPortBitMapForCopyBits(GetWindowPort(mainWindow)), 
 						&boardSrcRect, &boardDestRect, srcCopy, 0L);
 				
@@ -565,7 +566,7 @@ void PlayGame (void)
 		SetGWorld(boardSrcMap, nil);
 		PaintRect(&boardSrcRect);
 		
-		CopyBits((BitMap *)*GetGWorldPixMap(boardSrcMap), 
+		CopyBits(GetPortBitMapForCopyBits(boardSrcMap), 
 				GetPortBitMapForCopyBits(GetWindowPort(mainWindow)), 
 				&boardSrcRect, &boardDestRect, srcCopy, 0L);
 		

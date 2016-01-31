@@ -163,21 +163,21 @@ void DrawReflection (gliderPtr thisGlider, Boolean oneOrTwo)
 	if (oneOrTwo)
 	{
 		if (showFoil)
-			CopyMask((BitMap *)*GetGWorldPixMap(glid2SrcMap), 
-					(BitMap *)*GetGWorldPixMap(glidMaskMap), 
-					(BitMap *)*GetGWorldPixMap(workSrcMap), 
+			CopyMask(GetPortBitMapForCopyBits(glid2SrcMap), 
+					GetPortBitMapForCopyBits(glidMaskMap), 
+					GetPortBitMapForCopyBits(workSrcMap), 
 					&thisGlider->src, &thisGlider->mask, &dest);
 		else
-			CopyMask((BitMap *)*GetGWorldPixMap(glidSrcMap), 
-					(BitMap *)*GetGWorldPixMap(glidMaskMap), 
-					(BitMap *)*GetGWorldPixMap(workSrcMap), 
+			CopyMask(GetPortBitMapForCopyBits(glidSrcMap), 
+					GetPortBitMapForCopyBits(glidMaskMap), 
+					GetPortBitMapForCopyBits(workSrcMap), 
 					&thisGlider->src, &thisGlider->mask, &dest);
 	}
 	else
 	{
-		CopyMask((BitMap *)*GetGWorldPixMap(glid2SrcMap), 
-				(BitMap *)*GetGWorldPixMap(glidMaskMap), 
-				(BitMap *)*GetGWorldPixMap(workSrcMap), 
+		CopyMask(GetPortBitMapForCopyBits(glid2SrcMap), 
+				GetPortBitMapForCopyBits(glidMaskMap), 
+				GetPortBitMapForCopyBits(workSrcMap), 
 				&thisGlider->src, &thisGlider->mask, &dest);
 	}
 	
@@ -211,8 +211,8 @@ void RenderFlames (void)
 			flames[i].src.bottom = 15;
 		}
 		
-		CopyBits((BitMap *)*GetGWorldPixMap(savedMaps[flames[i].who].map), 
-				(BitMap *)*GetGWorldPixMap(workSrcMap), 
+		CopyBits(GetPortBitMapForCopyBits(savedMaps[flames[i].who].map), 
+				GetPortBitMapForCopyBits(workSrcMap), 
 				&flames[i].src, &flames[i].dest, srcCopy, nil);
 		
 		AddRectToWorkRects(&flames[i].dest);
@@ -230,8 +230,8 @@ void RenderFlames (void)
 			tikiFlames[i].src.bottom = 10;
 		}
 		
-		CopyBits((BitMap *)*GetGWorldPixMap(savedMaps[tikiFlames[i].who].map), 
-				(BitMap *)*GetGWorldPixMap(workSrcMap), 
+		CopyBits(GetPortBitMapForCopyBits(savedMaps[tikiFlames[i].who].map), 
+				GetPortBitMapForCopyBits(workSrcMap), 
 				&tikiFlames[i].src, &tikiFlames[i].dest, srcCopy, nil);
 		
 		AddRectToWorkRects(&tikiFlames[i].dest);
@@ -249,8 +249,8 @@ void RenderFlames (void)
 			bbqCoals[i].src.bottom = 9;
 		}
 		
-		CopyBits((BitMap *)*GetGWorldPixMap(savedMaps[bbqCoals[i].who].map), 
-				(BitMap *)*GetGWorldPixMap(workSrcMap), 
+		CopyBits(GetPortBitMapForCopyBits(savedMaps[bbqCoals[i].who].map), 
+				GetPortBitMapForCopyBits(workSrcMap), 
 				&bbqCoals[i].src, &bbqCoals[i].dest, srcCopy, nil);
 		
 		AddRectToWorkRects(&bbqCoals[i].dest);
@@ -312,8 +312,8 @@ void RenderPendulums (void)
 					}
 				}
 				
-				CopyBits((BitMap *)*GetGWorldPixMap(savedMaps[pendulums[i].who].map), 
-						(BitMap *)*GetGWorldPixMap(workSrcMap), 
+				CopyBits(GetPortBitMapForCopyBits(savedMaps[pendulums[i].who].map), 
+						GetPortBitMapForCopyBits(workSrcMap), 
 						&pendulums[i].src, &pendulums[i].dest, srcCopy, nil);
 								
 				AddRectToWorkRects(&pendulums[i].dest);
@@ -365,9 +365,9 @@ void RenderFlyingPoints (void)
 				else
 					flyingPoints[i].whole.top = flyingPoints[i].dest.top;
 				
-				CopyMask((BitMap *)*GetGWorldPixMap(pointsSrcMap), 
-						(BitMap *)*GetGWorldPixMap(pointsMaskMap), 
-						(BitMap *)*GetGWorldPixMap(workSrcMap), 
+				CopyMask(GetPortBitMapForCopyBits(pointsSrcMap), 
+						GetPortBitMapForCopyBits(pointsMaskMap), 
+						GetPortBitMapForCopyBits(workSrcMap), 
 						&pointsSrc[flyingPoints[i].mode], 
 						&pointsSrc[flyingPoints[i].mode], 
 						&flyingPoints[i].dest);
@@ -402,9 +402,9 @@ void RenderSparkles (void)
 			}
 			else
 			{
-				CopyMask((BitMap *)*GetGWorldPixMap(bonusSrcMap), 
-						(BitMap *)*GetGWorldPixMap(bonusMaskMap), 
-						(BitMap *)*GetGWorldPixMap(workSrcMap), 
+				CopyMask(GetPortBitMapForCopyBits(bonusSrcMap), 
+						GetPortBitMapForCopyBits(bonusMaskMap), 
+						GetPortBitMapForCopyBits(workSrcMap), 
 						&sparkleSrc[sparkles[i].mode], 
 						&sparkleSrc[sparkles[i].mode], 
 						&sparkles[i].bounds);
@@ -440,8 +440,8 @@ void RenderStars (void)
 				theStars[i].src.bottom = 31;
 			}
 			
-			CopyBits((BitMap *)*GetGWorldPixMap(savedMaps[theStars[i].who].map), 
-					(BitMap *)*GetGWorldPixMap(workSrcMap), 
+			CopyBits(GetPortBitMapForCopyBits(savedMaps[theStars[i].who].map), 
+					GetPortBitMapForCopyBits(workSrcMap), 
 					&theStars[i].src, &theStars[i].dest, srcCopy, nil);
 			
 			AddRectToWorkRects(&theStars[i].dest);
@@ -475,9 +475,9 @@ void RenderGlider (gliderPtr thisGlider, Boolean oneOrTwo)
 			src = shadowSrc[which];
 			src.right = src.left + (dest.right - dest.left);
 			
-			CopyMask((BitMap *)*GetGWorldPixMap(shadowSrcMap), 
-					(BitMap *)*GetGWorldPixMap(shadowMaskMap), 
-					(BitMap *)*GetGWorldPixMap(workSrcMap), 
+			CopyMask(GetPortBitMapForCopyBits(shadowSrcMap), 
+					GetPortBitMapForCopyBits(shadowMaskMap), 
+					GetPortBitMapForCopyBits(workSrcMap), 
 					&src, &src, &dest);
 		}
 		else if (thisGlider->mode == kGliderComingDown)
@@ -485,15 +485,15 @@ void RenderGlider (gliderPtr thisGlider, Boolean oneOrTwo)
 			src = shadowSrc[which];
 			src.left = src.right - (dest.right - dest.left);
 			
-			CopyMask((BitMap *)*GetGWorldPixMap(shadowSrcMap), 
-					(BitMap *)*GetGWorldPixMap(shadowMaskMap), 
-					(BitMap *)*GetGWorldPixMap(workSrcMap), 
+			CopyMask(GetPortBitMapForCopyBits(shadowSrcMap), 
+					GetPortBitMapForCopyBits(shadowMaskMap), 
+					GetPortBitMapForCopyBits(workSrcMap), 
 					&src, &src, &dest);
 		}
 		else
-			CopyMask((BitMap *)*GetGWorldPixMap(shadowSrcMap), 
-					(BitMap *)*GetGWorldPixMap(shadowMaskMap), 
-					(BitMap *)*GetGWorldPixMap(workSrcMap), 
+			CopyMask(GetPortBitMapForCopyBits(shadowSrcMap), 
+					GetPortBitMapForCopyBits(shadowMaskMap), 
+					GetPortBitMapForCopyBits(workSrcMap), 
 					&shadowSrc[which], &shadowSrc[which], &dest);
 		src =thisGlider->wholeShadow;
 		QOffsetRect(&src, playOriginH, playOriginV);
@@ -507,21 +507,21 @@ void RenderGlider (gliderPtr thisGlider, Boolean oneOrTwo)
 	if (oneOrTwo)
 	{
 		if ((!twoPlayerGame) && (showFoil))
-			CopyMask((BitMap *)*GetGWorldPixMap(glid2SrcMap), 
-					(BitMap *)*GetGWorldPixMap(glidMaskMap), 
-					(BitMap *)*GetGWorldPixMap(workSrcMap), 
+			CopyMask(GetPortBitMapForCopyBits(glid2SrcMap), 
+					GetPortBitMapForCopyBits(glidMaskMap), 
+					GetPortBitMapForCopyBits(workSrcMap), 
 					&thisGlider->src, &thisGlider->mask, &dest);
 		else
-			CopyMask((BitMap *)*GetGWorldPixMap(glidSrcMap), 
-					(BitMap *)*GetGWorldPixMap(glidMaskMap), 
-					(BitMap *)*GetGWorldPixMap(workSrcMap), 
+			CopyMask(GetPortBitMapForCopyBits(glidSrcMap), 
+					GetPortBitMapForCopyBits(glidMaskMap), 
+					GetPortBitMapForCopyBits(workSrcMap), 
 					&thisGlider->src, &thisGlider->mask, &dest);
 	}
 	else
 	{
-		CopyMask((BitMap *)*GetGWorldPixMap(glid2SrcMap), 
-				(BitMap *)*GetGWorldPixMap(glidMaskMap), 
-				(BitMap *)*GetGWorldPixMap(workSrcMap), 
+		CopyMask(GetPortBitMapForCopyBits(glid2SrcMap), 
+				GetPortBitMapForCopyBits(glidMaskMap), 
+				GetPortBitMapForCopyBits(workSrcMap), 
 				&thisGlider->src, &thisGlider->mask, &dest);
 	}
 	
@@ -545,9 +545,9 @@ void RenderBands (void)
 	{
 		dest = bands[i].dest;
 		QOffsetRect(&dest, playOriginH, playOriginV);
-		CopyMask((BitMap *)*GetGWorldPixMap(bandsSrcMap), 
-				(BitMap *)*GetGWorldPixMap(bandsMaskMap), 
-				(BitMap *)*GetGWorldPixMap(workSrcMap), 
+		CopyMask(GetPortBitMapForCopyBits(bandsSrcMap), 
+				GetPortBitMapForCopyBits(bandsMaskMap), 
+				GetPortBitMapForCopyBits(workSrcMap), 
 				&bandRects[bands[i].mode], 
 				&bandRects[bands[i].mode], &dest);
 		
@@ -577,9 +577,9 @@ void RenderShreds (void)
 				src.top = src.bottom - high;
 				dest = shreds[i].bounds;
 				QOffsetRect(&dest, playOriginH, playOriginV);
-				CopyMask((BitMap *)*GetGWorldPixMap(shredSrcMap), 
-						(BitMap *)*GetGWorldPixMap(shredMaskMap), 
-						(BitMap *)*GetGWorldPixMap(workSrcMap), 
+				CopyMask(GetPortBitMapForCopyBits(shredSrcMap), 
+						GetPortBitMapForCopyBits(shredMaskMap), 
+						GetPortBitMapForCopyBits(workSrcMap), 
 						&src, &src, &dest);
 				AddRectToBackRects(&dest);
 				dest.top--;
@@ -595,9 +595,9 @@ void RenderShreds (void)
 				shreds[i].frame++;
 				if (shreds[i].frame < 20)
 				{
-					CopyMask((BitMap *)*GetGWorldPixMap(shredSrcMap), 
-						(BitMap *)*GetGWorldPixMap(shredMaskMap), 
-							(BitMap *)*GetGWorldPixMap(workSrcMap), 
+					CopyMask(GetPortBitMapForCopyBits(shredSrcMap), 
+						GetPortBitMapForCopyBits(shredMaskMap), 
+							GetPortBitMapForCopyBits(workSrcMap), 
 							&shredSrcRect, &shredSrcRect, &dest);
 				}
 				else
@@ -618,22 +618,30 @@ void RenderShreds (void)
 void CopyRectsQD (void)
 {
 	short		i;
-	
-	for (i = 0; i < numWork2Main; i++)
+    GWorldPtr wndPort;
+    CGrafPtr        wasCPort;
+    GDHandle        wasWorld;
+
+    GetGWorld(&wasCPort, &wasWorld);
+    SetPortWindowPort(mainWindow);
+    GetPort(&wndPort);
+    for (i = 0; i < numWork2Main; i++)
 	{
-		CopyBits((BitMap *)*GetGWorldPixMap(workSrcMap), 
+		CopyBits(GetPortBitMapForCopyBits(workSrcMap), 
 				GetPortBitMapForCopyBits(GetWindowPort(mainWindow)), 
 				&work2MainRects[i], &work2MainRects[i], 
 				srcCopy, nil);
 	}
-	
+    QDFlushPortBuffer(wndPort, nil);
+    SetGWorld(workSrcMap, nil);
 	for (i = 0; i < numBack2Work; i++)
 	{
-		CopyBits((BitMap *)*GetGWorldPixMap(backSrcMap), 
-				(BitMap *)*GetGWorldPixMap(workSrcMap), 
+		CopyBits(GetPortBitMapForCopyBits(backSrcMap), 
+				GetPortBitMapForCopyBits(workSrcMap), 
 				&back2WorkRects[i], &back2WorkRects[i], 
 				srcCopy, nil);
 	}
+    SetGWorld(wasCPort, wasWorld);
 }
 
 //--------------------------------------------------------------  RenderFrame
@@ -660,14 +668,9 @@ void RenderFrame (void)
 		RenderGlider(&theGlider2, false);
 	RenderShreds();
 	RenderBands();
-	
-	while (TickCount() < nextFrame)
-	{
-	}
-	nextFrame = TickCount() + kTicksPerFrame;
-	
+    usleep(kTicksPerFrame * 1000 * 1000 / 60);
+
 	CopyRectsQD();
-	
 	numWork2Main = 0;
 	numBack2Work = 0;
 }
@@ -696,45 +699,70 @@ void InitGarbageRects (void)
 
 void CopyRectBackToWork (Rect *theRect)
 {
-	CopyBits((BitMap *)*GetGWorldPixMap(backSrcMap), 
-			(BitMap *)*GetGWorldPixMap(workSrcMap), 
+    CGrafPtr        wasCPort;
+    GDHandle        wasWorld;
+    GetGWorld(&wasCPort, &wasWorld);
+    SetGWorld(workSrcMap, nil);
+	CopyBits(GetPortBitMapForCopyBits(backSrcMap),
+			GetPortBitMapForCopyBits(workSrcMap), 
 			theRect, theRect, srcCopy, nil);
+    SetGWorld(wasCPort, wasWorld);
 }
 
 //--------------------------------------------------------------  CopyRectWorkToBack
 
 void CopyRectWorkToBack (Rect *theRect)
 {
-	CopyBits((BitMap *)*GetGWorldPixMap(workSrcMap), 
-			(BitMap *)*GetGWorldPixMap(backSrcMap), 
+    CGrafPtr        wasCPort;
+    GDHandle        wasWorld;
+    GetGWorld(&wasCPort, &wasWorld);
+    SetGWorld(backSrcMap, nil);
+	CopyBits(GetPortBitMapForCopyBits(workSrcMap),
+			GetPortBitMapForCopyBits(backSrcMap), 
 			theRect, theRect, srcCopy, nil);
+    SetGWorld(wasCPort, wasWorld);
 }
 
 //--------------------------------------------------------------  CopyRectWorkToMain
 
 void CopyRectWorkToMain (Rect *theRect)
 {
-	CopyBits((BitMap *)*GetGWorldPixMap(workSrcMap), 
+    CGrafPtr        wasCPort;
+    GDHandle        wasWorld;
+    GetGWorld(&wasCPort, &wasWorld);
+    SetPortWindowPort(mainWindow);
+	CopyBits(GetPortBitMapForCopyBits(workSrcMap),
 			GetPortBitMapForCopyBits(GetWindowPort(mainWindow)), 
 			theRect, theRect, srcCopy, nil);
+    SetGWorld(wasCPort, wasWorld);
 }
 
 //--------------------------------------------------------------  CopyRectMainToWork
 
 void CopyRectMainToWork (Rect *theRect)
 {
-	CopyBits(GetPortBitMapForCopyBits(GetWindowPort(mainWindow)), 
-			(BitMap *)*GetGWorldPixMap(workSrcMap), 
+    CGrafPtr        wasCPort;
+    GDHandle        wasWorld;
+    GetGWorld(&wasCPort, &wasWorld);
+    SetGWorld(workSrcMap, nil);
+	CopyBits(GetPortBitMapForCopyBits(GetWindowPort(mainWindow)),
+			GetPortBitMapForCopyBits(workSrcMap), 
 			theRect, theRect, srcCopy, nil);
+    SetGWorld(wasCPort, wasWorld);
 }
 
 //--------------------------------------------------------------  CopyRectMainToBack
 
 void CopyRectMainToBack (Rect *theRect)
 {
-	CopyBits(GetPortBitMapForCopyBits(GetWindowPort(mainWindow)), 
-			(BitMap *)*GetGWorldPixMap(backSrcMap), 
+    CGrafPtr        wasCPort;
+    GDHandle        wasWorld;
+    GetGWorld(&wasCPort, &wasWorld);
+    SetGWorld(backSrcMap, nil);
+	CopyBits(GetPortBitMapForCopyBits(GetWindowPort(mainWindow)),
+			GetPortBitMapForCopyBits(backSrcMap), 
 			theRect, theRect, srcCopy, nil);
+    SetGWorld(wasCPort, wasWorld);
 }
 
 //--------------------------------------------------------------  AddToMirrorRegion

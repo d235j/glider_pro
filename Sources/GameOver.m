@@ -173,9 +173,9 @@ void DoGameOverStarAnimation (void)
 			if (pages[i].frame >= 6)
 				pages[i].frame = 0;
 			
-			CopyMask((BitMap *)*GetGWorldPixMap(bonusSrcMap), 
-					(BitMap *)*GetGWorldPixMap(bonusMaskMap), 
-					(BitMap *)*GetGWorldPixMap(workSrcMap), 
+			CopyMask(GetPortBitMapForCopyBits(bonusSrcMap), 
+					GetPortBitMapForCopyBits(bonusMaskMap), 
+					GetPortBitMapForCopyBits(workSrcMap), 
 					&starSrc[pages[i].frame], 
 					&starSrc[pages[i].frame], 
 					&pages[i].dest);
@@ -192,9 +192,9 @@ void DoGameOverStarAnimation (void)
 		
 		if (angelDest.left <= (workSrcRect.right + 2))
 		{
-			CopyMask((BitMap *)*GetGWorldPixMap(angelSrcMap), 
-					(BitMap *)*GetGWorldPixMap(angelMaskMap), 
-					(BitMap *)*GetGWorldPixMap(workSrcMap), 
+			CopyMask(GetPortBitMapForCopyBits(angelSrcMap), 
+					GetPortBitMapForCopyBits(angelMaskMap), 
+					GetPortBitMapForCopyBits(workSrcMap), 
 					&angelSrcRect, &angelSrcRect, &angelDest);
 			angelDest.left -= 2;
 			AddRectToWorkRectsWhole(&angelDest);
@@ -409,16 +409,16 @@ void DrawPages (void)
 	{
 		if (pages[i].stuck)
 		{
-			CopyBits((BitMap *)*GetGWorldPixMap(gameOverSrcMap), 
-					(BitMap *)*GetGWorldPixMap(workSrcMap), 
+			CopyBits(GetPortBitMapForCopyBits(gameOverSrcMap), 
+					GetPortBitMapForCopyBits(workSrcMap), 
 					&lettersSrc[i], &pages[i].dest, 
 					srcCopy, roomRgn);
 		}
 		else
 		{
-			CopyMask((BitMap *)*GetGWorldPixMap(pageSrcMap), 
-					(BitMap *)*GetGWorldPixMap(pageMaskMap), 
-					(BitMap *)*GetGWorldPixMap(workSrcMap), 
+			CopyMask(GetPortBitMapForCopyBits(pageSrcMap), 
+					GetPortBitMapForCopyBits(pageMaskMap), 
+					GetPortBitMapForCopyBits(workSrcMap), 
 					&pageSrc[pages[i].frame], 
 					&pageSrc[pages[i].frame], 
 					&pages[i].dest);

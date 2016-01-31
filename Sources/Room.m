@@ -261,8 +261,8 @@ void ReadyBackground (short theID, short *theTiles)
 		else
 			DrawString("\pNothing to show");
 		
-		CopyBits((BitMap *)*GetGWorldPixMap(workSrcMap), 
-				(BitMap *)*GetGWorldPixMap(backSrcMap), 
+		CopyBits(GetPortBitMapForCopyBits(workSrcMap), 
+				GetPortBitMapForCopyBits(backSrcMap), 
 				&workSrcRect, &workSrcRect, srcCopy, nil);
 		return;
 	}
@@ -291,16 +291,16 @@ void ReadyBackground (short theID, short *theTiles)
 	{
 		src.left = theTiles[i] * kTileWide;
 		src.right = src.left + kTileWide;
-		CopyBits((BitMap *)*GetGWorldPixMap(workSrcMap), 
-				(BitMap *)*GetGWorldPixMap(backSrcMap), 
+		CopyBits(GetPortBitMapForCopyBits(workSrcMap), 
+				GetPortBitMapForCopyBits(backSrcMap), 
 				&src, &dest, srcCopy, nil);
 		QOffsetRect(&dest, kTileWide, 0);
 	}
 	
 	QSetRect(&src, 0, 0, kRoomWide, kTileHigh);
 	QSetRect(&dest, 0, 0, kRoomWide, kTileHigh);
-	CopyBits((BitMap *)*GetGWorldPixMap(backSrcMap), 
-			(BitMap *)*GetGWorldPixMap(workSrcMap), 
+	CopyBits(GetPortBitMapForCopyBits(backSrcMap), 
+			GetPortBitMapForCopyBits(workSrcMap), 
 			&src, &dest, srcCopy, nil);
 }
 

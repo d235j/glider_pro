@@ -433,7 +433,7 @@ Boolean PtInMarqueeHandle (Point where)
 
 void DrawGliderMarquee (void)
 {
-	CopyBits((BitMap *)*GetGWorldPixMap(blowerMaskMap), 
+	CopyBits(GetPortBitMapForCopyBits(blowerMaskMap), 
 			GetPortBitMapForCopyBits(GetWindowPort(mainWindow)), 
 			&leftStartGliderSrc, 
 			&marqueeGliderRect, 

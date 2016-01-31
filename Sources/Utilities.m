@@ -271,7 +271,6 @@ OSErr CreateOffScreenGWorld (GWorldPtr *theGWorld, Rect *bounds, short depth)
 	if (theErr)
 		theErr = NewGWorld(theGWorld, depth, bounds, nil, nil, 0);
 	
-	LockPixels(GetGWorldPixMap(*theGWorld));
 	
 	return theErr;
 }

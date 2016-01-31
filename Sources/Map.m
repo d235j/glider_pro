@@ -242,7 +242,7 @@ void RedrawMapContents (void)
 				{
 					QSetRect(&src, 0, 0, kMapRoomWidth, kMapRoomHeight);
 					QOffsetRect(&src, 0, type * kMapRoomHeight);
-					CopyBits((BitMap *)*GetGWorldPixMap(nailSrcMap), 
+					CopyBits(GetPortBitMapForCopyBits(nailSrcMap), 
 							GetPortBitMapForCopyBits(GetWindowPort(mapWindow)), 
 							&src, &aRoom, srcCopy, nil);
 				}
