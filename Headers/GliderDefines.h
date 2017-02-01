@@ -528,8 +528,8 @@
 #define kInitialGliderSelected		-2
 #define kLeftGliderSelected			-3
 #define kRightGliderSelected		-4
-#define kWindoidWDEF				2048
-#define kWindoidGrowWDEF			2064
+#define kWindoidWDEF				floatProc
+#define kWindoidGrowWDEF			floatGrowProc
 #define kTicksPerFrame				2
 #define kStarPictID					1995
 #define kNumUndergroundFloors		8

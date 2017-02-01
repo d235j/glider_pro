@@ -130,10 +130,10 @@ void OpenCoordWindow (void)
 		QSetRect(&coordWindowRect, 0, 0, 50, 38);
 		if (thisMac.hasColor)
 			coordWindow = NewCWindow(nil, &coordWindowRect, 
-					"\pTools", false, floatProc, kPutInFront, true, 0L);
+					"\pTools", false, kWindoidWDEF, kPutInFront, true, 0L);
 		else
 			coordWindow = NewWindow(nil, &coordWindowRect, 
-					"\pTools", false, floatProc, kPutInFront, true, 0L);
+					"\pTools", false, kWindoidWDEF, kPutInFront, true, 0L);
 		
 		if (coordWindow == nil)
 			RedAlert(kErrNoMemory);

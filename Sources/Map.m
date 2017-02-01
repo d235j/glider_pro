@@ -374,7 +374,7 @@ void OpenMapWindow (void)
 				mapRoomsWide * kMapRoomWidth + kMapScrollBarWidth - 2, 
 				mapRoomsHigh * kMapRoomHeight + kMapScrollBarWidth - 2);
 		mapWindow = NewCWindow(nil, &mapWindowRect, 
-					"\pMap", false, floatGrowProc, kPutInFront, true, 0L);
+					"\pMap", false, kWindoidGrowWDEF, kPutInFront, true, 0L);
 		
 		if (mapWindow == nil)
 			RedAlert(kErrNoMemory);

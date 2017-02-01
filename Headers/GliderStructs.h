@@ -7,6 +7,7 @@
 
 #include "QDOffscreen.h"
 
+#pragma pack(push,2)
 
 typedef struct
 {
@@ -344,4 +345,4 @@ typedef struct
 	short		object;
 } retroLink, *retroLinkPtr;
 
-
+#pragma pack(pop)

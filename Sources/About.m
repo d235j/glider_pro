@@ -32,7 +32,7 @@ static Boolean			okayButtIsHiLit, clickedDownInOkay;
 
 void DoAbout (void)
 {
-	#define			kAboutDialogID			150		// res ID of About dialog
+    #define			kAboutDialogID			150		// res ID of About dialog
 	#define			kTextItemVers			2		// item number of version text
 	#define			kPictItemMain			4		// item number of main PICT
 	
@@ -43,16 +43,21 @@ void DoAbout (void)
 	Handle			itemHandle;
 	short			itemType, hit, wasResFile;
 	ModalFilterUPP	aboutFilterUPP;
-	
+    CGrafPtr        wasCPort;
+    GDHandle        wasWorld;
+
+    GetGWorld(&wasCPort, &wasWorld);
+
 	aboutFilterUPP = NewModalFilterUPP(AboutFilter);
 	
 	wasResFile = CurResFile();
 	UseResFile(thisMac.thisResFile);
 	
 	aboutDialog = GetNewDialog(kAboutDialogID, nil, (WindowRef)-1L);
-//	if (aboutDialog == nil)
-//		RedAlert(kErrDialogDidntLoad);
-	
+	if (aboutDialog == nil)
+		RedAlert(kErrDialogDidntLoad);
+    SetPortDialogPort(aboutDialog);
+
 	version = (VersRecHndl)GetResource('vers', 1);
 	if (version != nil)
 	{
@@ -74,7 +79,7 @@ void DoAbout (void)
 	okayButtIsHiLit = false;				// Initially, button is not hilit
 	clickedDownInOkay = false;				// Initially, didn't click in okay button
 	GetDialogItem(aboutDialog, kPictItemMain, &itemType, &itemHandle, &mainPICTBounds);
-	
+    QDFlushPortBuffer(GetDialogPort(aboutDialog), nil);
 	do										// Loop until user wants to exit
 	{
 		ModalDialog(aboutFilterUPP, &hit);
@@ -83,9 +88,10 @@ void DoAbout (void)
 	
 	if (okayButtRgn != nil)
 		DisposeRgn(okayButtRgn);			// Clean up!
+    SetGWorld(wasCPort, wasWorld);
 	DisposeDialog(aboutDialog);
 	DisposeModalFilterUPP(aboutFilterUPP);
-	
+
 	UseResFile(wasResFile);
 }
 
@@ -253,7 +259,7 @@ static pascal Boolean AboutFilter (DialogPtr theDial, EventRecord *theEvent, sho
 		handledIt = false;
 		break;
 	}
-	
+    QDFlushPortBuffer(GetDialogPort(theDial), nil);
 	return (handledIt);
 }
 

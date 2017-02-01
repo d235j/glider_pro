@@ -291,10 +291,10 @@ void OpenToolsWindow (void)
 		QOffsetRect(&toolTextRect, 0, 157 - 15);
 		if (thisMac.hasColor)
 			toolsWindow = NewCWindow(nil, &toolsWindowRect, 
-					"\pTools", false, floatProc, kPutInFront, true, 0L);
+					"\pTools", false, kWindoidWDEF, kPutInFront, true, 0L);
 		else
 			toolsWindow = NewWindow(nil, &toolsWindowRect, 
-					"\pTools", false, floatProc, kPutInFront, true, 0L);
+					"\pTools", false, kWindoidWDEF, kPutInFront, true, 0L);
 		
 		if (toolsWindow == nil)
 			RedAlert(kErrNoMemory);

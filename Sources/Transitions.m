@@ -77,8 +77,8 @@ void WipeScreenOn (short direction, Rect *theRect)
 	#define		kWipeRectThick	4
 	Rect		wipeRect;
 	RgnHandle	dummyRgn;
-	short		hOffset, vOffset;
-	short		i, count;
+    short		hOffset = 0, vOffset = 0;
+	short		i, count = 0;
     CGrafPtr    wasCPort;
     GDHandle    wasWorld;
 
@@ -118,15 +118,18 @@ void WipeScreenOn (short direction, Rect *theRect)
 	}
 	
 	dummyRgn = NewRgn();
-	
+
 	for (i = 0; i < count; i++)
 	{
 		CopyBits(GetPortBitMapForCopyBits(workSrcMap), 
 				GetPortBitMapForCopyBits(GetWindowPort(mainWindow)), 
 				&wipeRect, &wipeRect, srcCopy, GetPortVisibleRegion(GetWindowPort(mainWindow), dummyRgn));
 		
-		QOffsetRect(&wipeRect, hOffset, vOffset);
-		
+        RectRgn(dummyRgn, &wipeRect);
+        QDFlushPortBuffer(GetWindowPort(mainWindow), dummyRgn);
+
+        QOffsetRect(&wipeRect, hOffset, vOffset);
+
 		if (wipeRect.top < theRect->top)
 			wipeRect.top = theRect->top;
 		else if (wipeRect.top > theRect->bottom)
@@ -136,7 +139,6 @@ void WipeScreenOn (short direction, Rect *theRect)
 		else if (wipeRect.bottom > theRect->bottom)
 			wipeRect.bottom = theRect->bottom;
 
-        QDFlushPortBuffer(GetWindowPort(mainWindow), nil);
 	}
     SetGWorld(wasCPort, wasWorld);
 	DisposeRgn(dummyRgn);
